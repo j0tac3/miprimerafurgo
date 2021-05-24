@@ -1,0 +1,33 @@
+.post-container{
+    margin-top: 1rem;
+    margin: 0 auto;
+    min-height: calc(100vh - 10rem);
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-evenly;
+}
+.list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.posts-list{
+    width: 60%;
+}
+.list-container{
+    width: 30%;
+}
+
+@media screen and (max-width: 750px) {
+    .post-container{
+        width: 100%;
+    }
+    .posts-list{
+        width: 100%;
+    }
+    .list-container{
+        width: 100%;
+    }
+}

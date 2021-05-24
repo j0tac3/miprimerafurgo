@@ -1,0 +1,12 @@
+.info-container{
+    display: flex;;
+}
+.info{
+    display: flex;
+    align-items: center;
+    margin-right: 0.5rem;
+    font-style: italic;
+}
+.icon{
+    width: 1rem;
+}

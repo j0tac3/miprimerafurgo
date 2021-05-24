@@ -1,0 +1,19 @@
+.miniature-container{
+    width: 20rem;
+    margin-bottom: 1rem;
+}
+.miniature-image{
+    
+}
+.info-container{
+
+}
+.miniature-title{
+    padding: 0;
+    margin: 0;
+}
+.miniatures{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

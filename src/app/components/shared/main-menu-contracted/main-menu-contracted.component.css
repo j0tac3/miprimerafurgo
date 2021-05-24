@@ -1,0 +1,18 @@
+.header-container{
+    position: relative;
+    height: 5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+.header-image{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.menu-icon{
+    filter: invert(1);
+    width: 2.5rem;
+    position: absolute;
+    left: 20px;
+}
