@@ -8,7 +8,7 @@ const APP_ROUTES: Routes = [
   { path: 'camperizar', component: HomeComponent },
   { path: 'aventuras', component: PostComponent },
   { path: 'articulos', component: HomeComponent },
-  { path: '**', component: HomeComponent }
+  {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, { relativeLinkResolution: 'legacy' });

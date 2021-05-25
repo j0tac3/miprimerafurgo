@@ -12,10 +12,14 @@ export class HeaderComponent implements OnInit {
   public subscription: Subscription;
 
   constructor( private route : Router) { 
-    this.subscription = this.route.events.subscribe(newUrl => {
+    this.subscription = this.route.events.subscribe((newUrl) => {
       try {
         if (newUrl instanceof NavigationEnd && newUrl.url.includes('home')) {
+          console.log('Estas en Home')
           this.currentRoute = 'inicio';
+        } else {
+          this.currentRoute = 'notInicio';
+          console.log('No estas en Home')
         }
       } catch (e) {
         console.log(e);
