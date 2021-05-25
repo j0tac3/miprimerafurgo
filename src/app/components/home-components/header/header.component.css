@@ -1,16 +1,11 @@
 .header-container{
     position: relative;
-    height: 20rem;
     overflow: hidden;
     display: flex;
-    font-size: 4rem;
 }
-.header-container-mini{
-    position: relative;
-    height: 10rem;
-    overflow: hidden;
-    display: flex;
-    font-size: 1rem;
+.header-container-expand{
+    height: 20rem;
+    font-size: 4rem;
 }
 .header-image{
     width: 100%;
