@@ -3,11 +3,11 @@
         <div class="glass"></div>
     </div>
     <div class="content">
-        <img    class="option-image"
-                src="assets/media/icons/{{ optionIconURL }}.svg" 
-                alt="{{ optionTitle }}">
         <a  [routerLink]="['/', optionTitle | lowercase]"
             class="option-title">
+            <img    class="option-image"
+                    src="assets/media/icons/{{ optionIconURL }}.svg" 
+                    alt="{{ optionTitle }}">
             {{ optionTitle }}
         </a>
     </div>
