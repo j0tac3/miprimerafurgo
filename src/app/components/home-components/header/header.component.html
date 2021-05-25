@@ -1,4 +1,4 @@
-<div class="header-container">
+<div [className]="router.isRouteActive(router.generate(['/') ? 'header-container' : 'header-container-mini'">
     <img src="assets/media/img/furgo_noche.jpg" alt="Mi primera Furgo" class="header-image">
     <span class="header-title">Mi Primera Furgo</span>
 </div>
