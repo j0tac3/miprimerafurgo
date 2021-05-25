@@ -8,5 +8,5 @@ img{
     width: 100%;
 }
 .body{
-    min-height: calc(100vh - 25rem);
+    min-height: calc(100vh - 16rem);
 }

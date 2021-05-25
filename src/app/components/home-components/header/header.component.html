@@ -1,4 +1,5 @@
-<div [ngClass]="[ 'header-container', 'header-container-expand' ]">
+<div    class="header-container"
+        [ngClass]="{ 'header-container-expand' : currentRoute === 'inicio'}">
     <img src="assets/media/img/furgo_noche.jpg" alt="Mi primera Furgo" class="header-image">
     <span class="header-title">Mi Primera Furgo</span>
 </div>

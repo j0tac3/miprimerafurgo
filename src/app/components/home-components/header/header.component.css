@@ -2,6 +2,8 @@
     position: relative;
     overflow: hidden;
     display: flex;
+    font-size: 2rem;
+    height: 5rem;
 }
 .header-container-expand{
     height: 20rem;

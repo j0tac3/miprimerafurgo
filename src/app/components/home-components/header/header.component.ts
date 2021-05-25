@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -7,8 +8,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  public currentRoute : string = 'home';
+  public subscription: Subscription;
 
-  constructor( private route : Router) { }
+  constructor( private route : Router) { 
+    this.subscription = this.route.events.subscribe(newUrl => {
+      try {
+        if (newUrl instanceof NavigationEnd && newUrl.url.includes('home')) {
+          this.currentRoute = 'inicio';
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    });
+  }
 
   ngOnInit(): void {
   }
