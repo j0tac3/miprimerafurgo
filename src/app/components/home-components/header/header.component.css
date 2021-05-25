@@ -2,6 +2,7 @@
     position: relative;
     overflow: hidden;
     display: flex;
+    transition: height .6s, font-size .5s;
 }
 .header-container-compact{
     height: 5rem;
@@ -9,7 +10,7 @@
 }
 .header-container-expand{
     height: 20rem;
-    font-size: 4rem;
+    font-size: 3rem;
 }
 .header-image{
     width: 100%;

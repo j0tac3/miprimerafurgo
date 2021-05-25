@@ -12,14 +12,15 @@ export class HeaderComponent implements OnInit {
   public subscription: Subscription;
 
   constructor( private route : Router) { 
-    this.subscription = this.route.events.subscribe((newUrl) => {
+    this.subscription = this.route.events.subscribe((newUrl : any) => {
       try {
-        if (newUrl instanceof NavigationEnd && newUrl.url.includes('home')) {
-          console.log('Estas en Home')
+        if (newUrl instanceof NavigationEnd) {
+        console.log(newUrl.url);
+        if (newUrl.url.includes('home')) {
           this.currentRoute = 'inicio';
-        } else {
-          this.currentRoute = 'notInicio';
-          console.log('No estas en Home')
+          } else {
+            this.currentRoute = 'notInicio';
+          }
         }
       } catch (e) {
         console.log(e);
@@ -30,9 +31,10 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  isHomeDirectory() : any{
-    console.log(this.route.url);
-    return this.route.url;
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 
 }
