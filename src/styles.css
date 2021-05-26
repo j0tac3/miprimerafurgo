@@ -8,5 +8,14 @@ img{
     width: 100%;
 }
 .body{
-    min-height: calc(100vh - 16rem);
+    min-height: calc(100vh - 15rem);
+    display: flex;
+    width: 100%;
+    FLEX-DIRECTION: COLUMN;
+    justify-content: center;
+}
+@media screen and (max-width: 750px) {
+    .body{
+        min-height: calc(100vh - 20rem);
+    }
 }
