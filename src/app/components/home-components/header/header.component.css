@@ -9,8 +9,8 @@
     font-size: 2rem;
 }
 .header-container-expand{
-    height: 20rem;
-    font-size: 3rem;
+    height: 15rem;
+    font-size: 2.5rem;
 }
 .header-image{
     width: 100%;
@@ -26,7 +26,7 @@
 
 @media screen and (max-width: 750px) {
     .header-container-expand{
-        height: 15rem;
-        font-size: 2.5rem;
+        /* height: 15rem;
+        font-size: 2.5rem; */
     }
 }
