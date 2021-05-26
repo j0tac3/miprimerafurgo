@@ -23,3 +23,10 @@
     right: 0.5rem;
     color: #ffff;
 }
+
+@media screen and (max-width: 750px) {
+    .header-container-expand{
+        height: 15rem;
+        font-size: 2.5rem;
+    }
+}
