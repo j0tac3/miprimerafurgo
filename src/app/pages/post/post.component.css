@@ -11,7 +11,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    /*justify-content: space-evenly;*/
+}
+.list-elemets{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 .posts-list{
     width: 60%;

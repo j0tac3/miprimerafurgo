@@ -2,15 +2,15 @@
     position: relative;
     overflow: hidden;
     display: flex;
-    transition: height .6s, font-size .4;
+    transition: height .6s, font-size .4s;
 }
 .header-container-compact{
     height: 5rem;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 .header-container-expand{
-    height: 20rem;
-    font-size: 3rem;
+    height: 15rem;
+    font-size: 2rem;
 }
 .header-image{
     width: 100%;
@@ -23,4 +23,17 @@
     bottom: 0.5rem;
     right: 0.5rem;
     color: #ffff;
+}
+.menu-icon{
+    display: none;
+    position: absolute;
+    left: 20px;
+    top: 2rem;
+}
+
+@media screen and (max-width: 750px) {
+    .header-container-expand{
+        /* height: 15rem;
+        font-size: 2.5rem; */
+    }
 }

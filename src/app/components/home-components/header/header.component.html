@@ -1,5 +1,6 @@
 <div    class="header-container header-container-compact"
         [ngClass]="{ 'header-container-expand' : currentRoute === 'inicio' }">
+    <img src="assets/media/icons/menu_open.svg" alt="Mi primera Furgo" class="menu-icon">
     <img src="assets/media/img/furgo_noche.jpg" alt="Mi primera Furgo" class="header-image">
-    <span class="header-title">Mi Primera Furgo</span>
+    <a [routerLink]="'/home'" class="header-title">Mi Primera Furgo</a>
 </div>

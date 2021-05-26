@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
       try {
         if (newUrl instanceof NavigationEnd) {
         console.log(newUrl.url);
-        if (newUrl.url.includes('home')) {
+        if (newUrl.url.includes('home') || newUrl.url === '/') {
           this.currentRoute = 'inicio';
           } else {
             this.currentRoute = 'notInicio';
