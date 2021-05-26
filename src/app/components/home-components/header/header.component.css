@@ -23,6 +23,12 @@
     right: 0.5rem;
     color: #ffff;
 }
+.menu-icon{
+    display: none;
+    position: absolute;
+    left: 20px;
+    top: 2rem;
+}
 
 @media screen and (max-width: 750px) {
     .header-container-expand{
