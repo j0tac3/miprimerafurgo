@@ -2,7 +2,7 @@
     position: relative;
     overflow: hidden;
     display: flex;
-    transition: height .6s, font-size .5s;
+    transition: height .6s, font-size .4;
 }
 .header-container-compact{
     height: 5rem;
@@ -18,6 +18,7 @@
     object-position: center;
 }
 .header-title{
+    text-decoration: none;
     position: absolute;
     bottom: 0.5rem;
     right: 0.5rem;
