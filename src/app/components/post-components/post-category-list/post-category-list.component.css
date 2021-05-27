@@ -1,7 +1,7 @@
-.category-list{
+.most-popular__list{
     padding-left: 0;
     overflow-y: hidden;
-    animation-duration: 1s;
+    animation-duration: 2s;
     animation-name: show-list;
 }
 
