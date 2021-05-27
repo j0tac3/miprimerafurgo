@@ -1,7 +1,17 @@
 .post-list-container{
     display: grid;
     justify-content: center;
+    animation: show-list 1s;
 }
 .title{
     text-align: center;
+}
+
+@keyframes show-list {
+    from{
+        transform: translateX(-150%);
+    }
+    to{
+        transform: translateX(0);
+    }
 }
