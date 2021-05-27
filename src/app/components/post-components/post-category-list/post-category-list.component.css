@@ -1,0 +1,15 @@
+.category-list{
+    padding-left: 0;
+    overflow-y: hidden;
+    animation-duration: 1s;
+    animation-name: show-list;
+}
+
+@keyframes show-list {
+    from{
+        height: 0;
+    }
+    to{
+        height: 85px;
+    }
+}
