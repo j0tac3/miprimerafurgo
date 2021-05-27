@@ -1,8 +1,7 @@
 .most-popular__list{
     padding-left: 0;
     overflow: hidden;
-    animation-duration: 1s;
-    animation-name: show-most-popular-list;
+    animation: show-most-popular-list 1s ease-in-out;
 }
 
 @keyframes show-most-popular-list {
