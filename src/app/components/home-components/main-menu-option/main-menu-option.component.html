@@ -1,14 +1,14 @@
 <div class="option-container">
-    <div class="glass-wrap">
+    <!-- <div class="glass-wrap">
         <div class="glass"></div>
-    </div>
+    </div> -->
     <div class="content">
-        <a  [routerLink]="['/', optionTitle | lowercase]"
-            class="option-title">
+        <a  [routerLink]="['/', optionTitle | lowercase]">
             <img    class="option-image"
                     src="assets/media/icons/{{ optionIconURL }}.svg" 
                     alt="{{ optionTitle }}">
-            {{ optionTitle }}
+            <h2 class="option-title">{{ optionTitle }}</h2>
+            <p class="option-text">{{ optionText }}</p>
         </a>
     </div>
 </div>
