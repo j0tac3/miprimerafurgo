@@ -30,11 +30,11 @@
     position: absolute;
     left: 10px;
     top: 1.5rem;
-    transform: translate(-150%);
-    transition: transform .5s;
+    visibility: visible;
+    transition: visibility .5s;
 }
 .menu-icon-notvisible{
-    transform: translate(0);
+    visibility: hidden;
 }
 
 @media screen and (max-width: 750px) {
