@@ -1,11 +1,10 @@
-.category-list{
+.most-popular__list{
     padding-left: 0;
-    overflow-y: hidden;
     animation-duration: 2s;
-    animation-name: show-list;
+    animation-name: show-most-popular-list;
 }
 
-@keyframes show-list {
+@keyframes show-most-popular-list {
     from{
         height: 0;
     }

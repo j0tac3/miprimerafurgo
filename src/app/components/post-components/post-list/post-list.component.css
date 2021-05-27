@@ -1,13 +1,13 @@
 .post-list-container{
     display: grid;
     justify-content: center;
-    animation: show-list 1s;
+    animation: show-posts-list 1s;
 }
 .title{
     text-align: center;
 }
 
-@keyframes show-list {
+@keyframes show-posts-list {
     from{
         transform: translateX(-150%);
     }
