@@ -1,9 +1,7 @@
 .option-container{
     width: 10rem;
-    /* height: 7rem; */
-    /* position: relative;*/
     border-radius: 5px;
-    margin: 1rem;
+    margin: 1rem 2rem;
 }
 .content{
     padding: 0.5rem;
