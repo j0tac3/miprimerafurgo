@@ -1,16 +1,23 @@
 .miniature-container{
     width: 20rem;
     margin-bottom: 1rem;
+    position: relative;
 }
 .miniature-image{
-    
+    filter: grayscale(.9);
+    border-radius: 5px;
 }
 .info-container{
-
+    position: absolute;
+    width: 90%;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    color: #ffff;
 }
 .miniature-title{
     padding: 0;
     margin: 0;
+    font-size: 24px;
 }
 .miniatures{
     display: flex;

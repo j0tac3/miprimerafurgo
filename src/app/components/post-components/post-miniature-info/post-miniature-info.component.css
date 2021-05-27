@@ -6,7 +6,10 @@
     align-items: center;
     margin-right: 0.5rem;
     font-style: italic;
+    color: #ffff;
+    text-decoration: none;
 }
 .icon{
     width: 1rem;
+    filter: invert(1);
 }

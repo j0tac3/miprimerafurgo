@@ -1,7 +1,7 @@
 .category-list{
     padding-left: 0;
     overflow: hidden;
-    animation: show-category-list 1s ease-in-out 1s;
+    animation: show-category-list 1.5s ease-in-out;
 }
 
 @keyframes show-category-list {
