@@ -12,6 +12,10 @@
     z-index: 999;
     text-align: center;
 }
+.option-link{
+    text-decoration: none;
+    color: darkgrey;
+}
 .option-title{
     color: inherit;
     text-transform: uppercase;
