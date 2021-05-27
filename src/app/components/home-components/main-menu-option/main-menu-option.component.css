@@ -17,6 +17,9 @@
     text-decoration: none;
     color: darkgrey;
 }
+.option-image{
+    width: 10rem;
+}
 .option-title{
     color: inherit;
     text-transform: uppercase;
