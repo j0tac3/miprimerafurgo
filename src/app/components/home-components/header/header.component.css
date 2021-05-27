@@ -2,7 +2,7 @@
     position: relative;
     overflow: hidden;
     display: flex;
-    transition: height .6s, font-size .4s;
+    transition: height .6s, font-size .5s;
 }
 .header-container-compact{
     height: 5rem;
@@ -25,10 +25,16 @@
     color: #ffff;
 }
 .menu-icon{
-    display: none;
     position: absolute;
-    left: 20px;
-    top: 2rem;
+    left: 10px;
+    top: 25%;
+    filter: invert(1);
+    width: 2.5rem;
+    transform: translate(0);
+    transition: transform 0.8s;
+}
+.menu-icon-visible{
+    transform: translate(-150%);
 }
 
 @media screen and (max-width: 750px) {
