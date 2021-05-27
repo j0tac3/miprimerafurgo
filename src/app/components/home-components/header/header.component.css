@@ -25,15 +25,15 @@
     color: #ffff;
 }
 .menu-icon{
+    width: 2.5rem;
+    filter: invert(1);
     position: absolute;
     left: 10px;
-    top: 25%;
-    filter: invert(1);
-    width: 2.5rem;
-    transform: translate(0);
-    transition: transform 0.8s;
+    top: 1.5rem;
+    transform: translate();
+    transition: transform .5s;
 }
-.menu-icon-visible{
+.menu-icon-notvisible{
     transform: translate(-150%);
 }
 

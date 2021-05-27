@@ -1,0 +1,14 @@
+.most-popular__list{
+    padding-left: 0;
+    overflow: hidden;
+    animation: show-most-popular-list 1s ease-in-out;
+}
+
+@keyframes show-most-popular-list {
+    from{
+        height: 0;
+    }
+    to{
+        height: 85px;
+    }
+}

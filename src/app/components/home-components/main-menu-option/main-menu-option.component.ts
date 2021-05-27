@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class MainMenuOptionComponent implements OnInit {
   @Input() optionIconURL!: string;
   @Input() optionTitle!: string;
+  @Input() optionText!: string;
 
   constructor() { }
 

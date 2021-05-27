@@ -1,7 +1,17 @@
 .post-list-container{
     display: grid;
     justify-content: center;
+    animation: show-posts-list 1s ease-in-out 1.5s;
 }
 .title{
     text-align: center;
+}
+
+@keyframes show-posts-list {
+    from{
+        transform: translateX(-150%);
+    }
+    to{
+        transform: translateX(0);
+    }
 }

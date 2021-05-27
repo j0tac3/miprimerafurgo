@@ -1,0 +1,14 @@
+.category-list{
+    padding-left: 0;
+    overflow: hidden;
+    animation: show-category-list 1s ease-in-out 1s;
+}
+
+@keyframes show-category-list {
+    from{
+        height: 0;
+    }
+    to{
+        height: 85px;
+    }
+}
