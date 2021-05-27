@@ -26,8 +26,9 @@
 }
 .menu-icon{
     width: 2.5rem;
+    filter: invert(1);
     position: absolute;
-    left: 20px;
+    left: 10px;
     top: 2rem;
     transform: translate(0);
     transition: transform .5s;
