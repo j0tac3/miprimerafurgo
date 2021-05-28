@@ -1,4 +1,7 @@
 .miniature-container{
+    margin-bottom: 1rem;
+}
+.miniature-link{
     width: 20rem;
     margin-bottom: 1rem;
     position: relative;

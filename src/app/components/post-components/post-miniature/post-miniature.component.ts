@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-post-miniature',
@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post-miniature.component.css']
 })
 export class PostMiniatureComponent implements OnInit {
-  public imageURL: string = 'assets/media/img/furgo_bicis.jpg';
-  public title: string = 'Mi primera aventura';
+  @Input() imageURL!: string;
+  @Input() title!: string;
 
 
   constructor() { }
