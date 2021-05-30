@@ -3,27 +3,28 @@
             [ngClass]="{ 'menu-icon-notvisible' : currentRoute === 'inicio' }"
             (click)="openCloseMenu()">
     <ul class="menu-list"
-        [ngClass]="{ 'menu-list_show' : showMenu }">
+        [ngClass]="{ 'menu-list_show' : showMenu }"
+        (click)="openCloseMenu()">
         <li class="list-item">
-            <a href="" class="item-link">
+            <a [routerLink]="'home'" class="item-link">
                 <img src="assets/media/icons/home.svg" alt="" class="link-image">
                 <span class="link-tag">Home</span>
             </a>
         </li>
         <li class="list-item">
-            <a href="" class="item-link">
+            <a [routerLink]="'camperizar'" class="item-link">
                 <img src="assets/media/icons/camperizar.svg" alt="" class="link-image">
                 <span class="link-tag">Camperizar</span>
             </a>
         </li>
         <li class="list-item">
-            <a href="" class="item-link">
+            <a [routerLink]="'aventuras'" class="item-link">
                 <img src="assets/media/icons/blog.svg" alt="" class="link-image">
-                <span class="link-tag">Blog</span>
+                <span class="link-tag">Aventuras</span>
             </a>
         </li>
         <li class="list-item">
-            <a href="" class="item-link">
+            <a [routerLink]="'articulos'" class="item-link">
                 <img src="assets/media/icons/articulos.svg" alt="" class="link-image">
                 <span class="link-tag">Articulos</span>
             </a>
