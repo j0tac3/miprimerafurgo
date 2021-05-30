@@ -1,0 +1,32 @@
+<div class="lateral-menu-container">
+    <img    src="assets/media/icons/menu_open.svg" alt="Mi primera Furgo" class="menu-icon"
+            [ngClass]="{ 'menu-icon-notvisible' : currentRoute === 'inicio' }"
+            (click)="openCloseMenu()">
+    <ul class="menu-list"
+        [ngClass]="{ 'menu-list_show' : showMenu }">
+        <li class="list-item">
+            <a href="" class="item-link">
+                <img src="assets/media/icons/home.svg" alt="" class="link-image">
+                <span class="link-tag">Home</span>
+            </a>
+        </li>
+        <li class="list-item">
+            <a href="" class="item-link">
+                <img src="assets/media/icons/camperizar.svg" alt="" class="link-image">
+                <span class="link-tag">Camperizar</span>
+            </a>
+        </li>
+        <li class="list-item">
+            <a href="" class="item-link">
+                <img src="assets/media/icons/blog.svg" alt="" class="link-image">
+                <span class="link-tag">Blog</span>
+            </a>
+        </li>
+        <li class="list-item">
+            <a href="" class="item-link">
+                <img src="assets/media/icons/articulos.svg" alt="" class="link-image">
+                <span class="link-tag">Articulos</span>
+            </a>
+        </li>
+    </ul>
+</div>

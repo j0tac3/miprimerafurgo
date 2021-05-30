@@ -16,6 +16,7 @@ import { MostPopularListComponent } from './components/post-components/most-popu
 import { PostCategoryListComponent } from './components/post-components/post-category-list/post-category-list.component';
 import { MainMenuContractedComponent } from './components/shared/main-menu-contracted/main-menu-contracted.component';
 import { UserMiniatureInfoComponent } from './components/user-components/user-miniature-info/user-miniature-info.component';
+import { LateralMenuComponent } from './components/shared/lateral-menu/lateral-menu.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { UserMiniatureInfoComponent } from './components/user-components/user-mi
     MostPopularListComponent,
     PostCategoryListComponent,
     MainMenuContractedComponent,
-    UserMiniatureInfoComponent
+    UserMiniatureInfoComponent,
+    LateralMenuComponent
   ],
   imports: [
     BrowserModule,

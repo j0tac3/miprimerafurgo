@@ -3,16 +3,17 @@ import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: 'app-lateral-menu',
+  templateUrl: './lateral-menu.component.html',
+  styleUrls: ['./lateral-menu.component.css']
 })
-export class HeaderComponent implements OnInit {
-  //public currentRoute : string = 'home';
-  //public subscription: Subscription;
+export class LateralMenuComponent implements OnInit {
+  public currentRoute : string = 'home';
+  public subscription: Subscription;
+  public showMenu: boolean = false;
 
   constructor( private route : Router ) { 
-    /* this.subscription = this.route.events.subscribe((newUrl : any) => {
+    this.subscription = this.route.events.subscribe((newUrl : any) => {
       try {
         if (newUrl instanceof NavigationEnd) {
         console.log(newUrl.url);
@@ -25,16 +26,20 @@ export class HeaderComponent implements OnInit {
       } catch (e) {
         console.log(e);
       }
-    }); */
+    });
   }
 
   ngOnInit(): void {
   }
 
-/*   ngOnDestroy() {
+  ngOnDestroy() {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
-  } */
+  }
+
+  openCloseMenu() : any {
+    this.showMenu = !this.showMenu;
+  }
 
 }

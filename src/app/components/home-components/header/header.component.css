@@ -1,6 +1,6 @@
 .header-container{
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
     display: flex;
     transition: height .6s, font-size .5s;
 }
