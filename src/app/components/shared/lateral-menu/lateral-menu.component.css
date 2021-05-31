@@ -10,6 +10,10 @@
     transform: translate();
     transition: transform .5s;
 }
+.menu-icon:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
 .menu-icon-notvisible{
     transform: translate(-150%);
 }

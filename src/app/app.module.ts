@@ -17,6 +17,8 @@ import { PostCategoryListComponent } from './components/post-components/post-cat
 import { MainMenuContractedComponent } from './components/shared/main-menu-contracted/main-menu-contracted.component';
 import { UserMiniatureInfoComponent } from './components/user-components/user-miniature-info/user-miniature-info.component';
 import { LateralMenuComponent } from './components/shared/lateral-menu/lateral-menu.component';
+import { CamperizacionComponent } from './pages/camperizacion/camperizacion.component';
+import { ArticulosComponent } from './pages/articulos/articulos.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { LateralMenuComponent } from './components/shared/lateral-menu/lateral-m
     PostCategoryListComponent,
     MainMenuContractedComponent,
     UserMiniatureInfoComponent,
-    LateralMenuComponent
+    LateralMenuComponent,
+    CamperizacionComponent,
+    ArticulosComponent
   ],
   imports: [
     BrowserModule,
