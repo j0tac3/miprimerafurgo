@@ -58,6 +58,10 @@
     border-top: solid 2px magenta;
     border-bottom: solid 2px magenta;
 }
+.active{
+    border-top: solid 2px magenta;
+    border-bottom: solid 2px magenta;
+}
 .link-image{
     width: 1.5rem;
     filter: invert(1);
