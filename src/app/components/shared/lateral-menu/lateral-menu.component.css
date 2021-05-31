@@ -30,11 +30,15 @@
     list-style: none;
     transform: translateX(-150%);
     transition: transform .5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .menu-list_show{
     transform: translateX(0);
 }
 .list-item{
+    width: 15rem;
     margin-top: 1rem;
     position: relative;
     padding-left: 1rem;
