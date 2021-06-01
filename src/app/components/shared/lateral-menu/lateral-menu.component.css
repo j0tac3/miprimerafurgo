@@ -5,17 +5,15 @@
 .menu-icon{
     width: 2.5rem;
     position: absolute;
-    transform: translateX(-50%);
     top: 1.5rem;
-    transition: transform .5s;
+    left: 10px;
+    transition: transform .3s;
     background-color: #fff;
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
+    border-radius: 50px;
 }
 .menu-icon:hover{
     cursor: pointer;
-    transform: translateX(0);
-    padding-left: 1rem;
+    transform: scale(1.1);
 }
 .menu-icon-notvisible{
     transform: translate(-150%);
