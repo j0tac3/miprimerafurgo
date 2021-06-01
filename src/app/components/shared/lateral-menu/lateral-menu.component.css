@@ -42,6 +42,16 @@
     position: relative;
     padding-left: 2rem;
 }
+.list-item-header{
+    color: #fff;
+    width: 100%;
+    margin-top: 1rem;
+    position: relative;
+    padding-left: 2rem;
+    font-size: 1.2rem;
+    border-bottom: 1px solid;
+    padding-bottom: 0.5rem;
+}
 .item-link{
     width: 8rem;
     text-decoration: none;
