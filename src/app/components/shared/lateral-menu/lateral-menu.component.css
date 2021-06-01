@@ -1,5 +1,5 @@
 .menu-lateral-container{
-    position: relative;
+    position: fixed;
     z-index: 999;
 }
 .menu-icon{
@@ -24,10 +24,10 @@
     padding: 0;
     margin: 0;
     width: 100vw;
+    height: 100vh;
     position: absolute;
-    top: 5rem;
-    left: 0rem;
-    height: calc(100vh - 5rem);
+    top: 0;
+    left: 0;
     background-color: rgba(0, 0, 0, 0.9);
     list-style: none;
     transform: translateX(-150%);
