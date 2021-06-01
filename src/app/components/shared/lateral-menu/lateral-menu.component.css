@@ -1,14 +1,17 @@
 .menu-lateral-container{
     position: relative;
+    z-index: 999;
 }
 .menu-icon{
     width: 2.5rem;
-    filter: invert(1);
+    /*filter: invert(1);*/
     position: absolute;
     left: 10px;
     top: 1.5rem;
     transform: translate();
     transition: transform .5s;
+    background-color: #ffff;
+    border-radius: 50px;
 }
 .menu-icon:hover{
     cursor: pointer;
@@ -18,7 +21,6 @@
     transform: translate(-150%);
 }
 .menu-list{
-    z-index: 999;
     padding: 0;
     margin: 0;
     width: 100vw;
