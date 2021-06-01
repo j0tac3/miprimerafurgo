@@ -1,5 +1,6 @@
 .miniature-container{
     margin-bottom: 1rem;
+    max-width: 30rem;
 }
 .miniature-link{
     width: 20rem;
