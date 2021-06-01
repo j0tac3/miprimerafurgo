@@ -38,7 +38,7 @@
 }
 .list-item{
     width: 15rem;
-    margin-top: 1rem;
+    margin-top: .5rem;
     position: relative;
     padding-left: 2rem;
 }
@@ -47,7 +47,7 @@
     width: 100%;
     font-size: 1.2rem;
     border-bottom: 1px solid;
-    padding-bottom: .5rem;
+    padding: .5rem 0;
     padding-left: 0;
     display: flex;
     align-items: center;
@@ -64,8 +64,8 @@
     align-items: center;
     border-top: solid 2px transparent;
     border-bottom: solid 2px transparent;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 .item-link:hover, .active{
     border-top: solid 2px #ffff;
