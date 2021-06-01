@@ -3,6 +3,13 @@
     overflow: hidden;
     animation: show-most-popular-list 1.5s ease-in-out;
 }
+.menu-slider{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
 
 @keyframes show-most-popular-list {
     from{
