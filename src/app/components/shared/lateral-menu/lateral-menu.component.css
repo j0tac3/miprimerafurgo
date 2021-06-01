@@ -30,9 +30,6 @@
     list-style: none;
     transform: translateX(-150%);
     transition: transform .5s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 .menu-list_show{
     transform: translateX(0);
@@ -41,7 +38,7 @@
     width: 15rem;
     margin-top: 1rem;
     position: relative;
-    padding-left: 1rem;
+    padding-left: 2rem;
 }
 .item-link{
     width: 8rem;

@@ -19,6 +19,7 @@ import { UserMiniatureInfoComponent } from './components/user-components/user-mi
 import { LateralMenuComponent } from './components/shared/lateral-menu/lateral-menu.component';
 import { CamperizacionComponent } from './pages/camperizacion/camperizacion.component';
 import { ArticulosComponent } from './pages/articulos/articulos.component';
+import { PostSearchComponent } from './components/post-components/post-search/post-search.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ArticulosComponent } from './pages/articulos/articulos.component';
     UserMiniatureInfoComponent,
     LateralMenuComponent,
     CamperizacionComponent,
-    ArticulosComponent
+    ArticulosComponent,
+    PostSearchComponent
   ],
   imports: [
     BrowserModule,

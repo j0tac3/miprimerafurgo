@@ -9,9 +9,10 @@
     transition: background-color .4s, color .4s, filter .4s;
 }
 .option-container:hover{
+    background-color: rgba(0, 0, 0, 0.9);
     /* background-color: hsla(174, 56%, 63%, 1); */
     /* background-color: hsla(162, 33%, 62%, .8); */
-    background-color: hsla(170, 75%, 53%, 1);
+    /* background-color: hsla(170, 75%, 53%, 1); */
     color: #fff;
     filter: invert(0);
 }
