@@ -1,14 +1,34 @@
-.most-popular__list{
-    padding-left: 0;
-    overflow: hidden;
-    animation: show-most-popular-list 1.5s ease-in-out;
-}
 .menu-slider{
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
+}
+
+.most-popular__list{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    /* animation: show-most-popular-list 1.5s ease-in-out; */
+}
+.popular-list_item{
+    opacity: 0;
+    transition: opacity .5s;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 50px;
+    padding: 50px;
+    border: 2px solid red;
+    background: #ffff;
+}
+.popular-list_item:first-child{
+    opacity: 1;
+}  
+.popular-list_item:target{
+    opacity: 1;
 }
 
 @keyframes show-most-popular-list {
