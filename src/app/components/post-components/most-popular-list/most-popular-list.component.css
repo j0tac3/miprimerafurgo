@@ -10,10 +10,12 @@
     padding: 0;
     margin: 0;
     list-style: none;
+    width: 10rem;
+    height: 10rem;
     position: relative;
     /* animation: show-most-popular-list 1.5s ease-in-out; */
 }
-.popular-list_item{
+.most-popular__list .popular-list_item{
     opacity: 0;
     transition: opacity .5s;
     position: absolute;
@@ -24,10 +26,10 @@
     border: 2px solid red;
     background: #ffff;
 }
-.popular-list_item:first-child{
+.most-popular__list .popular-list_item:first-child{
     opacity: 1;
 }  
-.popular-list_item:target{
+.most-popular__list .popular-list_item:target{
     opacity: 1;
 }
 
