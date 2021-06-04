@@ -15,21 +15,21 @@
     position: relative;
     /* animation: show-most-popular-list 1.5s ease-in-out; */
 }
-.most-popular__list .popular-list_item{
+.popular-list_item{
     opacity: 0;
     transition: opacity .5s;
     position: absolute;
     left: 0;
     top: 0;
-    margin: 50px;
-    padding: 50px;
+    margin: 25px;
+    padding: 25px;
     border: 2px solid red;
     background: #ffff;
 }
-.most-popular__list .popular-list_item:first-child{
+.popular-list_item:first-child{
     opacity: 1;
 }  
-.most-popular__list .popular-list_item:target{
+.popular-list_item:target{
     opacity: 1;
 }
 
