@@ -20,6 +20,7 @@ import { LateralMenuComponent } from './components/shared/lateral-menu/lateral-m
 import { CamperizacionComponent } from './pages/camperizacion/camperizacion.component';
 import { ArticulosComponent } from './pages/articulos/articulos.component';
 import { PostSearchComponent } from './components/post-components/post-search/post-search.component';
+import { PostSelectedComponent } from './components/post-components/post-selected/post-selected.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { PostSearchComponent } from './components/post-components/post-search/po
     LateralMenuComponent,
     CamperizacionComponent,
     ArticulosComponent,
-    PostSearchComponent
+    PostSearchComponent,
+    PostSelectedComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PostSelectedComponent } from './components/post-components/post-selected/post-selected.component';
 import { ArticulosComponent } from './pages/articulos/articulos.component';
 import { CamperizacionComponent } from './pages/camperizacion/camperizacion.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -10,6 +11,7 @@ const APP_ROUTES: Routes = [
   { path: 'camperizar', component: CamperizacionComponent },
   { path: 'aventuras', component: PostComponent },
   { path: 'articulos', component: ArticulosComponent },
+  { path: 'articulos/:id', component: PostSelectedComponent },
   {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 
