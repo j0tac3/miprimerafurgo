@@ -12,4 +12,11 @@ export class MostPopularListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  next_Image() {
+    console.log('Siguiente Imagen');
+  }
+
+  previous_Image() {
+    console.log('Anterior Imagen');
+  }
 }

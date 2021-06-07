@@ -1,40 +1,55 @@
 <div class="most-popular-container">
     <h3 class="most-popular__title">Mas Populares</h3>
-    <ul class="most-popular__list">
-        <li class="popular-list_item"><a href="" id="post1">Post numero 1 de la lista</a></li>
-        <li class="popular-list_item"><a href="" id="post2">Post numero 2 de la lista</a></li>
-        <li class="popular-list_item"><a href="" id="post3">Post numero 3 de la lista</a></li>
-        <li class="popular-list_item"><a href="" id="post4">Post numero 4 de la lista</a></li>
-        <li class="popular-list_item"><a href="" id="post5">Post numero 5 de la lista</a></li>
-    </ul>
-
-    <nav>
-        <ul class="menu-slider">
-            <li class="menu-slider-item">
-                <a href="#post1">
-                    1
+    <div class="slider">
+        <ul class="most-popular__list">
+            <li class="popular-list_item" id="post1">
+                <a href="">
+                    <app-post-miniature
+                        [imageURL]="'assets/media/img/furgo_bicis.jpg'"
+                        [title]="'Mi primera aventura'">
+                    </app-post-miniature>
                 </a>
             </li>
-            <li class="menu-slider-item">
-                <a href="#post2">
-                    2
+            <li class="popular-list_item" id="post2">
+                <a href="">
+                    <app-post-miniature
+                        [imageURL]="'assets/media/img/vistas_furgo.jpg'"
+                        [title]="'Ecapada con la Furgo'">
+                    </app-post-miniature>
                 </a>
             </li>
-            <li class="menu-slider-item">
-                <a href="#post3">
-                    3
+            <li class="popular-list_item" id="post3">
+                <a href="">
+                    <app-post-miniature
+                        [imageURL]="'assets/media/img/furgo_perro.jpg'"
+                        [title]="'Paseo por los rios'">
+                    </app-post-miniature>
                 </a>
             </li>
-            <li class="menu-slider-item">
-                <a href="#post4">
-                    4
+            <li class="popular-list_item" id="post4">
+                <a href="">
+                    <app-post-miniature
+                            [imageURL]="'assets/media/img/furgo_bicis.jpg'"
+                            [title]="'Mi primera aventura'">
+                        </app-post-miniature>
                 </a>
             </li>
-            <li class="menu-slider-item">
-                <a href="#post5">
-                    5
+            <li class="popular-list_item" id="post5">
+                <a href="">
+                    <app-post-miniature
+                        [imageURL]="'assets/media/img/vistas_furgo.jpg'"
+                        [title]="'Ecapada con la Furgo'">
+                    </app-post-miniature>
                 </a>
             </li>
         </ul>
-    </nav>
+       <!--  <div class="buttons-container"> -->
+            <button class="button-slider button-previous" (click)="previous_Image()">
+                <
+            </button>
+            <button class="button-slider button-next" (click)="next_Image()">
+                >
+            </button>
+      <!--   </div> -->
+    </div>
 </div>
