@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class PostMiniatureComponent implements OnInit {
   @Input() imageURL!: string;
   @Input() title!: string;
+  @Input() index!: number;
 
 
   constructor() { }

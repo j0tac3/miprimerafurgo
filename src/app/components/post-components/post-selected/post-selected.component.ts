@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-selected',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostSelectedComponent implements OnInit {
 
-  constructor() { }
+  constructor( private route: ActivatedRoute,
+                private router: Router) { }
 
   ngOnInit(): void {
+    const index = this.route.snapshot.paramMap.get('id');
+    console.log('Index: ' + index);
   }
 
 }

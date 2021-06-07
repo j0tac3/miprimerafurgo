@@ -10,8 +10,8 @@ const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'camperizar', component: CamperizacionComponent },
   { path: 'aventuras', component: PostComponent },
+  { path: 'aventuras/:id', component: PostSelectedComponent },
   { path: 'articulos', component: ArticulosComponent },
-  { path: 'articulos/:id', component: PostSelectedComponent },
   {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 
