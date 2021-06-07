@@ -9,8 +9,11 @@ import { PostComponent } from './pages/post/post.component';
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'camperizar', component: CamperizacionComponent },
-  { path: 'aventuras', component: PostComponent },
+  { path: 'aventuras', component: PostComponent,},
   { path: 'aventuras/:id', component: PostSelectedComponent },
+      /* children : [
+      { path: 'aventuras/:id', component: PostSelectedComponent },
+    ] }, */
   { path: 'articulos', component: ArticulosComponent },
   {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];

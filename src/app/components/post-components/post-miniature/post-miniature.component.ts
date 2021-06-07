@@ -10,7 +10,6 @@ export class PostMiniatureComponent implements OnInit {
   @Input() title!: string;
   @Input() index!: number;
 
-
   constructor() { }
 
   ngOnInit(): void {
