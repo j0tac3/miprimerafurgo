@@ -8,7 +8,7 @@
     position: relative;
 }
 .miniature-image{
-    filter: grayscale(.9);
+    /* filter: grayscale(.9); */
     border-radius: 5px;
 }
 .info-container{
