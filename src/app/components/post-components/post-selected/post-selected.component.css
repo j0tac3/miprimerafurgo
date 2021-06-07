@@ -3,6 +3,10 @@
     background-color: #121212;
     color: #dddd;
     border-top: solid 2px #aaaa;
+    border-bottom: solid 2px #aaaa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .header-image{
     max-height: 20rem;
