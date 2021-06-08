@@ -9,6 +9,12 @@ export class AppComponent {
   title = 'mi-primera-furgo-angular';
 
   onActivate(event : Event){
+    /* const scrollOptionsCustoms = {
+      left: 0,
+      top: 0,
+      behavior: "smooth"
+    }
+    window.scrollTo(scrollOptionsCustoms); */
     window.scroll(0,0);
     //or document.body.scrollTop = 0;
     //or document.querySelector('body').scrollTo(0,0)
