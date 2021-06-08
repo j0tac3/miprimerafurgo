@@ -7,7 +7,7 @@
 .header-container-compact{
     height: 5rem;
     font-size: 1rem;
-    transition: height .4s;
+    transition: height .5s;
 }
 .header-container-hidden{
     height: 0;
