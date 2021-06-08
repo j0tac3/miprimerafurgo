@@ -22,19 +22,17 @@
     justify-content: space-between;
     align-items: center;
 }
-.post-text{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
 .post-title{
     width: 90%;
     text-align: center;
     border-bottom: solid 1px;
     padding-bottom: 1rem;
 }
-.text{
+.post-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 85%;
     text-align: justify;
 }
