@@ -13,6 +13,12 @@ img{
     width: 100%;
     FLEX-DIRECTION: COLUMN;
     justify-content: center;
+    background-color: #1f1f1f;
+    color: #f1eded;
+}
+a{
+    color: #f1eded;
+    text-decoration: none;
 }
 @media screen and (max-width: 750px) {
     .body{
