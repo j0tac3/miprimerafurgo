@@ -21,12 +21,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid;
 }
 .post-title{
     width: 90%;
     text-align: center;
-    border-bottom: solid 1px;
-    padding-bottom: 1rem;
+    /* border-bottom: solid 1px;
+    padding-bottom: 1rem; */
 }
 .post-text{
     display: flex;
@@ -35,4 +37,8 @@
     flex-direction: column;
     width: 85%;
     text-align: justify;
+}
+.pie-foto{
+    font-style: italic;
+    font-size: .8rem;
 }

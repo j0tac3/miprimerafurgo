@@ -2,7 +2,7 @@
     width: 10rem;
     height: 20rem;
     border-radius: 10px;
-    border: 2px solid;
+    border: 2px solid transparent;
     margin: 1rem 1.5rem;
     padding: .5rem 2rem;
     color: darkgray;
@@ -14,8 +14,9 @@
     /* background-color: hsla(174, 56%, 63%, 1); */
     /* background-color: hsla(162, 33%, 62%, .8); */
     /* background-color: hsla(170, 75%, 53%, 1); */
-    color: #fff;
+    color: #ffff;
     filter: invert(0);
+    border: 2px solid #ffff;
 }
 .content{
     padding: 0.5rem;
