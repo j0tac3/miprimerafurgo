@@ -8,33 +8,34 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  //public currentRoute : string = 'home';
-  //public subscription: Subscription;
+  public currentRoute : string = 'home';
+  public subscription: Subscription;
 
   constructor( private route : Router ) { 
-    /* this.subscription = this.route.events.subscribe((newUrl : any) => {
+    this.subscription = this.route.events.subscribe((newUrl : any) => {
       try {
         if (newUrl instanceof NavigationEnd) {
         console.log(newUrl.url);
-        if (newUrl.url.includes('home') || newUrl.url === '/') {
-          this.currentRoute = 'inicio';
+        //if (newUrl.url.includes('home') || newUrl.url === '/') {
+        if (newUrl.url.includes('aventuras/')){
+          this.currentRoute = 'postSelected';
           } else {
-            this.currentRoute = 'notInicio';
+            this.currentRoute = 'notPost';
           }
         }
       } catch (e) {
         console.log(e);
       }
-    }); */
+    });
   }
 
   ngOnInit(): void {
   }
 
-/*   ngOnDestroy() {
+  ngOnDestroy() {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
-  } */
+  }
 
 }

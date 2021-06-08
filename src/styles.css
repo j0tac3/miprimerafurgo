@@ -11,8 +11,14 @@ img{
     min-height: calc(100vh - 10rem);
     display: flex;
     width: 100%;
-    FLEX-DIRECTION: COLUMN;
+    flex-direction: column;
     justify-content: center;
+    background-color: #1f1f1f;
+    color: #f1eded;
+}
+a{
+    color: #f1eded;
+    text-decoration: none;
 }
 @media screen and (max-width: 750px) {
     .body{

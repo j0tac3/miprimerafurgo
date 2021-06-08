@@ -4,8 +4,10 @@
     min-height: calc(100vh - 10rem);
     width: 80%;
     display: flex;
-    flex-wrap: wrap-reverse;
-    justify-content: space-evenly;
+    flex-direction: column;
+    /*flex-wrap: wrap-reverse;*/
+    justify-content: center;
+    align-items: center;
 }
 .list{
     display: flex;

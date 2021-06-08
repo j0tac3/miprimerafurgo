@@ -7,10 +7,10 @@
 .header-container-compact{
     height: 5rem;
     font-size: 1rem;
+    transition: height .5s;
 }
-.header-container-expand{
-    height: 15rem;
-    font-size: 2rem;
+.header-container-hidden{
+    height: 0;
 }
 .header-image{
     width: 100%;

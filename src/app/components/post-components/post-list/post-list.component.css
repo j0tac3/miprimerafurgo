@@ -1,7 +1,7 @@
 .post-list-container{
     display: grid;
     justify-content: center;
-    animation: show-posts-list 1.5s ease-in-out;
+    /* animation: show-posts-list 1.5s ease-in-out; */
 }
 .title{
     text-align: center;
