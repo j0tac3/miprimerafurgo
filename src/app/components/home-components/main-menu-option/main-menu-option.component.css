@@ -4,7 +4,7 @@
     border-radius: 10px;
     border: 2px solid;
     margin: 1rem 1.5rem;
-    padding: .5 2rem;
+    padding: .5rem 2rem;
     color: darkgray;
     filter: invert(.5);
     transition: background-color .4s, color .4s, filter .4s;
