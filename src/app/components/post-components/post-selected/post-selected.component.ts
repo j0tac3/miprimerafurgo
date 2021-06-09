@@ -22,7 +22,7 @@ export class PostSelectedComponent implements OnInit {
     }
   ];
   public currentPost!: any;
-  public showButtonToUp = false;
+  public showButtonToUp! : boolean;
 
   constructor( private route: ActivatedRoute,
                 private router: Router) { }
@@ -41,18 +41,20 @@ export class PostSelectedComponent implements OnInit {
   }
 
   toUp(){
-    window.scrollTo(0, 0);
+    if (window.scrollY > 0){
+      window.scrollTo(0, 0);
+      console.log("Subiendo....");
+      this.showButtonToUp = false;
+    }
   }
 
   onScroll(event: Event) {
-    console.log('Top: ' + window.scrollY);
     if (window.scrollY >= 220) {
       this.showButtonToUp = true;
-    } else{
+      console.log('Top: ' + window.scrollY);
+  } else{
       this.showButtonToUp = false;
     }
-    console.log(this.showButtonToUp);
-    this.showButtonToUp = true;
   }
 
 }
