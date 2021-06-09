@@ -1,6 +1,5 @@
 import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PostServiceService } from '../../../Services/post-service.service';
 
 @Component({
   selector: 'app-post-selected',
@@ -8,32 +7,52 @@ import { PostServiceService } from '../../../Services/post-service.service';
   styleUrls: ['./post-selected.component.css']
 })
 export class PostSelectedComponent implements OnInit {
+  public posts = [
+    {
+      imageURL: 'assets/media/img/furgo_bicis.jpg',
+      title: 'Mi primera aventura',
+    },
+    {
+      imageURL: 'assets/media/img/vistas_furgo.jpg',
+      title: 'Ecapada con la Furgo',
+    },
+    {
+      imageURL: 'assets/media/img/furgo_perro.jpg',
+      title: 'Paseo por los rios',
+    }
+  ];
   public currentPost!: any;
-
-  @HostListener("scroll", ['$event'])
-  detectedScroll($event : Event){
-    let scrollOffset = $event;
-    console.log('scroll: ', scrollOffset);
-  }
+  public showButtonToUp = false;
 
   constructor( private route: ActivatedRoute,
-                private router: Router,
-                private postService : PostServiceService) { }
+                private router: Router) { }
 
   ngOnInit(): void {
     let index = this.route.snapshot.paramMap.get('id');
-    this.getCurrentPost(0);
-    /*let currentIndex = index !== null ? index : '0';
-    this.currentPost = this.posts[Number.parseInt(currentIndex, 10)]; */
+    let currentIndex = index !== null ? index : '0'
+    this.currentPost = this.posts[Number.parseInt(currentIndex, 10)];
+    console.log(window.scrollX);
+    console.log(window.scrollY);
+    window.addEventListener('scroll', this.onScroll, true);
   }
 
-  getCurrentPost ( index : number) {
-    this.postService.getJsonContent()
-    .subscribe( resp => {
+  ngOnDestroy(): void {
+    window.removeEventListener('scroll', this.onScroll, true);
+  }
 
-      let posts = resp;
-      console.log(resp);
-    })
+  toUp(){
+    window.scrollTo(0, 0);
+  }
+
+  onScroll(event: Event) {
+    console.log('Top: ' + window.scrollY);
+    if (window.scrollY >= 220) {
+      this.showButtonToUp = true;
+    } else{
+      this.showButtonToUp = false;
+    }
+    console.log(this.showButtonToUp);
+    this.showButtonToUp = true;
   }
 
 }

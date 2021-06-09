@@ -42,3 +42,23 @@
     font-style: italic;
     font-size: .8rem;
 }
+.toUpButton{
+    width: 2.5rem;
+    height: 2rem;
+    color: #fff;
+    border: none;
+    position: fixed;
+    right: 3px;
+    top: 80vh;
+    background-image: url('./../../../../assets/media/icons/toUp.svg');
+    background-color: rgba(255, 255, 255, 0.3);
+    background-position: center;
+}
+.toUpButton:hover{
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #1f1f1f;
+}
+.showButtonUp{
+    visibility: visible;
+}
