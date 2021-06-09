@@ -8,24 +8,22 @@
     position: relative;
 }
 .miniature-image{
-    /* filter: grayscale(.9); */
-    border-radius: 5px;
+    /* border-radius: 5px; */
 }
 .info-container{
-  /*   position: absolute;
-    width: 90%; */
-    bottom: 0.5rem;
-    left: 0.5rem;
-   /*  color: #ffff; */
+    border-bottom: 1px solid;
+    padding-bottom: .5rem;
+    width: 90%;
+    margin: 0 auto;
 }
 .miniature-title{
     padding: 0;
     margin: 0;
-    padding-left: 1rem;
     font-size: 24px;
 }
 .miniatures{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    padding-top: .5rem;
 }

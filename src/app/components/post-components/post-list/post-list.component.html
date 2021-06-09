@@ -1,18 +1,8 @@
 <div class="post-list-container">
     <h2 class="title">Aventuras</h2>
-    <app-post-miniature
-        [imageURL]="'assets/media/img/furgo_bicis.jpg'"
-        [title]="'Mi primera aventura'"
-        [index]=1>
-    </app-post-miniature>
-    <app-post-miniature
-        [imageURL]="'assets/media/img/vistas_furgo.jpg'"
-        [title]="'Ecapada con la Furgo'"
-        [index]=2>
-    </app-post-miniature>
-    <app-post-miniature
-        [imageURL]="'assets/media/img/furgo_perro.jpg'"
-        [title]="'Paseo por los rios'"
-        [index]=3>
+    <app-post-miniature *ngFor="let post of posts; index as i"
+                        [imageURL]="post.imageURL"
+                        [title]="post.title"
+                        [index]=i>
     </app-post-miniature>
 </div>
