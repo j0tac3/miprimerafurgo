@@ -1,11 +1,12 @@
-<div class="post-selected-container" (scroll)="onScroll($event)">
+<div    class="post-selected-container">
+        <!-- (scroll)="onScroll($event)"> -->
     <img [src]="currentPost.imageURL" alt="" class="header-image">
     <h1 class="post-title"> {{ currentPost.title }} </h1>
     <div class="info-post">
         <app-user-miniature-info></app-user-miniature-info>
         <app-post-miniature-info></app-post-miniature-info>
     </div>
-    <div class="post-text" (scroll)="onScroll($event)">
+    <div class="post-text">
         <p class="text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nemo vitae quas rerum voluptates perferendis voluptatum ipsa nostrum esse unde eaque sed cupiditate impedit adipisci, debitis mollitia necessitatibus. Sint, maiores?
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nemo vitae quas rerum voluptates perferendis voluptatum ipsa nostrum esse unde eaque sed cupiditate impedit adipisci, debitis mollitia necessitatibus. Sint, maiores?
@@ -20,7 +21,11 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nemo vitae quas rerum voluptates perferendis voluptatum ipsa nostrum esse unde eaque sed cupiditate impedit adipisci, debitis mollitia necessitatibus. Sint, maiores?
         </p>
     </div>
-    <button class="toUpButton" (click)="toUp()" >
-           <!--  [hidden]="!showButtonToUp"> -->
-        </button>
+    <button class="toUpButton" (click)="toUp()">
+           <!--  [hidden]="!showButtonToUp">-->
+    </button>
+    <div class="coments">
+        <app-post-coment></app-post-coment>
+        <app-post-coment></app-post-coment>
+    </div>
 </div>

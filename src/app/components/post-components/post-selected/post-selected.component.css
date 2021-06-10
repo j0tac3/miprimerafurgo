@@ -2,11 +2,11 @@
     min-height: calc(100vh - 10rem);
     background-color: #1f1f1f;
     color: #f1eded;
-    border-top: solid 2px #aaaa;
     border-bottom: solid 2px #aaaa;
     display: flex;
     flex-direction: column;
     align-items: center;
+    scroll-behavior: auto;
 }
 .header-image{
     max-height: 20rem;

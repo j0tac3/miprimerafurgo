@@ -3,8 +3,8 @@
     z-index: 999;
 }
 .menu-icon{
-    width: 2.5rem;
-    position: absolute;
+    width: 2rem;
+    position: fixed;
     top: 1.5rem;
     left: 10px;
     transition: transform .3s;

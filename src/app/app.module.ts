@@ -22,6 +22,7 @@ import { CamperizacionComponent } from './pages/camperizacion/camperizacion.comp
 import { ArticulosComponent } from './pages/articulos/articulos.component';
 import { PostSearchComponent } from './components/post-components/post-search/post-search.component';
 import { PostSelectedComponent } from './components/post-components/post-selected/post-selected.component';
+import { PostComentComponent } from './components/post-components/post-coment/post-coment.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { PostSelectedComponent } from './components/post-components/post-selecte
     CamperizacionComponent,
     ArticulosComponent,
     PostSearchComponent,
-    PostSelectedComponent
+    PostSelectedComponent,
+    PostComentComponent
   ],
   imports: [
     BrowserModule,

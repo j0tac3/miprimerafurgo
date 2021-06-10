@@ -33,11 +33,11 @@ export class PostSelectedComponent implements OnInit {
     this.currentPost = this.posts[Number.parseInt(currentIndex, 10)];
     console.log(window.scrollX);
     console.log(window.scrollY);
-    window.addEventListener('scroll', this.onScroll, true);
+    //window.addEventListener('scroll', this.onScroll, true);
   }
 
   ngOnDestroy(): void {
-    window.removeEventListener('scroll', this.onScroll, true);
+    //window.removeEventListener('scroll', this.onScroll, true);
   }
 
   toUp(){
