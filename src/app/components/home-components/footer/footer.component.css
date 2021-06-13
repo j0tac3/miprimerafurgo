@@ -4,6 +4,7 @@
 
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 
     min-height: 5rem;
     color: darkgray;
@@ -11,6 +12,7 @@
 }
 .nosotros-container{
     width: 20rem;
+    margin-bottom: 1rem;
 }
 .title{
     color: #f1eded;
@@ -19,7 +21,8 @@
 .nosotros-text{
 }
 .contacto-container{
-    width: 15rem;
+    width: 20rem;
+    margin-bottom: 1rem;
 }
 .contact-option{
     display: flex;
@@ -32,16 +35,27 @@
 }
 
 .social-container{
-    width: 10rem;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    width: 20rem;
+    margin-bottom: 1rem;
 }
 .social-icon{
     width: 1.5rem;
     cursor: pointer;
     transition: transform .2s;
+    margin-right: .5rem;
 }
 .social-icon:hover{
     transform: scale(1.1);
+}
+.socials{
+    display: flex;
+    /* justify-content: space-evenly; */
+    align-items: center;
+}
+
+@media screen and (max-width: 750px) {
+    .footer-container{
+        flex-direction: column;
+        align-items: center;
+    }
 }
