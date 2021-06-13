@@ -21,6 +21,15 @@
 .contacto-container{
     width: 15rem;
 }
+.contact-option{
+    display: flex;
+    align-items: center;
+    margin-bottom: .5rem;
+}
+.contact-icon{
+    width: 1.5rem;
+    margin-right: .5rem;
+}
 
 .social-container{
     width: 10rem;
