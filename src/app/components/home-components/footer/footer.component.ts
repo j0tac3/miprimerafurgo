@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  constructor( @Inject(DOCUMENT) private document: Document) { }
 
   ngOnInit(): void {
+  }
+
+  goTo( socialName : String ) : void {
+    switch (socialName) {
+      case 'instagram':
+        this.document.location.href = 'https://www.instagram.com';
+        break;
+      case 'facebook':
+        this.document.location.href = 'https://www.facebook.com';
+        break;
+      case 'twitter':
+        this.document.location.href = 'https://www.twitter.com';
+        break;
+      default:
+        break;
+    }
   }
 
 }

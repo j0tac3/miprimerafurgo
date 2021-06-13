@@ -1,5 +1,38 @@
 .footer-container{
+    padding-left: 2rem;
+    padding-top: 1rem;
+
+    display: flex;
+    flex-wrap: wrap;
+
     min-height: 5rem;
-    color: #ffff;
+    color: darkgray;
     background-color: rgba(0, 0, 0, 0.9);
+}
+.nosotros-container{
+    width: 20rem;
+}
+.title{
+    color: #f1eded;
+    margin-top: 0;
+}
+.nosotros-text{
+}
+.contacto-container{
+    width: 15rem;
+}
+
+.social-container{
+    width: 10rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.social-icon{
+    width: 1.5rem;
+    cursor: pointer;
+    transition: transform .2s;
+}
+.social-icon:hover{
+    transform: scale(1.1);
 }
