@@ -2,16 +2,15 @@
     padding: 2rem;
 
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-evenly;
 
     min-height: 5rem;
     color: darkgray;
     background-color: rgba(0, 0, 0, 0.9);
 }
-.footer-region-container:Not(:last-child){
+/* .footer-region-container:Not(:last-child){ */
+.footer-region-container{
     width: 30%;
-    border-right: thin solid;
 }
 .title{
     color: #f1eded;
