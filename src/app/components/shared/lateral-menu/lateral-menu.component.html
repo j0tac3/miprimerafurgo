@@ -6,8 +6,9 @@
         [ngClass]="{ 'menu-list_show' : showMenu }"
         (click)="openCloseMenu()">
         <li class="list-item-header">
+            <img src="assets/media/icons/mpf_logo.png" alt="Cerrar menu" class="logo">
             <span>Mi Primera Furgo</span>
-            <img src="assets/media/icons/close.svg" alt="Cerrar menu" class="close-icon">
+            <!-- <img src="assets/media/icons/close.svg" alt="Cerrar menu" class="close-icon"> -->
         </li>
         <li class="list-item">
             <a [routerLink]="'home'" class="item-link" routerLinkActive="active">
