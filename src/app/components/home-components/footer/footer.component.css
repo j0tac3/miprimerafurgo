@@ -1,6 +1,5 @@
 .footer-container{
-    padding-left: 2rem;
-    padding-top: 1rem;
+    padding: 2rem;
 
     display: flex;
     flex-wrap: wrap;
@@ -10,9 +9,10 @@
     color: darkgray;
     background-color: rgba(0, 0, 0, 0.9);
 }
-.nosotros-container{
+.footer-region-container{
     width: 20rem;
-    margin-bottom: 1rem;
+}
+.nosotros-container{
 }
 .title{
     color: #f1eded;
@@ -21,8 +21,6 @@
 .nosotros-text{
 }
 .contacto-container{
-    width: 20rem;
-    margin-bottom: 1rem;
 }
 .contact-option{
     display: flex;
@@ -35,8 +33,6 @@
 }
 
 .social-container{
-    width: 20rem;
-    margin-bottom: 1rem;
 }
 .social-icon{
     width: 1.5rem;
@@ -49,13 +45,16 @@
 }
 .socials{
     display: flex;
-    /* justify-content: space-evenly; */
     align-items: center;
+    justify-content: space-evenly;
 }
 
 @media screen and (max-width: 750px) {
     .footer-container{
         flex-direction: column;
-        align-items: center;
+    }
+    .footer-region-container{
+        width: 100%;
+        margin-bottom: 1rem;
     }
 }
