@@ -12,6 +12,11 @@
 .footer-region-container{
     width: 30%;
 }
+.footer-region-container:Not(:last-child){
+    border-right: thin solid;
+    margin-right: 1rem;
+    padding-right: 1rem;
+}
 .title{
     color: #f1eded;
     margin-top: 0;
@@ -40,7 +45,11 @@
     justify-content: space-evenly;
 }
 .separador{
-    
+    border-bottom: thin solid;
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 @media screen and (max-width: 750px) {
@@ -49,6 +58,17 @@
     }
     .footer-region-container{
         width: 100%;
+    }
+    .footer-region-container:Not(:last-child){
+        border-right: none;
+        margin-right: 0;
+        padding-right: 0;
+    }
+    .separador{
+        border-bottom: thin solid;
+        width: 60%;
+        margin: 0 auto;
         margin-bottom: 1rem;
+        margin-top: 1rem;
     }
 }
