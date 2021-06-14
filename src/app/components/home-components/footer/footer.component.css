@@ -9,18 +9,13 @@
     color: darkgray;
     background-color: rgba(0, 0, 0, 0.9);
 }
-.footer-region-container{
-    width: 20rem;
-}
-.nosotros-container{
+.footer-region-container:Not(:last-child){
+    width: 30%;
+    border-right: thin solid;
 }
 .title{
     color: #f1eded;
     margin-top: 0;
-}
-.nosotros-text{
-}
-.contacto-container{
 }
 .contact-option{
     display: flex;
@@ -30,9 +25,6 @@
 .contact-icon{
     width: 1.5rem;
     margin-right: .5rem;
-}
-
-.social-container{
 }
 .social-icon{
     width: 1.5rem;
