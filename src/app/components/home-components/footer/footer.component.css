@@ -39,6 +39,9 @@
     align-items: center;
     justify-content: space-evenly;
 }
+.separador{
+    
+}
 
 @media screen and (max-width: 750px) {
     .footer-container{
