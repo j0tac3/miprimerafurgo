@@ -13,9 +13,9 @@
     width: 30%;
 }
 .footer-region-container:Not(:last-child){
-    border-right: thin solid;
+   /*  border-right: thin solid;
     margin-right: 1rem;
-    padding-right: 1rem;
+    padding-right: 1rem; */
 }
 .title{
     color: #f1eded;
@@ -41,8 +41,9 @@
 }
 .socials{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-evenly;
+    margin: .5rem 0;
 }
 .separador{
 }
@@ -61,7 +62,7 @@
     }
     .separador{
         border-bottom: thin solid;
-        width: 60%;
+        width: 15rem;
         margin: 0 auto;
         margin-bottom: 1rem;
         margin-top: 1rem;

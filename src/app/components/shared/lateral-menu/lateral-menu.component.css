@@ -46,16 +46,18 @@
     font-size: 1.2rem;
     border-bottom: 1px solid;
     padding: .5rem 0;
-    padding-left: 0;
+    padding-left: 1.7rem;
     display: flex;
     align-items: center;
+    /*background-image: url('./../../../../assets/media/icons/mpf_logo_2.png');*/
     /* justify-content: space-around; */
 }
 .close-icon{
     width: 1.5rem;
 }
 .logo{
-    width: 5rem;
+    width: 2rem;
+    margin-right: .5rem;
 }
 .item-link{
     width: 8rem;
