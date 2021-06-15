@@ -26,7 +26,9 @@ export class ArticulosComponent implements OnInit {
 
   insertarArticulo() {
     console.log(this.formArticulos.get('articulo')?.value);
-    let newArticulo = this.formArticulos.get('articulo')?.value
+    let newArticulo : string = this.formArticulos.get('articulo')?.value;
+    let urlFromIframe = newArticulo.substring(newArticulo.indexOf("https"), newArticulo.lastIndexOf('"'));
+    console.log(urlFromIframe);
     this.articulos.push(newArticulo);
     console.log(this.articulos);
   }
