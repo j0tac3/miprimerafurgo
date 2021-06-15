@@ -34,7 +34,7 @@ export class ArticulosComponent implements OnInit {
       //this.articulos.push(newArticulo);
       this.articulos.push(urlFromIframe);
       console.log(this.articulos);
-      this.formArticulos.get('articulo')?.reset;
+      this.formArticulos.get('articulo')?.reset();
     }
   }
 
