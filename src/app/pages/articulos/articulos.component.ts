@@ -8,7 +8,8 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./articulos.component.css']
 })
 export class ArticulosComponent implements OnInit {
-  public articulos : any = ['https://rcm-eu.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=miprimerafurg-21&m=amazon&o=30&p=8&l=as1&IS1=1&asins=B07MQBGCLF&linkId=b7118fa76bc622117a477805d0044de1&bc1=ffffff&amp;lt1=_blank&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr'];
+  public articulos : any = ['https://rcm-eu.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=miprimerafurg-21&m=amazon&o=30&p=8&l=as1&IS1=1&asins=B07MQBGCLF&linkId=b7118fa76bc622117a477805d0044de1&bc1=ffffff&amp;lt1=_blank&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr',
+                            'https://rcm-eu.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=miprimerafurg-21&m=amazon&o=30&p=8&l=as1&IS1=1&asins=B07MQBGCLF&linkId=b7118fa76bc622117a477805d0044de1&bc1=ffffff&amp;lt1=_blank&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr'];
   public formArticulos!: FormGroup;
 
   constructor(  private fb : FormBuilder,
@@ -32,6 +33,7 @@ export class ArticulosComponent implements OnInit {
     //this.articulos.push(newArticulo);
     this.articulos.push(urlFromIframe);
     console.log(this.articulos);
+    this.formArticulos.get('articulo')?.reset;
   }
 
   cargarArticulo(articulo : string) {
