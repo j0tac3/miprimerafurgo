@@ -7,11 +7,12 @@
             <textarea name="" id="" cols="30" rows="5" formControlName='articulo'></textarea>
         </form>
     </div>
-    
-    <iframe *ngFor="let articulo of articulos"
-            style="width:120px;height:240px;" 
-            marginwidth="0" marginheight="0" 
-            scrolling="no" frameborder="0" 
-            [src]="cargarArticulo(articulo)">
-    </iframe>
+    <div class="iframes-container">
+        <iframe *ngFor="let articulo of articulos"
+                style="width:120px;height:240px;" 
+                marginwidth="0" marginheight="0" 
+                scrolling="no" frameborder="0" 
+                [src]="cargarArticulo(articulo)">
+        </iframe>
+    </div>
 </div>
