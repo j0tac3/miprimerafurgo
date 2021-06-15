@@ -12,10 +12,9 @@
     <div class="nosotros-container footer-region-container">
         <h3 class="title">Categorias</h3>
         <ul class="category-list">
-            <li>Playa</li>
-            <li>Montaña</li>
-            <li>Camping</li>
-            <li>Furgo</li>
+            <li *ngFor="let category of categories">
+                <a href="">{{ category }}</a>
+            </li>
         </ul>
     </div>
     <div class="separador"></div>

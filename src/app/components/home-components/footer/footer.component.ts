@@ -7,6 +7,7 @@ import { DOCUMENT } from '@angular/common';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
+  public categories = ['Playas', 'Montaña', 'Camping', 'Furgo', 'Verano'];
 
   constructor( @Inject(DOCUMENT) private document: Document) { }
 
