@@ -26,14 +26,16 @@ export class ArticulosComponent implements OnInit {
   }
 
   insertarArticulo() {
-    console.log(this.formArticulos.get('articulo')?.value);
+    //console.log(this.formArticulos.get('articulo')?.value);
     let newArticulo : string = this.formArticulos.get('articulo')?.value;
-    let urlFromIframe = newArticulo.substring(newArticulo.indexOf("https"), newArticulo.lastIndexOf('"'));
-    console.log('URL DEL ARTICULO: ' + urlFromIframe);
-    //this.articulos.push(newArticulo);
-    this.articulos.push(urlFromIframe);
-    console.log(this.articulos);
-    this.formArticulos.get('articulo')?.reset;
+    if (newArticulo.length > 0){
+      let urlFromIframe = newArticulo.substring(newArticulo.indexOf("https"), newArticulo.lastIndexOf('"'));
+      console.log('URL DEL ARTICULO: ' + urlFromIframe);
+      //this.articulos.push(newArticulo);
+      this.articulos.push(urlFromIframe);
+      console.log(this.articulos);
+      this.formArticulos.get('articulo')?.reset;
+    }
   }
 
   cargarArticulo(articulo : string) {

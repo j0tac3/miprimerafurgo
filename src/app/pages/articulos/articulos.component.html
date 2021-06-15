@@ -9,10 +9,10 @@
     </div>
     <div class="iframes-container">
         <iframe *ngFor="let articulo of articulos"
-                style="width:120px;height:240px;" 
                 marginwidth="0" marginheight="0" 
                 scrolling="no" frameborder="0" 
-                [src]="cargarArticulo(articulo)">
+                [src]="cargarArticulo(articulo)"
+                class="articulo">
         </iframe>
     </div>
 </div>
