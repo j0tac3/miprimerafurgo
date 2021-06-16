@@ -4,9 +4,13 @@
     <div class="new-articulo-container">
         <button (click)="insertarArticulo()">+</button>
         <form action="" [formGroup]="formArticulos">
-            <input name="" id="" formControlName='articulo'>
+            <input name="" id="" formControlName='articulo'
+                    (keyup)="displayMaches($event)">
             <!-- <textarea name="" id="" cols="30" rows="5" formControlName='articulo'></textarea> -->
         </form>
+        <ul class="suggest">
+            <li *ngFor="let theme of themes">{{ theme.desc }}</li>
+        </ul>
     </div>
     <div class="iframes-container">
         <iframe *ngFor="let articulo of articulos"
