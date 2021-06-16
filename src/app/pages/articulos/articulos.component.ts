@@ -47,8 +47,12 @@ export class ArticulosComponent implements OnInit {
   }
 
   displayMaches( event : any) {
-    console.log(event);
-    const matchedArray = this.shearchTheme(event.target.value, this.themes);
+    const wordToSearch = event.target.value;
+    if (wordToSearch.length > 0) {
+      const matchedArray = this.shearchTheme(wordToSearch, this.themes);
+    } else {
+      this.themesSelected = [];
+    }
   }
 
   shearchTheme( wordToSearch : string , themes : object) {

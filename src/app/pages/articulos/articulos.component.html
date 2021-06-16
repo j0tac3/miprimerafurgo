@@ -3,7 +3,7 @@
     <span>Los sentimos, pero esta sección se encuentra en construcción &#x263A;</span> -->
     <div class="new-articulo-container">
         <button (click)="insertarArticulo()" class="button-articulo">+</button>
-        <div>
+        <div style="position: relative;">
             <form action="" [formGroup]="formArticulos">
                 <input name="" id="" formControlName='articulo'
                         (keyup)="displayMaches($event)"
@@ -11,7 +11,8 @@
                 <!-- <textarea name="" id="" cols="30" rows="5" formControlName='articulo'></textarea> -->
             </form>
             <ul class="suggest">
-                <li *ngFor="let theme of themesSelected">{{ theme.desc }}</li>
+                <li *ngFor="let theme of themesSelected"
+                    class="suggest-item">{{ theme.desc }}</li>
             </ul>
         </div>
         <div class="info-container">
