@@ -63,4 +63,13 @@ export class ArticulosComponent implements OnInit {
     })
   }
 
+  articuoFocusOut( event : any ) {
+    this.themesSelected = [];
+  }
+
+  seleccionarTema( tema : string ) {
+    this.formArticulos.get('articulo')?.setValue(tema);
+    this.themesSelected = [];
+  }
+
 }

@@ -7,12 +7,14 @@
             <form action="" [formGroup]="formArticulos">
                 <input name="" id="" formControlName='articulo'
                         (keyup)="displayMaches($event)"
+                        (focusout)="articuoFocusOut($event)"
                         style="list-style: none;">
                 <!-- <textarea name="" id="" cols="30" rows="5" formControlName='articulo'></textarea> -->
             </form>
             <ul class="suggest">
                 <li *ngFor="let theme of themesSelected"
-                    class="suggest-item">{{ theme.desc }}</li>
+                    class="suggest-item"
+                    (click)="seleccionarTema(theme.desc)">{{ theme.desc }}</li>
             </ul>
         </div>
         <div class="info-container">
