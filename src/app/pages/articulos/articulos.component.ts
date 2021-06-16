@@ -46,9 +46,9 @@ export class ArticulosComponent implements OnInit {
     return this.sanitizer.bypassSecurityTrustResourceUrl(articulo)
   }
 
-  displayMaches( event : Event) {
+  displayMaches( event : any) {
     console.log(event);
-    //const matchedArray = this.shearchTheme(event.target.value, this.themes);
+    const matchedArray = this.shearchTheme(event.target.value, this.themes);
   }
 
   shearchTheme( wordToSearch : string , themes : object) {
