@@ -68,6 +68,7 @@ export class ArticulosComponent implements OnInit {
   }
 
   seleccionarTema( tema : string ) {
+    console.log(tema);
     this.formArticulos.get('articulo')?.setValue(tema);
     this.themesSelected = [];
   }
