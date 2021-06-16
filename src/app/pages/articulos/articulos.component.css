@@ -45,12 +45,14 @@
 }
 .icon-info{
     width: 1rem;
+    filter: invert(.4);
 }
 .icon-info:hover{
     cursor: pointer;
     background-color: #dedede;
     border-radius: 50px;
     transform: scale(1.2);
+    filter: invert(0);
 }
 .info-text{
     display: none;
@@ -73,6 +75,7 @@
     color: #fff;
     width: 100%;
     padding: 0;
+    list-style: none;
 }
 .suggest-item{
     margin: .3rem 0;

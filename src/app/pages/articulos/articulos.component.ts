@@ -49,7 +49,11 @@ export class ArticulosComponent implements OnInit {
   displayMaches( event : any) {
     const wordToSearch = event.target.value;
     if (wordToSearch.length > 0) {
-      const matchedArray = this.shearchTheme(wordToSearch, this.themes);
+      if(wordToSearch === '*'){
+        this.themesSelected = this.themes;
+      }else {
+        const matchedArray = this.shearchTheme(wordToSearch, this.themes);
+      }
     } else {
       this.themesSelected = [];
     }
