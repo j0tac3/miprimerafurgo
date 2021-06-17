@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PostSelectedComponent } from './components/post-components/post-selected/post-selected.component';
 import { ArticulosComponent } from './pages/articulos/articulos.component';
 import { CamperizacionComponent } from './pages/camperizacion/camperizacion.component';
+import { ContactoComponent } from './pages/contacto/contacto.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PostComponent } from './pages/post/post.component';
 
@@ -15,6 +16,7 @@ const APP_ROUTES: Routes = [
       { path: 'aventuras/:id', component: PostSelectedComponent },
     ] }, */
   { path: 'articulos', component: ArticulosComponent },
+  { path: 'contacto', component: ContactoComponent },
   {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 

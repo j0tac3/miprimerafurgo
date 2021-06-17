@@ -24,6 +24,7 @@ import { ArticulosComponent } from './pages/articulos/articulos.component';
 import { PostSearchComponent } from './components/post-components/post-search/post-search.component';
 import { PostSelectedComponent } from './components/post-components/post-selected/post-selected.component';
 import { PostComentComponent } from './components/post-components/post-coment/post-coment.component';
+import { ContactoComponent } from './pages/contacto/contacto.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { PostComentComponent } from './components/post-components/post-coment/po
     ArticulosComponent,
     PostSearchComponent,
     PostSelectedComponent,
-    PostComentComponent
+    PostComentComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,

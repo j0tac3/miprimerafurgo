@@ -1,0 +1,36 @@
+<div class="contacto-container">
+    <h2>Contacto</h2>
+    <form action="" class="contacto" [formGroup]="formContacto">
+        <div class="form-control">
+            <label for="nombre" class="label-control">Nombre</label>
+            <input  type="text" 
+                    class="input-control" 
+                    formControlName="nombre"
+                    placeholder="j0tace">
+        </div>
+        <div class="form-control">
+            <label for="email" class="label-control">Email</label>
+            <input  type="text" 
+                    class="input-control" 
+                    formControlName="email"
+                    placeholder="tuemail@ejemplo.com">
+        </div>
+        <div class="form-control">
+            <label for="tema" class="label-control">Tema</label>
+            <select formControlName="tema" id=""
+                    class="input-control">
+                    <option *ngFor="let tema of temas" 
+                        [value]="tema">{{ tema }}</option>
+            </select>
+        </div>
+        <div class="form-control">
+            <label for="tema" class="label-control">Mensaje/Observación</label>
+            <textarea   formControlName="observacion" 
+                        id="" 
+                        cols="30" rows="10"
+                        class="textarea-control">
+            </textarea>
+        </div>
+        <button class="btn-contacto">Enviar</button>
+    </form>    
+</div>
