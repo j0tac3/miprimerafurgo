@@ -7,8 +7,9 @@
     text-align: center;
 }
 
-.form-contacto{
-
+.contacto{
+    width: 80%;
+    max-width: 20rem;
 }
 .form-control{
     display: grid;
@@ -21,7 +22,7 @@
 .input-control{
     border: none;
     border-bottom: 1px solid #aaaa;
-    width: 10rem;
+    width: 100%;
 }
 .textarea-control{
     border: 1px solid #aaaa;
