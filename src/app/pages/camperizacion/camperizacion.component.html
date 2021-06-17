@@ -21,7 +21,7 @@
             <select formControlName="tema" id=""
                     class="input-control">
                     <option *ngFor="let tema of temas" 
-                        value="{{ tema }}">{{ tema }}</option>
+                        [value]="tema">{{ tema }}</option>
             </select>
         </div>
         <div class="form-control">
