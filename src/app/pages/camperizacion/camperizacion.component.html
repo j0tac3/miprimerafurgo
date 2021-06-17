@@ -20,7 +20,6 @@
             <label for="tema" class="label-control">Tema</label>
             <select formControlName="tema" id=""
                     class="input-control">
-                    <option [value]="null">Seleccione una opción</option>
                     <option *ngFor="let tema of temas" 
                         [value]="tema">{{ tema }}</option>
             </select>
