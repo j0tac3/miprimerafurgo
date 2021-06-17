@@ -1,7 +1,7 @@
 <div class="camp-container">
     <!-- <img src="assets/media/icons/under-constructions.svg" alt="">
     <span>Los sentimos, pero esta sección se encuentra en construcción &#x263A;</span> -->
-    <form action="" class="contacto">
+    <form action="" class="contacto" [formGroup]="formContacto">
         <div class="form-control">
             <label for="nombre" class="label-control">Nombre</label>
             <input  type="text" 
@@ -20,6 +20,7 @@
             <label for="tema" class="label-control">Tema</label>
             <select formControlName="tema" id=""
                     class="input-control">
+                    <option [value]="null">Seleccione una opción</option>
                     <option *ngFor="let tema of temas" 
                         [value]="tema">{{ tema }}</option>
             </select>
