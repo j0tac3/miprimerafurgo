@@ -19,14 +19,8 @@
         <div class="form-control">
             <label for="tema" class="label-control">Tema</label>
             <select name="tema" id="">
-                
-            </select>
-        </div>
-        <div class="form-control">
-            <label for="tema" class="label-control">Tema</label>
-            <select class="select-control" 
-                    formControlName="tema">
-                
+                <option *ngFor="let tema of temas" 
+                        value="tema">{{ tema }}</option>
             </select>
         </div>
         <div class="form-control">
@@ -37,6 +31,6 @@
                         class="textarea-control">
             </textarea>
         </div>
-        <button class="btn-contacto"></button>
+        <button class="btn-contacto">Enviar</button>
     </form>    
 </div>

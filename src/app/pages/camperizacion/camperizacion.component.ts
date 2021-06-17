@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./camperizacion.component.css']
 })
 export class CamperizacionComponent implements OnInit {
+public temas = ['Sugerencia', 'Fallo en Diseño', 'Error de funcionamiento', 'Otros'];
 
   constructor() { }
 
