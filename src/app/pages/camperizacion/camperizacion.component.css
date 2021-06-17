@@ -8,20 +8,32 @@
 }
 
 .form-contacto{
-    
+
 }
 .form-control{
-
+    display: grid;
+    margin-bottom: .5rem;
+}
+.label-control{
+    justify-self: start;
+    margin-bottom: .2rem;
 }
 .input-control{
-
+    border: none;
+    border-bottom: 1px solid #aaaa;
+    width: 10rem;
 }
 .textarea-control{
-
+    border: 1px solid #aaaa;
+    border-radius: 5px;
 }
 .select-control{
 
 }
 .btn-contacto{
-
+    background-color: royalblue;
+    border: 1px solid #aaa;
+    color: #ffff;
+    padding: .2rem .5rem;
+    box-shadow: 5px 5px 7px 0px #aaaa;
 }
