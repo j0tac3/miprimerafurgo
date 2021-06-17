@@ -5,20 +5,23 @@
     align-items: center;
 }
 .buscador{
-    width: 8rem;
+    width: 15rem;
     height: 2rem;
-    padding: 0 2rem 0 1rem;
+    padding: 0 2.5rem 0 .5rem;
     border: 1px solid #aaa;
-    border-radius: 20px;
+    border-radius: 5px;
 }
 .buscador:focus{
     outline: none;
 }
 .buscador-icon{
-    width: 1.5rem;
     position: absolute;
-    right: .5rem;
-    opacity: 0.6;
+    width: 2rem;
+    padding: 0.1rem;
+    right: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #aaa;
 }
 
 @media screen and (max-width: 760px) {

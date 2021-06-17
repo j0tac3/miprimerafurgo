@@ -13,7 +13,7 @@
 .info-container{
     border-bottom: 1px solid;
     padding-bottom: .5rem;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 }
 .miniature-title{
@@ -26,4 +26,17 @@
     justify-content: space-between;
     align-items: center;
     padding-top: .5rem;
+}
+.texto-resumen{
+    width: 100%;
+}
+
+@media screen and (max-width: 750px) {
+    .info-container{
+        width: 90%;
+    }
+    .texto-resumen{
+        width: 90%;
+        margin: 0 auto;
+    }
 }

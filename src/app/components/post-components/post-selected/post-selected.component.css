@@ -15,7 +15,7 @@
     margin-bottom: 1rem;
 }
 .info-post, .post-text{
-    width: 90%;
+    width: 50%;
 }
 .info-post{
     display: flex;
@@ -35,7 +35,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 85%;
     text-align: justify;
 }
 .pie-foto{
@@ -61,4 +60,10 @@
 }
 .showButtonUp{
     visibility: visible;
+}
+
+@media screen and (max-width: 750px) {
+    .info-post, .post-text{
+        width: 85%;
+    }
 }
