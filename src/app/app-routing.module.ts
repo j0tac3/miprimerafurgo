@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PostSelectedComponent } from './components/post-components/post-selected/post-selected.component';
+import { CreteNewPostComponent } from './components/post-components/crete-new-post/crete-new-post.component';
 import { ArticulosComponent } from './pages/articulos/articulos.component';
 import { CamperizacionComponent } from './pages/camperizacion/camperizacion.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
@@ -17,6 +18,7 @@ const APP_ROUTES: Routes = [
     ] }, */
   { path: 'articulos', component: ArticulosComponent },
   { path: 'contacto', component: ContactoComponent },
+  { path: 'createPost', component: CreteNewPostComponent },
   {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 

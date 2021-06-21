@@ -1,0 +1,47 @@
+<div class="post-container">
+    <div class="header-image-container">
+
+    </div>
+    <div class="element-to-add-container" 
+        [ngClass]="{ 'subOption-hidden' : showInputElement === false }">
+        <form action="" [formGroup]="formNewElement">
+            <input type="text" class="input-to-add" formControlName="element">
+            <button class="btn-element-add" (click)="guardarElemento()">Guardar</button>
+            <button class="btn-element-add" (click)="cerrarModalAdd()">Cancelar</button>
+        </form>
+
+    </div>
+    <aside class="options-container">
+        <ul class="option-list">
+            <li class="option-item">
+                <button class="option"
+                        (click)="showSuboption('texto')">Texto
+                </button>
+                <div    class="subOption-container"
+                        [ngClass]="{ 'subOption-hidden' : subOptionsTextVisible === false }">
+                    <button class="option subOption" (click)="showInputElemenToAdd('h1')">Titulo</button>
+                    <button class="option subOption" (click)="showInputElemenToAdd('h2')">Subtitulo</button>
+                    <button class="option subOption" (click)="showInputElemenToAdd('ul')">Lista</button>
+                    <button class="option subOption" (click)="showInputElemenToAdd('p')">Parrafo</button>
+                </div>
+            </li>
+            <li class="option-item">
+                <button class="option"
+                        (click)="showSuboption('media')">Media
+                </button>
+                <div    class="subOption-container"
+                        [ngClass]="{ 'subOption-hidden' : subOptionsMediaVisible === false }">
+                    <button class="option subOption">Imagen</button>
+                    <button class="option subOption">Galeria</button>
+                </div>
+            </li>
+            <li class="option-item">
+                <button class="option">Video</button>
+            </li>
+        </ul>
+    </aside>
+
+    <div class="container-elements">
+
+    </div>
+</div>
