@@ -44,6 +44,7 @@ export class CamperizacionComponent implements OnInit {
   }
 
   addElements() {
+    console.log(this.htmlToAdd);
     let contenedor = this.elementRef.nativeElement.querySelector('.container-elements');
     for (const elemeto of this.htmlToAdd) {
       if (elemeto.elemento === 'h1') {
