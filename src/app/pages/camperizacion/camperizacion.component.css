@@ -32,10 +32,13 @@
 .option{
     margin: 0 .5rem;
 }
-.subOption{
+.subOption-container{
     display: inline;
     padding: 0 .5rem;
 }
 .subOption-hidden{
     display: none;
+}
+.subOption{
+    margin: 0;
 }
