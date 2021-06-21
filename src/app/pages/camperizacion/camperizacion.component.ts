@@ -48,11 +48,11 @@ export class CamperizacionComponent implements OnInit {
     let contenedor = this.elementRef.nativeElement.querySelector('.container-elements');
     for (const elemeto of this.htmlToAdd) {
       if (elemeto.elemento === 'h1') {
-        contenedor.insertAdjacentHTML('afterbegin', '<h1>{{ elemento.value }}</h1>');
+        contenedor.insertAdjacentHTML('beforeend', '<h1>{{ elemento.value }}</h1>');
       } else if (elemeto.elemento === 'h2') {
-        contenedor.insertAdjacentHTML('afterbegin', '<h2>{{ elemento.value }}</h2>');
+        contenedor.insertAdjacentHTML('beforeend', '<h2>{{ elemento.value }}</h2>');
       } else if (elemeto.elemento === 'p') {
-        contenedor.insertAdjacentHTML('afterbegin', '<p>{{ elemento.value }}</p>');
+        contenedor.insertAdjacentHTML('beforeend', '<p>{{ elemento.value }}</p>');
       }
     }
   }
