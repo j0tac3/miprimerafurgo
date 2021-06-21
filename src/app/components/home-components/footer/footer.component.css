@@ -12,11 +12,6 @@
 .footer-region-container{
     width: 30%;
 }
-.footer-region-container:Not(:last-child){
-   /*  border-right: thin solid;
-    margin-right: 1rem;
-    padding-right: 1rem; */
-}
 .title{
     color: #f1eded;
     margin-top: 0;
@@ -51,8 +46,6 @@
     padding: 0;
     margin: 0;
     text-align: center;
-}
-.separador{
 }
 .category-item:hover{
     text-decoration: underline;

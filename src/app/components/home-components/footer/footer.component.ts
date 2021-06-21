@@ -25,8 +25,11 @@ export class FooterComponent implements OnInit {
       case 'twitter':
         this.document.location.href = 'https://www.twitter.com';
         break;
-        case 'youtube':
-      this.document.location.href = 'https://www.youtube.com';
+      case 'youtube':
+        this.document.location.href = 'https://www.youtube.com';
+        break;
+      case 'email':
+        this.document.location.href = 'contacto';
         break;
       default:
         break;

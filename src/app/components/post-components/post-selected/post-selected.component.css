@@ -16,6 +16,8 @@
 }
 .info-post, .post-text{
     width: 50%;
+    max-width: 40rem;
+
 }
 .info-post{
     display: flex;

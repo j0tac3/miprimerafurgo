@@ -9,17 +9,17 @@
             Si te apasiona todo ese mundo, estas en el sitio correcto!
         </p>
     </div>
-    <div class="nosotros-container footer-region-container">
+    <!-- <div class="nosotros-container footer-region-container">
         <h3 class="title">Categorias</h3>
         <ul class="category-list">
             <li *ngFor="let category of categories">
                 <a href="" class="category-item">{{ category }}</a>
             </li>
         </ul>
-    </div>
+    </div> -->
     <div class="separador"></div>
-    <div class="social-container footer-region-container">
-        <!-- <h3 class="title">Social</h3> -->
+        <div class="social-container footer-region-container">
+        <h3 class="title">Contacto</h3>
         <div class="socials">
             <img    src="assets/media/icons/social/facebook.svg" 
                     alt="Facebook" 
@@ -37,6 +37,10 @@
                     alt="Youtube" 
                     class="social-icon"
                     (click)="goTo('youtube')">
+            <img    src="assets/media/icons/social/email.svg"
+                    alt="Email" 
+                    class="social-icon"
+                    (click)="goTo('email')">
         </div>
     </div>
     <div class="separador"></div>
