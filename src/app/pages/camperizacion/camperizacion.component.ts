@@ -16,10 +16,10 @@ export class CamperizacionComponent implements OnInit {
 
   showSuboption( suboptionName : string) : void {
     console.log(suboptionName);
-    if (suboptionName === ' texto') {
+    if (suboptionName === 'texto') {
       this.subOptionsTextVisible = !this.subOptionsTextVisible;
       console.log('Texto : ' + this.subOptionsTextVisible);
-  } else if (suboptionName === ' media'){
+  } else if (suboptionName === 'media'){
       this.subOptionsMediaVisible = !this.subOptionsMediaVisible;
       console.log('Media : ' + this.subOptionsTextVisible);
     }
