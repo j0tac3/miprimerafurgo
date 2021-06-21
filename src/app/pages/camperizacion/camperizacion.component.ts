@@ -30,15 +30,16 @@ export class CamperizacionComponent implements OnInit {
   constructor( private elementRef : ElementRef ) { }
 
   ngOnInit(): void {
+    this.addElements();
   }
 
   showSuboption( suboptionName : string) : void {
     if (suboptionName === 'texto') {
       this.subOptionsTextVisible = !this.subOptionsTextVisible;
-      this.subOptionsMediaVisible = !this.subOptionsMediaVisible;
+      this.subOptionsMediaVisible = false;
     } else if (suboptionName === 'media'){
       this.subOptionsMediaVisible = !this.subOptionsMediaVisible;
-      this.subOptionsTextVisible = !this.subOptionsTextVisible;
+      this.subOptionsTextVisible = false;
     }
   }
 
