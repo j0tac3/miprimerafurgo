@@ -24,21 +24,27 @@
 }
 .option-list{
     list-style: none;
+    padding: 0;
 }
 .option-item{
     display: flex;
     flex-direction: row-reverse;
+    margin-bottom: .5rem;
 }
 .option{
     margin: 0 .5rem;
+    width: 4rem;
+    height: 1.5rem;
+    background-color: rgba(0, 0, 0, .7);
+    color: #fff;
+    border: transparent;
 }
 .subOption-container{
     display: inline;
-    padding: 0 .5rem;
 }
 .subOption-hidden{
     display: none;
 }
 .subOption{
-    margin: 0;
+    margin: 0 .2rem;
 }
