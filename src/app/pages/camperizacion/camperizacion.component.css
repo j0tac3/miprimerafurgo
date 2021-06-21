@@ -5,26 +5,37 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    position: relative;
 }
 
 .header-image-container{
-
+    height: 10rem;
+    width: 90%;
+    background-color: rgba(255, 255, 255, .7);
+    border: 1px dotted;
 }
 .options-container{
-
+    position: fixed;
+    right: 0;
+    top: 10rem;
 }
 .option-container{
 
 }
 .option-list{
-
+    list-style: none;
 }
 .option-item{
-
+    display: flex;
+    flex-direction: row-reverse;
 }
 .option{
-
+    margin: 0 .5rem;
 }
 .subOption{
-    
+    display: inline;
+    padding: 0 .5rem;
+}
+.subOption-hidden{
+    display: none;
 }
