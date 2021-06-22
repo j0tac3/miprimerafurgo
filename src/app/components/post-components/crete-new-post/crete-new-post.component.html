@@ -34,21 +34,22 @@
     <div class="container-elements" style="width: 90%;">
 
     </div>
-    <div class="element-to-add-container">
-        <form   action="" 
-                [formGroup]="formNewElement"
-                [ngClass]="{ 'subOption-hidden' : showInputElement === false && showInputElementImage === false}">
-            <input  type="text" 
-                    class="input-to-add" 
-                    formControlName="element"
-                    [ngClass]="{ 'subOption-hidden' : showInputElement === false }">
-            <input  type="file" 
-                    class="input-to-add" 
-                    formControlName="elementImage"
-                    [ngClass]="{ 'subOption-hidden' : showInputElementImage === false }"
-                    (change)="onImageChange($event)">
-            <button class="btn-element-add" (click)="guardarElemento()">Guardar</button>
-            <button class="btn-element-add" (click)="closeInputElement()">Cancelar</button>
-        </form>
-    </div>
+</div>
+<div class="element-to-add-container">
+    <form   action="" 
+            class="form-element"
+            [formGroup]="formNewElement"
+            [ngClass]="{ 'subOption-hidden' : showInputElement === false && showInputElementImage === false}">
+        <input  type="text" 
+                class="input-to-add" 
+                formControlName="element"
+                [ngClass]="{ 'subOption-hidden' : showInputElement === false }">
+        <input  type="file" 
+                class="input-to-add" 
+                formControlName="elementImage"
+                [ngClass]="{ 'subOption-hidden' : showInputElementImage === false }"
+                (change)="onImageChange($event)">
+        <button class="btn-element-add" (click)="guardarElemento()">Guardar</button>
+        <button class="btn-element-add" (click)="closeInputElement()">Cancelar</button>
+    </form>
 </div>
