@@ -48,9 +48,7 @@
 .subOption-container{
     /* display: inline; */
 }
-.subOption-hidden{
-    display: none;
-}
+
 .subOption{
     margin: 0 .2rem;
 }
@@ -59,11 +57,10 @@
     width: 80%;
     max-width: 40rem;
 }
-
 .form-element{
-    height: 5rem;
+    /* height: 5rem;
     width: 90%;
-    background-color: rgba(0, 0, 0, .7);
+    background-color: rgba(0, 0, 0, .7); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,4 +78,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.subOption-hidden{
+    display: none;
+}
+.input-to-add{
+    outline: none;
 }

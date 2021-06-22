@@ -94,6 +94,7 @@ export class CreteNewPostComponent implements OnInit {
         this.closeInputElement();
     } else {
       this.elementName = elementName;
+      this.subOptionsTextVisible = false;
       switch (elementName) {
         case 'h1':
         case 'h2':
