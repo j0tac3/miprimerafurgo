@@ -11,6 +11,7 @@ export class CreteNewPostComponent implements OnInit {
   public subOptionsTextVisible : boolean = false;
   public subOptionsMediaVisible : boolean = false;
   public showInputElement : boolean = false;
+  public showInputElementImage : boolean = false;
 
   public formNewElement!: FormGroup;
   public elementName!: string;
@@ -44,6 +45,7 @@ export class CreteNewPostComponent implements OnInit {
   formInit(){
     this.formNewElement = this.fb.group({
       element: ['', Validators.required],
+      elementImage: ['', Validators.required],
     })
   }
 
@@ -95,7 +97,11 @@ export class CreteNewPostComponent implements OnInit {
           this.formNewElement.get('element')?.reset();
           this.showInputElement = true;
           break;
-      
+      case 'img':
+        this.formNewElement.get('elementImage')?.reset();
+        this.showInputElementImage = true;
+        break;
+
         default:
           break;
       }
@@ -103,15 +109,29 @@ export class CreteNewPostComponent implements OnInit {
   }
     
   guardarElemento(){
-    let element = this.formNewElement.get('element')?.value;
+    let element = this.showInputElement ? this.formNewElement.get('element')?.value : this.getImageValue();
     const elementToAdd = new NewElement(this.elementName, element);
     this.addElement(elementToAdd);
     
     this.closeInputElement();
   }
 
+  getImageValue(){
+    //this.formNewElement.get('elementImage')?.value
+  }
+
   closeInputElement() {
-    this.formNewElement.get('element')?.reset();
-    this.showInputElement = !this.showInputElement;
+    this.comprobarSiElementoTexto(this.elementName);
+  }
+
+  comprobarSiElementoTexto( elementName : string ){
+    //return ['h1', 'h2', 'p'].includes(elementName) ? true : false;
+    if ( ['h1', 'h2', 'p'].includes(elementName) ){
+      this.formNewElement.get('element')?.reset()
+      this.showInputElement = !this.showInputElement;
+    } else {
+      this.formNewElement.get('elementImage')?.reset()
+      this.showInputElement = !this.showInputElementImage;
+    }
   }
 }

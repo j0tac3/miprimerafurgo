@@ -2,14 +2,21 @@
     <div class="header-image-container">
 
     </div>
-    <div class="element-to-add-container" 
-        [ngClass]="{ 'subOption-hidden' : showInputElement === false }">
-        <form action="" [formGroup]="formNewElement">
-            <input type="text" class="input-to-add" formControlName="element">
+    <div class="element-to-add-container">
+        <form   action="" 
+                [formGroup]="formNewElement"
+                [ngClass]="{ 'subOption-hidden' : showInputElement === false && showInputElementImage === false}">
+            <input  type="text" 
+                    class="input-to-add" 
+                    formControlName="element"
+                    [ngClass]="{ 'subOption-hidden' : showInputElement === false }">
+            <input  type="text" 
+                    class="input-to-add" 
+                    formControlName="element"
+                    [ngClass]="{ 'subOption-hidden' : showInputElementImage === false }">
             <button class="btn-element-add" (click)="guardarElemento()">Guardar</button>
             <button class="btn-element-add" (click)="closeInputElement()">Cancelar</button>
         </form>
-
     </div>
     <aside class="options-container">
         <ul class="option-list">
@@ -31,8 +38,8 @@
                 </button>
                 <div    class="subOption-container"
                         [ngClass]="{ 'subOption-hidden' : subOptionsMediaVisible === false }">
-                    <button class="option subOption">Imagen</button>
-                    <button class="option subOption">Galeria</button>
+                    <button class="option subOption" (click)="showInputElemenToAdd('img')">Imagen</button>
+                    <button class="option subOption" (click)="showInputElemenToAdd('img')">Galeria</button>
                 </div>
             </li>
             <li class="option-item">
