@@ -83,7 +83,7 @@ export class CreteNewPostComponent implements OnInit {
     } else if (element.element === 'p') {
       contenedor.insertAdjacentHTML('beforeend', `<p>${element.value}</p>`);
     } else if (element.element === 'img') {
-      contenedor.insertAdjacentHTML('beforeend', `<img src="assets/media/img/furgo_noche.jpg"`);
+      contenedor.insertAdjacentHTML('beforeend', `<img src="assets/media/img/furgo_noche.jpg">`);
     }
   }
 
