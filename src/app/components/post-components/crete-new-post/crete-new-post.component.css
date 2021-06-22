@@ -63,7 +63,7 @@
 .form-element{
     height: 5rem;
     width: 90%;
-    background-color: rgba(0, 0, 0, .6);
+    background-color: rgba(0, 0, 0, .7);
     display: flex;
     justify-content: center;
     align-items: center;
