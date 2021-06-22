@@ -38,7 +38,7 @@ export class CreteNewPostComponent implements OnInit {
                 private fb: FormBuilder ) { }
 
   ngOnInit(): void {
-    this.addElements();
+    //this.addElements();
     this.formInit();
   }
 
@@ -59,7 +59,7 @@ export class CreteNewPostComponent implements OnInit {
     }
   }
 
-  addElements() {
+/*   addElements() {
     console.log(this.htmlToAdd);
     let contenedor = this.elementRef.nativeElement.querySelector('.container-elements');
     for (const elemeto of this.htmlToAdd) {
@@ -71,7 +71,7 @@ export class CreteNewPostComponent implements OnInit {
         contenedor.insertAdjacentHTML('beforeend', '<p>{{ elemento.value }}</p>');
       }
     }
-  }
+  } */
 
   addElement( element : NewElement) {
     console.log(element);
@@ -82,6 +82,8 @@ export class CreteNewPostComponent implements OnInit {
       contenedor.insertAdjacentHTML('beforeend', `<h2>${element.value}</h2>`);
     } else if (element.element === 'p') {
       contenedor.insertAdjacentHTML('beforeend', `<p>${element.value}</p>`);
+    } else if (element.element === 'img') {
+      contenedor.insertAdjacentHTML('beforeend', `<img src="assets/media/img/furgo_noche.jpg"`);
     }
   }
 
@@ -131,7 +133,7 @@ export class CreteNewPostComponent implements OnInit {
       this.showInputElement = !this.showInputElement;
     } else {
       this.formNewElement.get('elementImage')?.reset()
-      this.showInputElement = !this.showInputElementImage;
+      this.showInputElementImage = !this.showInputElementImage;
     }
   }
 }
