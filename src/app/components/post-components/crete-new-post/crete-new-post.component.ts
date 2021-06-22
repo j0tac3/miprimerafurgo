@@ -17,6 +17,7 @@ export class CreteNewPostComponent implements OnInit {
   public elementName!: string;
 
   public imgFile! : string;
+  public elements: NewElement[] = [];
 
   public htmlToAdd = [
     {
@@ -61,22 +62,25 @@ export class CreteNewPostComponent implements OnInit {
     }
   }
 
-/*   addElements() {
-    console.log(this.htmlToAdd);
+  addElements() {
     let contenedor = this.elementRef.nativeElement.querySelector('.container-elements');
-    for (const elemeto of this.htmlToAdd) {
-      if (elemeto.elemento === 'h1') {
-        contenedor.insertAdjacentHTML('beforeend', '<h1>{{ elemento.value }}</h1>');
-      } else if (elemeto.elemento === 'h2') {
-        contenedor.insertAdjacentHTML('beforeend', '<h2>{{ elemento.value }}</h2>');
-      } else if (elemeto.elemento === 'p') {
-        contenedor.insertAdjacentHTML('beforeend', '<p>{{ elemento.value }}</p>');
+    for (const element of this.elements) {
+      let contenedor = this.elementRef.nativeElement.querySelector('.container-elements');
+      if (element.element === 'h1') {
+        contenedor.insertAdjacentHTML('beforeend', `<h1>${element.value}</h1>`);
+      } else if (element.element === 'h2') {
+        contenedor.insertAdjacentHTML('beforeend', `<h2 style="text-align: left;">${element.value}</h2>`);
+      } else if (element.element === 'p') {
+        contenedor.insertAdjacentHTML('beforeend', `<p style="text-align: left;">${element.value}</p>`);
+      } else if (element.element === 'img') {
+        contenedor.insertAdjacentHTML('beforeend', `<img src="${element.value}" class="post-image" style="1111111111max-width: 40rem;">`);
       }
     }
-  } */
+  }
 
   addElement( element : NewElement) {
-    console.log(element);
+    this.elements.push(element);
+    console.log(this.elements);
     let contenedor = this.elementRef.nativeElement.querySelector('.container-elements');
     if (element.element === 'h1') {
       contenedor.insertAdjacentHTML('beforeend', `<h1>${element.value}</h1>`);
@@ -85,14 +89,14 @@ export class CreteNewPostComponent implements OnInit {
     } else if (element.element === 'p') {
       contenedor.insertAdjacentHTML('beforeend', `<p style="text-align: left;">${element.value}</p>`);
     } else if (element.element === 'img') {
-      contenedor.insertAdjacentHTML('beforeend', `<img src="${element.value}" class="post-image" style="width: 80%;max-width: 40rem;">`);
+      contenedor.insertAdjacentHTML('beforeend', `<img src="${element.value}" class="post-image" style="1111111111max-width: 40rem;">`);
     }
   }
 
   showInputElemenToAdd( elementName : string ) {
-    if (elementName === this.elementName) {
-        this.closeInputElement();
-    } else {
+    //if (elementName === this.elementName) {
+       // this.closeInputElement();
+    //} else {
       this.elementName = elementName;
       this.subOptionsTextVisible = false;
       switch (elementName) {
@@ -110,7 +114,7 @@ export class CreteNewPostComponent implements OnInit {
         default:
           break;
       }
-    }
+    //}
   }
     
   guardarElemento(){

@@ -5,7 +5,8 @@
     align-items: center;
     text-align: center;
     position: relative;
-    padding-top: 2rem;
+    width: 50%;
+    margin: 0 auto;
 }
 
 .header-image-container{
@@ -15,17 +16,20 @@
     border: 1px dotted;
 }
 .options-container{
-    position: fixed;
-    right: 0;
-    top: 10rem;
+    position: sticky;
+    top: 5rem;
     z-index: 900;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
 }
 .option-container{
-
 }
 .option-list{
     list-style: none;
     padding: 0;
+    width: 50%;
 }
 .option-item{
     display: flex;
@@ -54,13 +58,9 @@
 }
 
 .post-image{
-    width: 80%;
     max-width: 40rem;
 }
 .form-element{
-    /* height: 5rem;
-    width: 90%;
-    background-color: rgba(0, 0, 0, .7); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,4 +84,16 @@
 }
 .input-to-add{
     outline: none;
+    background-color: #ffff;
+}
+
+@media screen and (max-width: 750px) {
+    .post-container, .option-list{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 1024px) and (min-width: 768px){
+    .post-container, .option-list{
+        width: 70%;
+    }
 }
