@@ -35,11 +35,11 @@
 
     </div>
 </div>
-<div class="element-to-add-container">
+<div    class="element-to-add-container"
+        [ngClass]="{ 'subOption-hidden' : showInputElement === false && showInputElementImage === false}">
     <form   action="" 
             class="form-element"
-            [formGroup]="formNewElement"
-            [ngClass]="{ 'subOption-hidden' : showInputElement === false && showInputElementImage === false}">
+            [formGroup]="formNewElement"></form>
         <input  type="text" 
                 class="input-to-add" 
                 formControlName="element"
