@@ -53,3 +53,8 @@
 .subOption{
     margin: 0 .2rem;
 }
+
+.post-image{
+    width: 80%;
+    max-width: 40rem;
+}
