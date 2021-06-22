@@ -84,18 +84,21 @@ export class CreteNewPostComponent implements OnInit {
   }
 
   showInputElemenToAdd( elementName : string ) {
-    this.elementName = elementName;
-    console.log(elementName);
-    switch (elementName) {
-      case 'h1':
-      case 'h2':
-      case 'p':
-        this.formNewElement.get('element')?.reset();
-        this.showInputElement = true;
-        break;
-    
-      default:
-        break;
+    if (elementName === this.elementName) {
+        this.closeInputElement();
+    } else {
+      this.elementName = elementName;
+      switch (elementName) {
+        case 'h1':
+        case 'h2':
+        case 'p':
+          this.formNewElement.get('element')?.reset();
+          this.showInputElement = true;
+          break;
+      
+        default:
+          break;
+      }
     }
   }
     
@@ -104,11 +107,11 @@ export class CreteNewPostComponent implements OnInit {
     const elementToAdd = new NewElement(this.elementName, element);
     this.addElement(elementToAdd);
     
-    this.formNewElement.get('element')?.reset();
-    this.showInputElement = false;
+    this.closeInputElement();
   }
 
-  cerrarModalAdd(){
-    this.showInputElement = !this.showInputElement;
+  closeInputElement() {
+    this.formNewElement.get('element')?.reset();
+    this.showInputElement = false;
   }
 }
