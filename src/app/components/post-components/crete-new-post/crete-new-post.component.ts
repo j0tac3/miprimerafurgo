@@ -125,19 +125,18 @@ export class CreteNewPostComponent implements OnInit {
   }
 
   onImageChange(e : any) {
+    const file = e.target.files[0];
+    this.formNewElement.patchValue({
+      elementImage: file
+    });
+    this.formNewElement.get('elementImage')?.updateValueAndValidity()
+
+    // File Preview
     const reader = new FileReader();
-    
-    if(e.target.files && e.target.files.length) {
-      const [file] = e.target.files;
-      reader.readAsDataURL(file);
-    
-      reader.onload = () => {
-        this.imgFile = reader.result as string;
-        this.formNewElement.patchValue({
-          elementImage: reader.result as string
-        });
-      };
+    reader.onload = () => {
+      this.imgFile = reader.result as string;
     }
+    reader.readAsDataURL(file)
   }
 
   closeInputElement() {
