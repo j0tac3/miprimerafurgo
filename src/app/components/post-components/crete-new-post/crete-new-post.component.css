@@ -18,7 +18,7 @@
     position: fixed;
     right: 0;
     top: 10rem;
-    z-index: 999;
+    z-index: 900;
 }
 .option-container{
 

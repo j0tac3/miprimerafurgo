@@ -81,7 +81,7 @@ export class CreteNewPostComponent implements OnInit {
     if (element.element === 'h1') {
       contenedor.insertAdjacentHTML('beforeend', `<h1>${element.value}</h1>`);
     } else if (element.element === 'h2') {
-      contenedor.insertAdjacentHTML('beforeend', `<h2>${element.value}</h2>`);
+      contenedor.insertAdjacentHTML('beforeend', `<h2 style="text-align: left;">${element.value}</h2>`);
     } else if (element.element === 'p') {
       contenedor.insertAdjacentHTML('beforeend', `<p style="text-align: left;">${element.value}</p>`);
     } else if (element.element === 'img') {
