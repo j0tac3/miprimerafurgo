@@ -112,6 +112,6 @@ export class CreteNewPostComponent implements OnInit {
 
   closeInputElement() {
     this.formNewElement.get('element')?.reset();
-    this.showInputElement = false;
+    this.showInputElement = !this.showInputElement;
   }
 }
