@@ -134,7 +134,7 @@ export class CreteNewPostComponent implements OnInit {
       reader.onload = () => {
         this.imgFile = reader.result as string;
         this.formNewElement.patchValue({
-          elementImage: reader.result
+          elementImage: reader.result as string
         });
       };
     }
