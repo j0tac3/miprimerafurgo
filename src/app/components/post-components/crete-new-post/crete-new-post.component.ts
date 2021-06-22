@@ -16,6 +16,8 @@ export class CreteNewPostComponent implements OnInit {
   public formNewElement!: FormGroup;
   public elementName!: string;
 
+  public imgFile! : string;
+
   public htmlToAdd = [
     {
       'id' : 1,
@@ -83,7 +85,7 @@ export class CreteNewPostComponent implements OnInit {
     } else if (element.element === 'p') {
       contenedor.insertAdjacentHTML('beforeend', `<p style="text-align: left;">${element.value}</p>`);
     } else if (element.element === 'img') {
-      contenedor.insertAdjacentHTML('beforeend', `<img src="assets/media/img/furgo_noche.jpg" class="post-image">`);
+      contenedor.insertAdjacentHTML('beforeend', `<img [src]="${element.value}" class="post-image">`);
     }
   }
 
@@ -119,7 +121,23 @@ export class CreteNewPostComponent implements OnInit {
   }
 
   getImageValue(){
-    //this.formNewElement.get('elementImage')?.value
+    return this.imgFile;
+  }
+
+  onImageChange(e : any) {
+    const reader = new FileReader();
+    
+    if(e.target.files && e.target.files.length) {
+      const [file] = e.target.files;
+      reader.readAsDataURL(file);
+    
+      reader.onload = () => {
+        this.imgFile = reader.result as string;
+        this.formNewElement.patchValue({
+          elementImage: reader.result
+        });
+      };
+    }
   }
 
   closeInputElement() {
