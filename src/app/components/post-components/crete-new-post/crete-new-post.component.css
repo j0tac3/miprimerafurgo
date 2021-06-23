@@ -61,6 +61,8 @@
     max-width: 40rem;
 }
 .form-element{
+    width: 40%;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -68,6 +70,14 @@
     border-radius: 5px;
     border: none;
     box-shadow: 10px 10px 5px -5px #aaa;
+    background-color: #fff;
+}
+.form-control{
+    display: grid;
+    width: 100%;
+}
+.label{
+    justify-self: flex-start;
 }
 .element-to-add-container{
     position: fixed;
@@ -86,11 +96,17 @@
 .input-to-add{
     outline: none;
     background-color: #ffff;
+    border: none;
+    border-bottom: 1px solid #aaa;
+    margin: .5rem 0;
 }
 
 @media screen and (max-width: 750px) {
     .post-container{
         width: 100%;
+    }
+    .form-element{
+        width: 80%;
     }
 }
 @media screen and (max-width: 1024px) and (min-width: 751px){

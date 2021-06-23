@@ -101,7 +101,7 @@ export class CreteNewPostComponent implements OnInit {
           this.showInputElement = true;
           this.setElementTag(this.elementName);
           break;
-        case 'imagen':
+        case 'img':
           this.formNewElement.get('elementImage')?.reset();
           this.showInputElementImage = true;
           this.setElementTag(this.elementName);
