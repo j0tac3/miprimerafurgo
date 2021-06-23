@@ -91,7 +91,7 @@ export class CreteNewPostComponent implements OnInit {
     //if (elementName === this.elementName) {
        // this.closeInputElement();
     //} else {
-      this.elementName = (event.target.value).toLowerCase();
+      this.elementName = event.target.textContent.toLowerCase();
       //this.subOptionsTextVisible = false;
       switch (this.elementName) {
         case 'titulo':
