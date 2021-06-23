@@ -15,6 +15,7 @@ export class CreteNewPostComponent implements OnInit {
 
   public formNewElement!: FormGroup;
   public elementName!: string;
+  public elementTag!: string;
 
   public imgFile! : string;
   public elements: NewElement[] = [];
@@ -86,27 +87,32 @@ export class CreteNewPostComponent implements OnInit {
     }
   }
 
-  showInputElemenToAdd( elementName : string ) {
+  showInputElemenToAdd( event : any ) {
     //if (elementName === this.elementName) {
        // this.closeInputElement();
     //} else {
-      this.elementName = elementName;
+      this.elementName = (event.target.value).toLowerCase();
       //this.subOptionsTextVisible = false;
-      switch (elementName) {
-        case 'h1':
-        case 'h2':
-        case 'p':
+      switch (this.elementName.) {
+        case 'titulo':
+        case 'subtitulo':
+        case 'parrafo':
           this.formNewElement.get('element')?.reset();
           this.showInputElement = true;
           break;
-        case 'img':
+        case 'imagen':
           this.formNewElement.get('elementImage')?.reset();
           this.showInputElementImage = true;
           break;
         default:
           break;
       }
+      this.setElementTag(this.elementName);
     //}
+  }
+
+  setElementTag( elementName : string) {
+
   }
     
   guardarElemento(){

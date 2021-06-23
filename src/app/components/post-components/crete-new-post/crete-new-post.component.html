@@ -9,10 +9,10 @@
                 </button>
                 <div    class="subOption-container"
                         [ngClass]="{ 'subOption-hidden' : subOptionsTextVisible === false }">
-                    <button class="option subOption" (click)="showInputElemenToAdd('h1')">Titulo</button>
-                    <button class="option subOption" (click)="showInputElemenToAdd('h2')">Subtitulo</button>
-                    <button class="option subOption" (click)="showInputElemenToAdd('ul')">Lista</button>
-                    <button class="option subOption" (click)="showInputElemenToAdd('p')">Parrafo</button>
+                    <button class="option subOption" (click)="showInputElemenToAdd($event)">Titulo</button>
+                    <button class="option subOption" (click)="showInputElemenToAdd($event)">Subtitulo</button>
+                    <button class="option subOption" (click)="showInputElemenToAdd($event)">Lista</button>
+                    <button class="option subOption" (click)="showInputElemenToAdd($event)">Parrafo</button>
                 </div>
             </li>
             <li class="option-item">
@@ -40,15 +40,18 @@
         <form   action="" 
                 class="form-element"
                 [formGroup]="formNewElement">
-            <input  type="text" 
+            <div class="form-control">
+                <label for="">{{ elementTag }}</label>
+                <input  type="text" 
                     class="input-to-add" 
                     formControlName="element"
                     [ngClass]="{ 'subOption-hidden' : showInputElement === false }">
-            <input  type="file" 
+                <input  type="file" 
                     class="input-to-add" 
                     formControlName="elementImage"
                     [ngClass]="{ 'subOption-hidden' : showInputElementImage === false }"
                     (change)="onImageChange($event)">
+            </div>
             <div class="buttons-container">
                 <button class="btn-element-add" (click)="guardarElemento()">Guardar</button>
                 <button class="btn-element-add" (click)="closeInputElement()">Cancelar</button>
