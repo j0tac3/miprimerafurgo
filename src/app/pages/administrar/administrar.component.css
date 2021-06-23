@@ -1,0 +1,29 @@
+.admin-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 1rem 0;
+    background-color: #1f1f1f;
+    text-align: center;
+    color: #ffff;
+}
+.icon{
+    width: 15rem;
+    border: 1px solid transparent;
+}
+.icon:hover{
+    border: 1px solid #aaa;
+    background-color: #aaa ;
+}
+.option-container{
+    position: relative;
+}
+.titulo{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: .3rem 0;
+    margin-bottom: .27rem;
+    background-color: rgba(0, 0, 0, .8);
+}

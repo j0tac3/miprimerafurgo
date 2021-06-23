@@ -7,6 +7,7 @@ import { CamperizacionComponent } from './pages/camperizacion/camperizacion.comp
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PostComponent } from './pages/post/post.component';
+import { AdministrarComponent } from './pages/administrar/administrar.component';
 
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
@@ -19,6 +20,7 @@ const APP_ROUTES: Routes = [
   { path: 'articulos', component: ArticulosComponent },
   { path: 'contacto', component: ContactoComponent },
   { path: 'createPost', component: CreteNewPostComponent },
+  { path: 'administrar', component: AdministrarComponent },
   {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 

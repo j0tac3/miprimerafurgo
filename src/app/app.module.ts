@@ -26,6 +26,7 @@ import { PostSelectedComponent } from './components/post-components/post-selecte
 import { PostComentComponent } from './components/post-components/post-coment/post-coment.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { CreteNewPostComponent } from './components/post-components/crete-new-post/crete-new-post.component';
+import { AdministrarComponent } from './pages/administrar/administrar.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { CreteNewPostComponent } from './components/post-components/crete-new-po
     PostSelectedComponent,
     PostComentComponent,
     ContactoComponent,
-    CreteNewPostComponent
+    CreteNewPostComponent,
+    AdministrarComponent
   ],
   imports: [
     BrowserModule,
