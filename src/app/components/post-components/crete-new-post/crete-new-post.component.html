@@ -9,10 +9,10 @@
                 </button>
                 <div    class="subOption-container"
                         [ngClass]="{ 'subOption-hidden' : subOptionsTextVisible === false }">
-                    <button class="option subOption" (click)="showInputElemenToAdd($event)">Titulo</button>
-                    <button class="option subOption" (click)="showInputElemenToAdd($event)">Subtitulo</button>
-                    <button class="option subOption" (click)="showInputElemenToAdd($event)">Lista</button>
-                    <button class="option subOption" (click)="showInputElemenToAdd($event)">Parrafo</button>
+                    <button class="option subOption" (click)="showInputElemenToAdd('h1')">Titulo</button>
+                    <button class="option subOption" (click)="showInputElemenToAdd('h2')">Subtitulo</button>
+                    <button class="option subOption" (click)="showInputElemenToAdd('ul')">Lista</button>
+                    <button class="option subOption" (click)="showInputElemenToAdd('p')">Parrafo</button>
                 </div>
             </li>
             <li class="option-item">

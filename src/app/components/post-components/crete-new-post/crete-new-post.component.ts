@@ -87,32 +87,43 @@ export class CreteNewPostComponent implements OnInit {
     }
   }
 
-  showInputElemenToAdd( event : any ) {
+  showInputElemenToAdd( tag : string ) {
     //if (elementName === this.elementName) {
        // this.closeInputElement();
     //} else {
-      this.elementName = event.target.textContent.toLowerCase();
+      this.elementName = tag;
       //this.subOptionsTextVisible = false;
       switch (this.elementName) {
-        case 'titulo':
-        case 'subtitulo':
-        case 'parrafo':
+        case 'h1':
+        case 'h2':
+        case 'p':
           this.formNewElement.get('element')?.reset();
           this.showInputElement = true;
+          this.setElementTag(this.elementName);
           break;
         case 'imagen':
           this.formNewElement.get('elementImage')?.reset();
           this.showInputElementImage = true;
+          this.setElementTag(this.elementName);
           break;
         default:
           break;
       }
-      this.setElementTag(this.elementName);
     //}
   }
 
   setElementTag( elementName : string) {
-
+    if (elementName === 'h1') {
+      this.elementTag = 'Titulo';
+    } else if (elementName === 'h2') {
+      this.elementTag = 'Subtitulo';
+    } else if (elementName === 'ul') {
+        this.elementTag = 'Lista';
+    } else if (elementName === 'p') {
+      this.elementTag = 'Párrafo';
+    }if (elementName === 'img') {
+      this.elementTag = 'Imagen';
+    }
   }
     
   guardarElemento(){
