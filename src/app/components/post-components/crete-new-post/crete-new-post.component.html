@@ -49,8 +49,10 @@
                     formControlName="elementImage"
                     [ngClass]="{ 'subOption-hidden' : showInputElementImage === false }"
                     (change)="onImageChange($event)">
-            <button class="btn-element-add" (click)="guardarElemento()">Guardar</button>
-            <button class="btn-element-add" (click)="closeInputElement()">Cancelar</button>
+            <div class="buttons-container">
+                <button class="btn-element-add" (click)="guardarElemento()">Guardar</button>
+                <button class="btn-element-add" (click)="closeInputElement()">Cancelar</button>
+            </div>
         </form>
     </div>
     <button (click)="addElements()">
