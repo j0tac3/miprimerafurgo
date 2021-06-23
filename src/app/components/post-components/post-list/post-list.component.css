@@ -6,14 +6,7 @@
 .title{
     text-align: center;
 }
-.btn-new-aventura{
-    width: 15rem;
-    padding: 1rem;
-    background-color: dodgerblue;
-    text-align: center;
-    margin: 1rem auto;
-    border-radius: 2px;
-}
+
 @keyframes show-posts-list {
     from{
         transform: translateX(-150%);

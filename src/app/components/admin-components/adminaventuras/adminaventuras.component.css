@@ -1,0 +1,14 @@
+.adminaventura-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 20vh);
+}
+.btn-new-aventura{
+    width: 15rem;
+    padding: 1rem;
+    background-color: dodgerblue;
+    text-align: center;
+    margin: 1rem auto;
+    border-radius: 2px;
+}

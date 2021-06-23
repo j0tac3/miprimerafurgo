@@ -8,6 +8,8 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PostComponent } from './pages/post/post.component';
 import { AdministrarComponent } from './pages/administrar/administrar.component';
+import { AdminarticulosComponent } from './components/admin-components/adminarticulos/adminarticulos.component';
+import { AdminaventurasComponent } from './components/admin-components/adminaventuras/adminaventuras.component';
 
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
@@ -21,6 +23,8 @@ const APP_ROUTES: Routes = [
   { path: 'contacto', component: ContactoComponent },
   { path: 'createPost', component: CreteNewPostComponent },
   { path: 'administrar', component: AdministrarComponent },
+  { path: 'adminArticulos', component: AdminarticulosComponent },
+  { path: 'adminAventuras', component: AdminaventurasComponent },
   {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 

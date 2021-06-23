@@ -6,6 +6,7 @@
     background-color: #1f1f1f;
     text-align: center;
     color: #ffff;
+    min-height: 60vh;
 }
 .icon{
     width: 15rem;

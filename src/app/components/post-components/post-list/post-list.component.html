@@ -1,6 +1,5 @@
 <div class="post-list-container">
     <h2 class="title">Aventuras</h2>
-    <a class="btn-new-aventura" [routerLink]="'/createPost'"> Añadir una nueva Aventura</a>
     <app-post-miniature *ngFor="let post of posts; index as i"
                         [imageURL]="post.imageURL"
                         [title]="post.title"
