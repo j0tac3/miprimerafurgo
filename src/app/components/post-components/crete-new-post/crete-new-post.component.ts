@@ -55,10 +55,12 @@ export class CreteNewPostComponent implements OnInit {
   showSuboption( suboptionName : string) : void {
     if (suboptionName === 'texto') {
       this.subOptionsTextVisible = !this.subOptionsTextVisible;
-      this.subOptionsMediaVisible = false;
+      if (this.subOptionsMediaVisible) { this.subOptionsMediaVisible = false };
+      if (this.showInputElementImage) { this.showInputElementImage = false };
     } else if (suboptionName === 'media'){
       this.subOptionsMediaVisible = !this.subOptionsMediaVisible;
-      this.subOptionsTextVisible = false;
+      if (this.subOptionsTextVisible) { this.subOptionsTextVisible = false };
+      if (this.showInputElement) { this.showInputElement = false };
     }
   }
 
@@ -99,7 +101,7 @@ export class CreteNewPostComponent implements OnInit {
           break;
         case 'img':
           this.formNewElement.get('elementImage')?.reset();
-          this.showInputElementImage = true;
+          this.showInputElement = true;
           break;
         default:
           break;
