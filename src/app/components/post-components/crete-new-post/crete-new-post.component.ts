@@ -65,16 +65,7 @@ export class CreteNewPostComponent implements OnInit {
   addElements() {
     let contenedor = this.elementRef.nativeElement.querySelector('.container-elements');
     for (const element of this.elements) {
-      let contenedor = this.elementRef.nativeElement.querySelector('.container-elements');
-      if (element.element === 'h1') {
-        contenedor.insertAdjacentHTML('beforeend', `<h1>${element.value}</h1>`);
-      } else if (element.element === 'h2') {
-        contenedor.insertAdjacentHTML('beforeend', `<h2 style="text-align: left;">${element.value}</h2>`);
-      } else if (element.element === 'p') {
-        contenedor.insertAdjacentHTML('beforeend', `<p style="text-align: left;">${element.value}</p>`);
-      } else if (element.element === 'img') {
-        contenedor.insertAdjacentHTML('beforeend', `<img src="${element.value}" class="post-image" style="1111111111max-width: 40rem;">`);
-      }
+      this.addElement(element);
     }
   }
 
@@ -98,7 +89,7 @@ export class CreteNewPostComponent implements OnInit {
        // this.closeInputElement();
     //} else {
       this.elementName = elementName;
-      this.subOptionsTextVisible = false;
+      //this.subOptionsTextVisible = false;
       switch (elementName) {
         case 'h1':
         case 'h2':
@@ -106,11 +97,10 @@ export class CreteNewPostComponent implements OnInit {
           this.formNewElement.get('element')?.reset();
           this.showInputElement = true;
           break;
-      case 'img':
-        this.formNewElement.get('elementImage')?.reset();
-        this.showInputElementImage = true;
-        break;
-
+        case 'img':
+          this.formNewElement.get('elementImage')?.reset();
+          this.showInputElementImage = true;
+          break;
         default:
           break;
       }
@@ -131,12 +121,6 @@ export class CreteNewPostComponent implements OnInit {
 
   onImageChange(e : any) {
     const file = e.target.files[0];
- /*    this.formNewElement.patchValue({
-      elementImage: file
-    }); */
-    //this.formNewElement.get('elementImage')?.updateValueAndValidity()
-
-    // File Preview
     const reader = new FileReader();
     reader.onload = () => {
       this.imgFile = reader.result as string;
@@ -145,12 +129,16 @@ export class CreteNewPostComponent implements OnInit {
   }
 
   closeInputElement() {
-    this.comprobarSiElementoTexto(this.elementName);
+    let isText = this.comprobarSiElementoTexto(this.elementName);
+    this.showHiddenInputs(isText);
   }
 
   comprobarSiElementoTexto( elementName : string ){
-    //return ['h1', 'h2', 'p'].includes(elementName) ? true : false;
-    if ( ['h1', 'h2', 'p'].includes(elementName) ){
+    return ['h1', 'h2', 'p'].includes(elementName);
+  }
+
+  showHiddenInputs(isText : boolean) {
+    if (isText) {
       this.formNewElement.get('element')?.reset()
       this.showInputElement = !this.showInputElement;
     } else {
