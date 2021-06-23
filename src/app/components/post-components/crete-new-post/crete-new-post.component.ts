@@ -68,13 +68,11 @@ export class CreteNewPostComponent implements OnInit {
   addElements() {
     let contenedor = this.elementRef.nativeElement.querySelector('.container-elements');
     for (const element of this.elements) {
-      this.addElement(element);
+      this.publicarElemento(element);
     }
   }
 
-  addElement( element : NewElement) {
-    this.elements.push(element);
-    console.log(this.elements);
+  publicarElemento( element : NewElement ) {
     let contenedor = this.elementRef.nativeElement.querySelector('.container-elements');
     if (element.element === 'h1') {
       contenedor.insertAdjacentHTML('beforeend', `<h1>${element.value}</h1>`);
@@ -85,6 +83,12 @@ export class CreteNewPostComponent implements OnInit {
     } else if (element.element === 'img') {
       contenedor.insertAdjacentHTML('beforeend', `<img src="${element.value}" class="post-image" style="1111111111max-width: 40rem;">`);
     }
+  }
+
+  addElement( element : NewElement) {
+    this.elements.push(element);
+    console.log(this.elements);
+    this.publicarElemento(element);
   }
 
   showInputElemenToAdd( tag : string ) {
