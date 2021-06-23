@@ -100,7 +100,18 @@
     border-bottom: 1px solid #aaa;
     margin: .5rem 0;
 }
-
+.btn-element{
+    margin: 0 .5rem;
+    color: #fff;
+    border: none;
+    padding: .2rem .7rem;
+}
+.btn-add{
+    background-color: royalblue;
+}
+.btn-cancel{
+    background-color: red;
+}
 @media screen and (max-width: 750px) {
     .post-container{
         width: 100%;
