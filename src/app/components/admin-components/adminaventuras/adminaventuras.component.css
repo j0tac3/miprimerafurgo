@@ -13,3 +13,10 @@
     margin: 1rem auto;
     border-radius: 2px;
 }
+.btn-action{
+    background-color: transparent;
+    border: none;
+}
+.img-btn{
+    width: 1.5rem;
+}
