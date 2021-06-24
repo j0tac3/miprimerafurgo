@@ -1,8 +1,8 @@
 <div class="adminaventura-container">
     <a class="btn-new-aventura" [routerLink]="'/createPost'"> Añadir una nueva Aventura</a>
 
-    <table>
-        <thead>
+    <table class="aventuras">
+        <thead class="aventuras__cabecera">
             <th>Titulo</th>
             <th>Fecha Creacion</th>
             <th>Publicar</th>
@@ -36,7 +36,7 @@
                 </td>
                 <td>
                     <button class="btn-action">
-                        <img src="assets/media/icons/close-circle.svg" alt="">
+                        <img src="assets/media/icons/close-circle.svg" alt="" class="img-btn">
                     </button>
                 </td>
             </tr>
@@ -45,12 +45,12 @@
                 <td>24/06/2021</td>
                 <td><input type="checkbox" name="" id=""></td>
                 <td>
-                    <button>
+                    <button class="btn-action">
                         <img src="assets/media/icons/text.svg" alt="" class="img-btn">
                     </button>
                 </td>
                 <td>
-                    <button>
+                    <button class="btn-action">
                         <img src="assets/media/icons/close-circle.svg" alt="" class="img-btn">
                     </button>
                 </td>

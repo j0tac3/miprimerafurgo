@@ -20,3 +20,22 @@
 .img-btn{
     width: 1.5rem;
 }
+.aventuras{
+    margin-top: 1rem;
+    border-collapse: collapse;
+    width: 80%;
+    text-align: center;
+}
+.aventuras__cabecera{
+    background-color: steelblue;
+    color: #ffff;
+}
+.aventuras__cabecera > th{
+    padding: .5rem;
+}
+
+@media screen and (max-width: 750px) {
+    .aventuras{
+        width: 100%;
+    }
+}
