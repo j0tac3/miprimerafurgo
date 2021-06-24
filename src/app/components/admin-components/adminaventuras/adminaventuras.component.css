@@ -1,8 +1,9 @@
 .adminaventura-container{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: space-evenly;
     min-height: calc(100vh - 20vh);
+    padding-top: 2rem;
 }
 .btn-new-aventura{
     width: 15rem;
