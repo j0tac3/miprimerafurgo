@@ -1,4 +1,5 @@
 <div class="lateral-menu-container">
+    <div class="layout" [ngClass]="{ 'menu-list_show' : showMenu }" (click)="openCloseMenu()"></div>
     <img    src="assets/media/icons/menu_open.svg" alt="Mi primera Furgo" class="menu-icon"
             [ngClass]="{ 'menu-icon-notvisible' : currentRoute === 'inicio' }"
             (click)="openCloseMenu()">

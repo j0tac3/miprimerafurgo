@@ -21,7 +21,7 @@
 .menu-list{
     padding: 0;
     margin: 0;
-    width: 100vw;
+    width: 20rem;
     height: 100vh;
     position: absolute;
     top: 0;
@@ -31,9 +31,6 @@
     transform: translateX(-150%);
     transition: transform .5s;
 }
-.menu-list_show{
-    transform: translateX(0);
-}
 .list-item{
     width: 15rem;
     margin-top: .5rem;
@@ -42,7 +39,7 @@
 }
 .list-item-header{
     color: #fff;
-    width: 100%;
+    /*width: 100%;*/
     font-size: 1.2rem;
     border-bottom: 1px solid;
     padding: .5rem 0;
@@ -78,4 +75,17 @@
     width: 1.5rem;
     filter: invert(1);
     margin-right: 1rem;
+}
+
+.layout{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: translateX(-150%);
+    transition: transform .6s;
+}
+
+.menu-list_show{
+    transform: translateX(0);
 }

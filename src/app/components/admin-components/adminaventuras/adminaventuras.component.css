@@ -17,6 +17,9 @@
     background-color: transparent;
     border: none;
 }
+.btn-action:hover{
+    background-color: #aaaa;
+}
 .img-btn{
     width: 1.5rem;
 }
