@@ -27,6 +27,7 @@
     margin-top: 1rem;
     border-collapse: collapse;
     width: 80%;
+    max-width: 50rem;
     text-align: center;
 }
 .aventuras__cabecera{

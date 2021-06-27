@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NewElement } from './../../../models/newElement.model'
+import { ElementAventura } from 'src/app/models/elementPost.model';
 
 @Component({
   selector: 'app-crete-new-post',
@@ -8,6 +9,8 @@ import { NewElement } from './../../../models/newElement.model'
   styleUrls: ['./crete-new-post.component.css']
 })
 export class CreteNewPostComponent implements OnInit {
+  public adventure_id? : number;
+
   public subOptionsTextVisible : boolean = false;
   public subOptionsMediaVisible : boolean = false;
   public showInputElement : boolean = false;
@@ -18,32 +21,50 @@ export class CreteNewPostComponent implements OnInit {
   public elementTag!: string;
 
   public imgFile! : string;
-  public elements: NewElement[] = [];
+  public elements: ElementAventura[] = [];
 
-  public htmlToAdd = [
-    {
-      'id' : 1,
-      'elemento' : 'h1',
-      'value' : 'Prueba de titulo'
-    },
-    {
-      'id' : 2,
-      'elemento' : 'h2',
-      'value' : 'Prueba de subtitulo'
-    },
-    {
-      'id' : 3,
-      'elemento' : 'p',
-      'value' : 'Esto es un texto del tipo parrafo'
-    }
-  ]
-
-  constructor( private elementRef : ElementRef,
-                private fb: FormBuilder ) { }
+  constructor(  private elementRef : ElementRef,
+                private fb: FormBuilder,
+                private route : ActivatedRoute ) { }
 
   ngOnInit(): void {
-    //this.addElements();
+     this.route.queryParams
+    .subscribe( params => {
+      console.log(params);
+      if (params.id){
+        this.adventure_id = params.id;
+      }
+    });
+
+    this.createOrEditAdventura();
     this.formInit();
+  }
+
+  createOrEditAdventura(){
+    if (this.checkIfNewAdventure()){
+      //Crear un nuevo array para guardar los elementos de la nueva aventura
+      console.log('Se va a crear una nueva aventura.');
+    } else {
+      //Usar el servicio para recoger los elementos de la aventura desde la BDD
+      console.log(`Leyendo los datos de la aventura ${this.adventure_id} desde el servicio ....`);
+    }
+  }
+
+  addElements() {
+    if (this.checkIfNewAdventure()){
+      //LLamar al servicio para que cree una nueva aventura en la BDD
+      console.log('Creando una nueva Aventura ...')
+    } else {
+      //LLamar al servicio para que edite la aventura en la BDD
+      console.log(`Editando la aventura ${this.adventure_id} ...`)
+    }
+    /* for (const element of this.elements) {
+      this.publicarElemento(element);
+    } */
+  }
+
+  checkIfNewAdventure(){
+    return (this.adventure_id === undefined || this.adventure_id === null);
   }
 
   formInit(){
@@ -65,14 +86,7 @@ export class CreteNewPostComponent implements OnInit {
     }
   }
 
-  addElements() {
-    let contenedor = this.elementRef.nativeElement.querySelector('.container-elements');
-    for (const element of this.elements) {
-      this.publicarElemento(element);
-    }
-  }
-
-  publicarElemento( element : NewElement ) {
+  publicarElemento( element : ElementAventura ) {
     let contenedor = this.elementRef.nativeElement.querySelector('.container-elements');
     if (element.element === 'h1') {
       contenedor.insertAdjacentHTML('beforeend', `<h1>${element.value}</h1>`);
@@ -85,18 +99,14 @@ export class CreteNewPostComponent implements OnInit {
     }
   }
 
-  addElement( element : NewElement) {
+  addElement( element : ElementAventura) {
     this.elements.push(element);
     console.log(this.elements);
     this.publicarElemento(element);
   }
 
   showInputElemenToAdd( tag : string ) {
-    //if (elementName === this.elementName) {
-       // this.closeInputElement();
-    //} else {
       this.elementName = tag;
-      //this.subOptionsTextVisible = false;
       switch (this.elementName) {
         case 'h1':
         case 'h2':
@@ -113,7 +123,6 @@ export class CreteNewPostComponent implements OnInit {
         default:
           break;
       }
-    //}
   }
 
   setElementTag( elementName : string) {
@@ -132,7 +141,9 @@ export class CreteNewPostComponent implements OnInit {
     
   guardarElemento(){
     let element = this.showInputElement ? this.formNewElement.get('element')?.value : this.getImageValue();
-    const elementToAdd = new NewElement(this.elementName, element);
+    const elementToAdd = new ElementAventura();
+    elementToAdd.element = this.elementName;
+    elementToAdd.value = element;
     this.addElement(elementToAdd);
     
     this.closeInputElement();

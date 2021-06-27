@@ -1,5 +1,7 @@
 <div class="adminaventura-container">
-    <a class="btn-new-aventura" [routerLink]="'/createPost'"> Añadir una nueva Aventura</a>
+    <a class="btn-new-aventura" [routerLink]="'/createPost'"> 
+        Añadir una nueva Aventura
+    </a>
 
     <table class="aventuras">
         <thead class="aventuras__cabecera">
@@ -16,7 +18,9 @@
                 <td><input type="checkbox" name="" id=""></td>
                 <td>
                     <button class="btn-action">
-                        <img src="assets/media/icons/text.svg" alt="" class="img-btn">
+                        <img src="assets/media/icons/text.svg" alt="" class="img-btn" 
+                                [routerLink]="'/createPost'"
+                                [queryParams]="{'id': 1}">
                     </button>
                 </td>
                 <td>
@@ -31,7 +35,9 @@
                 <td><input type="checkbox" name="" id=""></td>
                 <td>
                     <button class="btn-action">
-                        <img src="assets/media/icons/text.svg" alt="" class="img-btn">
+                        <img src="assets/media/icons/text.svg" alt="" class="img-btn" 
+                                [routerLink]="'/createPost'"
+                                [queryParams]="{'id': 2}">
                     </button>
                 </td>
                 <td>
@@ -46,7 +52,9 @@
                 <td><input type="checkbox" name="" id=""></td>
                 <td>
                     <button class="btn-action">
-                        <img src="assets/media/icons/text.svg" alt="" class="img-btn">
+                        <img src="assets/media/icons/text.svg" alt="" class="img-btn"
+                                [routerLink]="'/createPost'"
+                                [queryParams]="{'id': 3}">
                     </button>
                 </td>
                 <td>

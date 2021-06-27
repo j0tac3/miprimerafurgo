@@ -21,6 +21,7 @@ const APP_ROUTES: Routes = [
     ] }, */
   { path: 'articulos', component: ArticulosComponent },
   { path: 'contacto', component: ContactoComponent },
+  { path: 'createPost/:id', component: CreteNewPostComponent },
   { path: 'createPost', component: CreteNewPostComponent },
   { path: 'administrar', component: AdministrarComponent },
   { path: 'adminArticulos', component: AdminarticulosComponent },
