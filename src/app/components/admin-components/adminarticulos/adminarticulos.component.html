@@ -1,1 +1,52 @@
-<p>adminarticulos works!</p>
+<div class="admin-container">
+    <a class="btn-addArticulo" [routerLink]="'/createPost'"> 
+        Añadir Articulo
+    </a>
+
+    <table class="articulos">
+        <thead>
+            <th>Articulo</th>
+            <th>Enlace</th>
+            <th>Publicar</th>
+            <th>Edit</th>
+            <th>Del</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Hamaca de Camping</td>
+                <td><a href="">enlace</a></td>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>
+                    <button class="btn-action">
+                        <img src="assets/media/icons/text.svg" alt="" class="img-btn">
+                                <!-- [routerLink]="'/createPost'"
+                                [queryParams]="{'id': 1}"> -->
+                    </button>
+                </td>
+                <td>
+                    <button class="btn-action">
+                        <img src="assets/media/icons/close-circle.svg" alt="">
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>Colchon de furgo</td>
+                <td><a href="">enlace</a></td>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>
+                    <button class="btn-action">
+                        <img src="assets/media/icons/text.svg" alt="" class="img-btn">
+                                <!-- [routerLink]="'/createPost'"
+                                [queryParams]="{'id': 2}"> -->
+                    </button>
+                </td>
+                <td>
+                    <button class="btn-action">
+                        <img src="assets/media/icons/close-circle.svg" alt="" class="img-btn">
+                    </button>
+                </td>
+            </tr>
+            <tr>
+        </tbody>
+    </table>
+</div>

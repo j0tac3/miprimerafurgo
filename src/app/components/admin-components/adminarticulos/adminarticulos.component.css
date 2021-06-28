@@ -1,0 +1,33 @@
+
+.admin-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: calc(100vh - 20vh);
+    padding-top: 2rem;
+}
+.articulos{
+    margin-top: 1rem;
+    border-collapse: collapse;
+    width: 80%;
+    max-width: 50rem;
+    text-align: center;
+}
+.btn-addArticulo{
+    width: 15rem;
+    padding: 1rem;
+    background-color: dodgerblue;
+    text-align: center;
+    margin: 1rem auto;
+    border-radius: 2px;
+}
+.btn-action{
+    background-color: transparent;
+    border: none;
+}
+.btn-action:hover{
+    background-color: #aaaa;
+}
+.img-btn{
+    width: 1.5rem;
+}
