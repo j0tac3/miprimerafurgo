@@ -21,6 +21,13 @@
     margin: 1rem auto;
     border-radius: 2px;
 }
+.articulos__cabecera{
+    background-color: steelblue;
+    color: #ffff;
+}
+.articulos__cabecera > th{
+    padding: .5rem;
+}
 .btn-action{
     background-color: transparent;
     border: none;
