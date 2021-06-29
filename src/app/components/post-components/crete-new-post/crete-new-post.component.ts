@@ -1,7 +1,10 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ElementAventura } from 'src/app/models/elementPost.model';
+import { ElementAventuraModel } from 'src/app/models/elementAventura.model';
+import { AventuraService } from './../../../Services/aventura.service'
+import { ElementsaventuraService } from './../../../Services/elementsaventura.service'
+import { AventuraModel } from 'src/app/models/aventura.model';
 
 @Component({
   selector: 'app-crete-new-post',
@@ -21,11 +24,14 @@ export class CreteNewPostComponent implements OnInit {
   public elementTag!: string;
 
   public imgFile! : string;
-  public elements: ElementAventura[] = [];
+  public imageName! : string;
+  public elements: ElementAventuraModel[] = [];
 
   constructor(  private elementRef : ElementRef,
                 private fb: FormBuilder,
-                private route : ActivatedRoute ) { }
+                private route : ActivatedRoute,
+                private aventuraService : AventuraService,
+                private elementaventuraService : ElementsaventuraService ) { }
 
   ngOnInit(): void {
      this.route.queryParams
@@ -54,6 +60,7 @@ export class CreteNewPostComponent implements OnInit {
     if (this.checkIfNewAdventure()){
       //LLamar al servicio para que cree una nueva aventura en la BDD
       console.log('Creando una nueva Aventura ...')
+      this.createAventura();
     } else {
       //LLamar al servicio para que edite la aventura en la BDD
       console.log(`Editando la aventura ${this.adventure_id} ...`)
@@ -86,7 +93,7 @@ export class CreteNewPostComponent implements OnInit {
     }
   }
 
-  publicarElemento( element : ElementAventura ) {
+  publicarElemento( element : ElementAventuraModel ) {
     let contenedor = this.elementRef.nativeElement.querySelector('.container-elements');
     if (element.element === 'h1') {
       contenedor.insertAdjacentHTML('beforeend', `<h1>${element.value}</h1>`);
@@ -99,7 +106,7 @@ export class CreteNewPostComponent implements OnInit {
     }
   }
 
-  addElement( element : ElementAventura) {
+  addElement( element : ElementAventuraModel) {
     this.elements.push(element);
     console.log(this.elements);
     this.publicarElemento(element);
@@ -141,7 +148,7 @@ export class CreteNewPostComponent implements OnInit {
     
   guardarElemento(){
     let element = this.showInputElement ? this.formNewElement.get('element')?.value : this.getImageValue();
-    const elementToAdd = new ElementAventura();
+    const elementToAdd = new ElementAventuraModel();
     elementToAdd.element = this.elementName;
     elementToAdd.value = element;
     this.addElement(elementToAdd);
@@ -155,6 +162,8 @@ export class CreteNewPostComponent implements OnInit {
 
   onImageChange(e : any) {
     const file = e.target.files[0];
+    this.imageName = file.name;
+   // console.log(this.imageName);
     const reader = new FileReader();
     reader.onload = () => {
       this.imgFile = reader.result as string;
@@ -179,5 +188,32 @@ export class CreteNewPostComponent implements OnInit {
       this.formNewElement.get('elementImage')?.reset()
       this.showInputElementImage = !this.showInputElementImage;
     }
+  }
+
+  createAventura() {
+    if (this.elements.length > 0) {
+      let aventura = new AventuraModel();
+      aventura.publicado = false;
+      aventura.user_id = 1;
+      this.aventuraService.createAventura(aventura)
+      .subscribe( resp => {
+        console.log(resp['data']);
+        aventura = resp['data'];
+        console.log(aventura);
+        this.createElements(aventura);
+      });
+    }
+  }
+
+  createElements( aventura : AventuraModel){
+    for (let element of this.elements){
+      element.aventura_id = aventura.id;
+    }
+    //enviar los elementos a crearlos desde el servicio
+    console.log(this.elements);
+    this.elementaventuraService.createAventura(this.elements)
+    .subscribe( resp => {
+      console.log(resp);
+    }); 
   }
 }

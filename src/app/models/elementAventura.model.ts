@@ -1,4 +1,4 @@
-export class ElementAventura{
+export class ElementAventuraModel{
     id? : number;
     aventura_id? : number;
     element? : string;
