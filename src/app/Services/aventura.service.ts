@@ -22,8 +22,12 @@ export class AventuraService {
     return this.http.put<AventuraModel>(`${this.url}/${aventura.id}`, aventura);
   }
 
-  getAventura(): Observable<AventuraModel[]> {
-    return this.http.get<AventuraModel[]>(`${this.url}`);
+  getAventura(): Observable<any> {
+    return this.http.get<any>(`${this.url}`);
+  }
+
+  getAventuraSelected(aventura_id : any): Observable<any> {
+    return this.http.get<any>(`${this.url}/${aventura_id}`);
   }
 
   deleteAventura(aventura: AventuraModel): Observable<any> {

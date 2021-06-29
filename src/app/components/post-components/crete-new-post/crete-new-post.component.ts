@@ -53,6 +53,15 @@ export class CreteNewPostComponent implements OnInit {
     } else {
       //Usar el servicio para recoger los elementos de la aventura desde la BDD
       console.log(`Leyendo los datos de la aventura ${this.adventure_id} desde el servicio ....`);
+      this.aventuraService.getAventuraSelected(this.adventure_id)
+      .subscribe( resp => {
+        console.log(resp);
+        this.elements = resp['data'].elementos;
+        console.log(this.elements);
+        for (let element of this.elements) {
+          this.publicarElemento(element);
+        }
+      });
     }
   }
 
@@ -102,7 +111,7 @@ export class CreteNewPostComponent implements OnInit {
     } else if (element.element === 'p') {
       contenedor.insertAdjacentHTML('beforeend', `<p style="text-align: left;">${element.value}</p>`);
     } else if (element.element === 'img') {
-      contenedor.insertAdjacentHTML('beforeend', `<img src="${element.value}" class="post-image" style="1111111111max-width: 40rem;">`);
+      contenedor.insertAdjacentHTML('beforeend', `<img src="${element.value}" class="post-image" style="max-width: 40rem;">`);
     }
   }
 
