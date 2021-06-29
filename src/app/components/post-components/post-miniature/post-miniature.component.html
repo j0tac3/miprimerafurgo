@@ -1,11 +1,11 @@
 <div class="miniature-container">
-    <a  [routerLink]="'/aventuraSeleccionada'"
+    <a  [routerLink]="'/aventura'"
         [queryParams]="{'id': aventura.id}"
         class="miniature-link">
         <img [src]="aventura.headerImage" alt="" class="miniature-image">
     </a>
     <div class="info-container">            
-        <a  [routerLink]="'/aventuraSeleccionada'"
+        <a  [routerLink]="'/createPost'"
             [queryParams]="{'id': aventura.id}"
             class="miniature-link">
             <span class="miniature-title">{{ aventura.titulo }}</span>

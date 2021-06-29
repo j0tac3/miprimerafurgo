@@ -17,7 +17,6 @@ export class PostSelectedComponent implements OnInit {
   public showButtonToUp! : boolean;
 
   constructor( private route: ActivatedRoute,
-                private router: Router,
                 private aventuraService : AventuraService,
                 private elementRef : ElementRef) { }
 

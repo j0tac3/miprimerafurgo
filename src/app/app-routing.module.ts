@@ -14,7 +14,6 @@ import { AdminaventurasComponent } from './components/admin-components/adminaven
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'camperizar', component: CamperizacionComponent },
-  { path: 'aventuraSeleccionada/:id', component: PostSelectedComponent },
   { path: 'aventuras', component: PostComponent,},
       /* children : [
       { path: 'aventuras/:id', component: PostSelectedComponent },
@@ -26,6 +25,7 @@ const APP_ROUTES: Routes = [
   { path: 'administrar', component: AdministrarComponent },
   { path: 'adminArticulos', component: AdminarticulosComponent },
   { path: 'adminAventuras', component: AdminaventurasComponent },
+  { path: 'aventura/:id', component: PostSelectedComponent },
   {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 
