@@ -9,6 +9,7 @@ import { AventuraService } from 'src/app/Services/aventura.service';
 })
 export class AdminaventurasComponent implements OnInit {
   public aventuras : AventuraModel[] = [];
+  public message! : string;
 
   constructor( private aventuraService : AventuraService ) { }
 
@@ -30,8 +31,12 @@ export class AdminaventurasComponent implements OnInit {
       console.log(resp);
       this.aventuras = this.aventuras.filter(aventura => {
         aventura.id !== aventuraToDel.id;
+        this.message = `La aventura "${aventuraToDel.titulo}" ha sido eliminada.`;
       })
     })
   }
 
+  closeModel(){
+    this.message = '';  
+  }
 }

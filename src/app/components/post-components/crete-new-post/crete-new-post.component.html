@@ -61,4 +61,14 @@
     <button (click)="addElements()">
         Publicar
     </button>
+
+    <div class="modal_container"
+        [ngClass]="{'modal_visible': message}">
+        <div class="modal">
+            <button class="btn-action button_close-modal" (click)="closeModel()">
+                <img src="assets/media/icons/close-circle.svg" alt="">
+            </button>
+            <p>{{ message }}</p>
+        </div>
+    </div>
 </div>

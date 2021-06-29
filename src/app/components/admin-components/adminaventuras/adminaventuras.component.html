@@ -29,40 +29,16 @@
                     </button>
                 </td>
             </tr>
-            <!-- <tr>
-                <td>Noche de estrellas</td>
-                <td>22/06/2021</td>
-                <td><input type="checkbox" name="" id=""></td>
-                <td>
-                    <button class="btn-action">
-                        <img src="assets/media/icons/text.svg" alt="" class="img-btn" 
-                                [routerLink]="'/createPost'"
-                                [queryParams]="{'id': 2}">
-                    </button>
-                </td>
-                <td>
-                    <button class="btn-action">
-                        <img src="assets/media/icons/close-circle.svg" alt="" class="img-btn">
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <td>Escapada a la playa</td>
-                <td>24/06/2021</td>
-                <td><input type="checkbox" name="" id=""></td>
-                <td>
-                    <button class="btn-action">
-                        <img src="assets/media/icons/text.svg" alt="" class="img-btn"
-                                [routerLink]="'/createPost'"
-                                [queryParams]="{'id': 3}">
-                    </button>
-                </td>
-                <td>
-                    <button class="btn-action">
-                        <img src="assets/media/icons/close-circle.svg" alt="" class="img-btn">
-                    </button>
-                </td>
-            </tr> -->
         </tbody>
     </table>
+
+    <div class="modal_container"
+            [ngClass]="{'modal_visible': message}">
+            <div class="modal">
+                <button class="btn-action button_close-modal" (click)="closeModel()">
+                    <img src="assets/media/icons/close-circle.svg" alt="">
+                </button>
+                <p>{{ message }}</p>
+            </div>
+    </div>
 </div>

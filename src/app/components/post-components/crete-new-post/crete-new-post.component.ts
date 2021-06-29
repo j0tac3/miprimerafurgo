@@ -13,6 +13,7 @@ import { AventuraModel } from 'src/app/models/aventura.model';
 })
 export class CreteNewPostComponent implements OnInit {
   public adventure_id? : number;
+  public message! : string;
 
   public subOptionsTextVisible : boolean = false;
   public subOptionsMediaVisible : boolean = false;
@@ -223,6 +224,11 @@ export class CreteNewPostComponent implements OnInit {
     this.elementaventuraService.createAventura(this.elements)
     .subscribe( resp => {
       console.log(resp);
+      this.message = 'La aventura se ha creado correctamente.';
     }); 
+  }
+
+  closeModel(){
+    this.message = '';
   }
 }
