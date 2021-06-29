@@ -14,8 +14,8 @@ import { AdminaventurasComponent } from './components/admin-components/adminaven
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'camperizar', component: CamperizacionComponent },
+  { path: 'aventuraSeleccionada/:id', component: PostSelectedComponent },
   { path: 'aventuras', component: PostComponent,},
-  { path: 'aventuras/:id', component: PostSelectedComponent },
       /* children : [
       { path: 'aventuras/:id', component: PostSelectedComponent },
     ] }, */

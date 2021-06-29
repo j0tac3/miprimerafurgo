@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AventuraModel } from 'src/app/models/aventura.model';
+import { AventuraService } from 'src/app/Services/aventura.service';
 
 @Component({
   selector: 'app-post-list',
@@ -6,24 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post-list.component.css']
 })
 export class PostListComponent implements OnInit {
-  public posts = [
-    {
-      imageURL: 'assets/media/img/furgo_bicis.jpg',
-      title: 'Mi primera aventura',
-    },
-    {
-      imageURL: 'assets/media/img/vistas_furgo.jpg',
-      title: 'Ecapada con la Furgo',
-    },
-    {
-      imageURL: 'assets/media/img/furgo_perro.jpg',
-      title: 'Paseo por los rios',
-    }
-  ];
+  public aventuras : AventuraModel[] = [];
 
-  constructor() { }
+  constructor( private aventuraService : AventuraService) { }
 
   ngOnInit(): void {
+    this.getAventuras();
+  }
+
+  getAventuras() {
+    this.aventuraService.getAventura()
+    .subscribe( resp => {
+     this.aventuras = resp['data'];
+     console.log(this.aventuras);
+    })
   }
 
 }

@@ -1,5 +1,8 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AventuraModel } from 'src/app/models/aventura.model';
+import { ElementAventuraModel } from 'src/app/models/elementAventura.model';
+import { AventuraService } from './../../../Services/aventura.service'
 
 @Component({
   selector: 'app-post-selected',
@@ -7,33 +10,55 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./post-selected.component.css']
 })
 export class PostSelectedComponent implements OnInit {
-  public posts = [
-    {
-      imageURL: 'assets/media/img/furgo_bicis.jpg',
-      title: 'Mi primera aventura',
-    },
-    {
-      imageURL: 'assets/media/img/vistas_furgo.jpg',
-      title: 'Ecapada con la Furgo',
-    },
-    {
-      imageURL: 'assets/media/img/furgo_perro.jpg',
-      title: 'Paseo por los rios',
-    }
-  ];
-  public currentPost!: any;
+  public aventura = new AventuraModel();
+  public elements: ElementAventuraModel[] = [];
+  public adventure_id? : number;
+
   public showButtonToUp! : boolean;
 
   constructor( private route: ActivatedRoute,
-                private router: Router) { }
+                private router: Router,
+                private aventuraService : AventuraService,
+                private elementRef : ElementRef) { }
 
   ngOnInit(): void {
-    let index = this.route.snapshot.paramMap.get('id');
-    let currentIndex = index !== null ? index : '0'
-    this.currentPost = this.posts[Number.parseInt(currentIndex, 10)];
-    console.log(window.scrollX);
-    console.log(window.scrollY);
+    this.route.queryParams
+    .subscribe( params => {
+      console.log(params);
+      if (params.id){
+        this.adventure_id = params.id;
+        this.getAventura();
+      }
+    });
+
     //window.addEventListener('scroll', this.onScroll, true);
+  }
+
+  getAventura(){
+    console.log(`Leyendo los datos de la aventura ${this.adventure_id} desde el servicio ....`);
+      this.aventuraService.getAventuraSelected(this.adventure_id)
+      .subscribe( resp => {
+        console.log(resp);
+        this.aventura = resp['data'];
+        this.elements = resp['data'].elementos;
+        console.log(this.elements);
+        for (let element of this.elements) {
+          this.publicarElemento(element);
+        }
+      });
+  }
+
+  publicarElemento( element : ElementAventuraModel ) {
+    let contenedor = this.elementRef.nativeElement.querySelector('.container-elements');
+    if (element.element === 'h1') {
+      contenedor.insertAdjacentHTML('beforeend', `<h1>${element.value}</h1>`);
+    } else if (element.element === 'h2') {
+      contenedor.insertAdjacentHTML('beforeend', `<h2 style="text-align: left;">${element.value}</h2>`);
+    } else if (element.element === 'p') {
+      contenedor.insertAdjacentHTML('beforeend', `<p style="text-align: left;">${element.value}</p>`);
+    } else if (element.element === 'img') {
+      contenedor.insertAdjacentHTML('beforeend', `<img src="${element.value}" class="post-image" style="max-width: 40rem;">`);
+    }
   }
 
   ngOnDestroy(): void {

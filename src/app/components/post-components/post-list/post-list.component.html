@@ -1,8 +1,6 @@
 <div class="post-list-container">
     <h2 class="title">Aventuras</h2>
-    <app-post-miniature *ngFor="let post of posts; index as i"
-                        [imageURL]="post.imageURL"
-                        [title]="post.title"
-                        [index]=i>
+    <app-post-miniature *ngFor="let aventura of aventuras; index as i"
+                        [aventura]="aventura">
     </app-post-miniature>
 </div>

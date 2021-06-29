@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AventuraModel } from 'src/app/models/aventura.model';
 
 @Component({
   selector: 'app-post-miniature',
@@ -6,9 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./post-miniature.component.css']
 })
 export class PostMiniatureComponent implements OnInit {
-  @Input() imageURL!: string;
-  @Input() title!: string;
-  @Input() index!: number;
+  @Input() aventura! : AventuraModel;
 
   constructor() { }
 
