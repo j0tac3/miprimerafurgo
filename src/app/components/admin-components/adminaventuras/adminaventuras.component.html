@@ -3,42 +3,49 @@
         Añadir una nueva Aventura
     </a>
 
-    <table class="aventuras">
-        <thead class="aventuras__cabecera">
-            <th>Titulo</th>
-            <th>Fecha Creacion</th>
-            <th>Publicar</th>
-            <th>Editar</th>
-            <th>Eliminar</th>
-        </thead>
-        <tbody>
-            <tr *ngFor="let aventura of aventuras">
-                <td>{{ aventura.titulo }}</td>
-                <td>20/05/2021</td>
-                <td><input type="checkbox" name="" id=""></td>
-                <td>
-                    <button class="btn-action">
-                        <img src="assets/media/icons/text.svg" alt="" class="img-btn" 
-                                [routerLink]="'/createPost'"
-                                [queryParams]="{'id': aventura.id}">
-                    </button>
-                </td>
-                <td>
-                    <button class="btn-action" (click)="delAventura(aventura)">
-                        <img src="assets/media/icons/close-circle.svg" alt="">
-                    </button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="table-container">
+        <table class="aventuras">
+            <thead class="aventuras__cabecera">
+                <th>Publicar</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+                <th>Fecha Creacion</th>
+                <th>Titulo</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let aventura of aventuras">
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td>
+                        <button class="btn-action">
+                            <img src="assets/media/icons/text.svg" alt="" class="img-btn" 
+                                    [routerLink]="'/createPost'"
+                                    [queryParams]="{'id': aventura.id}">
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn-action" (click)="delAventura(aventura)">
+                            <img src="assets/media/icons/close-circle.svg" alt="">
+                        </button>
+                    </td>
+                    <td>{{ aventura.fecha_creacion | date : 'shortDate' }}</td>
+                    <td class="titulo"><div class="titulo-container">{{ aventura.titulo }}</div></td>
+                </tr>
+            </tbody>
+        </table> 
+    </div>
 
-    <div class="modal_container"
+    <div    class="modal_container"
             [ngClass]="{'modal_visible': message}">
-            <div class="modal">
-                <button class="btn-action button_close-modal" (click)="closeModel()">
-                    <img src="assets/media/icons/close-circle.svg" alt="">
-                </button>
-                <p>{{ message }}</p>
-            </div>
+        <div class="modal">
+            <button class="btn-action button_close-modal" (click)="closeModel()">
+                <img src="assets/media/icons/close-circle.svg" alt="">
+            </button>
+            <p>{{ message }}</p>
+        </div>
+    </div>
+
+    <div    class="loading"
+            [ngClass]="{ 'loading-hidden' : aventurasCargadas }">
+        <img src="assets/media/gifs/loading.gif" alt="" class="loading-img">
     </div>
 </div>

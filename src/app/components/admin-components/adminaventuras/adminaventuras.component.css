@@ -20,8 +20,25 @@
 .btn-action:hover{
     background-color: #aaaa;
 }
+.titulo{
+    white-space: nowrap;
+    text-align: left;
+}
+.titulo-container{
+    width: 20rem;
+    overflow-x: auto;
+}
+.titulo-container::-webkit-scrollbar{
+    display: none;
+}
 .img-btn{
     width: 1.5rem;
+}
+.table-container{
+    width: 100%;
+    overflow-x: auto;
+    display: flex;
+    justify-content: center;
 }
 .aventuras{
     margin-top: 1rem;
@@ -41,6 +58,9 @@
 @media screen and (max-width: 750px) {
     .aventuras{
         width: 100%;
+    }
+    .table-container{
+        justify-content: flex-start;
     }
 }
 
@@ -76,4 +96,23 @@
     right: 0;
     top: 0;
     filter: invert(1);
+}
+
+
+.loading{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .5);
+}
+.loading-hidden{
+    display: none;
+}
+.loading-img{
+    width: 20%;
 }

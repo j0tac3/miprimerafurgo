@@ -10,6 +10,7 @@ import { AventuraService } from 'src/app/Services/aventura.service';
 export class AdminaventurasComponent implements OnInit {
   public aventuras : AventuraModel[] = [];
   public message! : string;
+  public aventurasCargadas = false;
 
   constructor( private aventuraService : AventuraService ) { }
 
@@ -20,8 +21,9 @@ export class AdminaventurasComponent implements OnInit {
   getAventuras() {
     this.aventuraService.getAventura()
     .subscribe( resp => {
-     this.aventuras = resp['data'];
-     console.log(this.aventuras);
+      this.aventuras = resp['data'];
+      console.log(this.aventuras);
+      this.aventurasCargadas = true;
     })
   }
 
