@@ -42,10 +42,18 @@
                 [formGroup]="formNewElement">
             <div class="form-control">
                 <label for="" class="label">{{ elementTag }}</label>
+                <div class="text-container">{{ prevText }}</div>
+                <img [src]="imgFile" class="prevImage">
+                <!-- <textarea   name="" id="" cols="25" rows="10"
+                            formControlName="element"
+                            class="text-area"
+                            [ngClass]="{ 'subOption-hidden' : showInputElement === false }">
+                </textarea> -->
                 <input  type="text" 
-                    class="input-to-add" 
-                    formControlName="element"
-                    [ngClass]="{ 'subOption-hidden' : showInputElement === false }">
+                        class="input-to-add" 
+                        formControlName="element"
+                        [ngClass]="{ 'subOption-hidden' : showInputElement === false }"
+                        (keyup)="actualizarPreText($event)">
                 <input  type="file" 
                     class="input-to-add" 
                     formControlName="elementImage"

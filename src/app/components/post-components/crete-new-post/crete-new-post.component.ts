@@ -14,6 +14,7 @@ import { AventuraModel } from 'src/app/models/aventura.model';
 export class CreteNewPostComponent implements OnInit {
   public adventure_id? : number;
   public message! : string;
+  public prevText! : string;
 
   public subOptionsTextVisible : boolean = false;
   public subOptionsMediaVisible : boolean = false;
@@ -104,6 +105,7 @@ export class CreteNewPostComponent implements OnInit {
   }
 
   publicarElemento( element : ElementAventuraModel ) {
+    this.prevText = '';
     let contenedor = this.elementRef.nativeElement.querySelector('.container-elements');
     if (element.element === 'h1') {
       contenedor.insertAdjacentHTML('beforeend', `<h1>${element.value}</h1>`);
@@ -113,6 +115,7 @@ export class CreteNewPostComponent implements OnInit {
       contenedor.insertAdjacentHTML('beforeend', `<p style="text-align: left;">${element.value}</p>`);
     } else if (element.element === 'img') {
       contenedor.insertAdjacentHTML('beforeend', `<img src="${element.value}" class="post-image" style="max-width: 40rem;">`);
+      this.imgFile = '';
     }
   }
 
@@ -184,6 +187,8 @@ export class CreteNewPostComponent implements OnInit {
   closeInputElement() {
     let isText = this.comprobarSiElementoTexto(this.elementName);
     this.showHiddenInputs(isText);
+    this.prevText = '';
+    this.imgFile = '';
   }
 
   comprobarSiElementoTexto( elementName : string ){
@@ -230,5 +235,9 @@ export class CreteNewPostComponent implements OnInit {
 
   closeModel(){
     this.message = '';
+  }
+
+  actualizarPreText( event : any) {
+    this.prevText = event.target.value;
   }
 }
