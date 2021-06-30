@@ -1,4 +1,5 @@
 import { ElementAventuraModel } from "./elementAventura.model";
+import { UserModel } from "./user.model";
 
 export class AventuraModel {
     id? : number;
@@ -9,6 +10,7 @@ export class AventuraModel {
     user_id? : number;
     fecha_creacion? : Date;
     elementos? : ElementAventuraModel[];
+    user? : UserModel;
 
     constructor( id? : number, publicado? : boolean, user_id? : number, fecha_creacion? : Date, property? : ElementAventuraModel, headerImage? : ElementAventuraModel){
         this.id = id;

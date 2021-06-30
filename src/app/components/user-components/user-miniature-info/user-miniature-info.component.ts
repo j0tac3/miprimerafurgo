@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { UserModel } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-user-miniature-info',
@@ -6,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-miniature-info.component.css']
 })
 export class UserMiniatureInfoComponent implements OnInit {
-public userImageURL: string = 'assets/media/img/batman.jpg';
-public userName: string = 'SerJota'
+  @Input() user! : UserModel;
+  public userImageURL: string = 'assets/media/img/batman.jpg';
 
   constructor() { }
 

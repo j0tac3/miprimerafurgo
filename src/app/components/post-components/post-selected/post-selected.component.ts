@@ -2,6 +2,7 @@ import { Component, ElementRef, HostListener, Input, OnInit } from '@angular/cor
 import { ActivatedRoute, Router } from '@angular/router';
 import { AventuraModel } from 'src/app/models/aventura.model';
 import { ElementAventuraModel } from 'src/app/models/elementAventura.model';
+import { UserModel } from 'src/app/models/user.model';
 import { AventuraService } from './../../../Services/aventura.service'
 
 @Component({
@@ -11,6 +12,7 @@ import { AventuraService } from './../../../Services/aventura.service'
 })
 export class PostSelectedComponent implements OnInit {
   public aventura = new AventuraModel();
+  public user = new UserModel();
   public elements: ElementAventuraModel[] = [];
   public adventure_id? : number;
 
@@ -38,6 +40,7 @@ export class PostSelectedComponent implements OnInit {
       .subscribe( resp => {
         this.aventura = resp['data'];
         this.elements = resp['data'].elementos;
+        this.user = resp['data'].user;
         console.log(this.elements);
         for (let element of this.elements) {
           this.publicarElemento(element);
