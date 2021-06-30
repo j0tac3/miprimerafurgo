@@ -3,4 +3,8 @@
     <app-post-miniature *ngFor="let aventura of aventuras; index as i"
                         [aventura]="aventura">
     </app-post-miniature>
+    <div    class="loading"
+            [ngClass]="{ 'loading-hidden' : aventurasCargadas }">
+        <img src="assets/media/gifs/loading.gif" alt="" class="loading-img">
+    </div>
 </div>

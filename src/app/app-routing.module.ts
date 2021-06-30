@@ -26,6 +26,7 @@ const APP_ROUTES: Routes = [
   { path: 'adminArticulos', component: AdminarticulosComponent },
   { path: 'adminAventuras', component: AdminaventurasComponent },
   { path: 'aventura/:id', component: PostSelectedComponent },
+  { path: 'aventura', component: PostSelectedComponent },
   {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 

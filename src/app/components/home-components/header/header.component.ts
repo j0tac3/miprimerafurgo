@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
         if (newUrl instanceof NavigationEnd) {
         console.log(newUrl.url);
         //if (newUrl.url.includes('home') || newUrl.url === '/') {
-        if (newUrl.url.includes('aventuras/')){
+        if (newUrl.url.includes('/aventura?')){
           this.currentRoute = 'postSelected';
           } else {
             this.currentRoute = 'notPost';

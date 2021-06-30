@@ -9,6 +9,7 @@ import { AventuraService } from 'src/app/Services/aventura.service';
 })
 export class PostListComponent implements OnInit {
   public aventuras : AventuraModel[] = [];
+  public aventurasCargadas = false;
 
   constructor( private aventuraService : AventuraService) { }
 
@@ -21,6 +22,7 @@ export class PostListComponent implements OnInit {
     .subscribe( resp => {
      this.aventuras = resp['data'];
      console.log(this.aventuras);
+     this.aventurasCargadas = true;
     })
   }
 

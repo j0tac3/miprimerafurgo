@@ -16,14 +16,13 @@ export class PostSelectedComponent implements OnInit {
 
   public showButtonToUp! : boolean;
 
-  constructor( private route: ActivatedRoute,
+  constructor(  private route: ActivatedRoute,
                 private aventuraService : AventuraService,
                 private elementRef : ElementRef) { }
 
   ngOnInit(): void {
     this.route.queryParams
     .subscribe( params => {
-      console.log(params);
       if (params.id){
         this.adventure_id = params.id;
         this.getAventura();
@@ -37,7 +36,6 @@ export class PostSelectedComponent implements OnInit {
     console.log(`Leyendo los datos de la aventura ${this.adventure_id} desde el servicio ....`);
       this.aventuraService.getAventuraSelected(this.adventure_id)
       .subscribe( resp => {
-        console.log(resp);
         this.aventura = resp['data'];
         this.elements = resp['data'].elementos;
         console.log(this.elements);
@@ -48,7 +46,7 @@ export class PostSelectedComponent implements OnInit {
   }
 
   publicarElemento( element : ElementAventuraModel ) {
-    let contenedor = this.elementRef.nativeElement.querySelector('.container-elements');
+    let contenedor = this.elementRef.nativeElement.querySelector('#container-elements');
     if (element.element === 'h1') {
       contenedor.insertAdjacentHTML('beforeend', `<h1>${element.value}</h1>`);
     } else if (element.element === 'h2') {
