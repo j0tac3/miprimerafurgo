@@ -8,8 +8,12 @@
     align-items: center;
     scroll-behavior: auto;
 }
+.post-title{
+    max-width: 40rem;
+}
 .header-image{
-    max-height: 20rem;
+    max-height: 30rem;
+    max-width: 40rem;
     object-fit: cover;
     border-bottom: 2px solid #aaa;
     margin-bottom: 1rem;

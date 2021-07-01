@@ -12,7 +12,12 @@
         </a>
         <div class="miniatures">
             <app-user-miniature-info [user]="user"></app-user-miniature-info>
-            <app-post-miniature-info></app-post-miniature-info>
+            <app-post-miniature-info
+                [comments]="12"
+                [timeAgo]="aventura.creado_hace"
+                [views]="aventura.views"
+                [created_at]="aventura.fecha_creacion">
+            </app-post-miniature-info>
         </div>
     </div>
     <p class="texto-resumen">{{ aventura.resumen }}</p>

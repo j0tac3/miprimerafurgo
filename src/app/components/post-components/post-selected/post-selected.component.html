@@ -4,7 +4,12 @@
     <img [src]="aventura.headerImage" alt="" class="header-image">
     <div class="info-post">
         <app-user-miniature-info [user]="user"></app-user-miniature-info>
-        <app-post-miniature-info></app-post-miniature-info>
+        <app-post-miniature-info
+            [comments]="12"
+            [timeAgo]="aventura.creado_hace"
+            [views]="aventura.views"
+            [created_at]="aventura.fecha_creacion">
+        </app-post-miniature-info>
     </div>
     <div class="post-text" id="container-elements">
        

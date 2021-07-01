@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-post-miniature-info',
@@ -6,9 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post-miniature-info.component.css']
 })
 export class PostMiniatureInfoComponent implements OnInit {
-public comentsIcon: string = 'assets/media/icons/coments.svg';
-public viewsIcon: string = 'assets/media/icons/view.svg';
-public timeAgo: string = 'Hace 2 días';
+  @Input() views? : number;
+  @Input() timeAgo? : string;
+  @Input() comments? : number;
+  @Input() created_at? : Date;
+  
+  public comentsIcon: string = 'assets/media/icons/coments.svg';
+  public viewsIcon: string = 'assets/media/icons/view.svg';
 
   constructor() { }
 

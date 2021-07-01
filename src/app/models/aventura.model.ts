@@ -9,13 +9,12 @@ export class AventuraModel {
     publicado? : boolean;
     user_id? : number;
     fecha_creacion? : Date;
+    creado_hace? : string;
+    views? : number;
     elementos? : ElementAventuraModel[];
     user? : UserModel;
 
-    constructor( id? : number, publicado? : boolean, user_id? : number, fecha_creacion? : Date, property? : ElementAventuraModel, headerImage? : ElementAventuraModel){
-        this.id = id;
-        this.publicado = publicado;
-        this.user_id = user_id;
-        this.fecha_creacion = fecha_creacion;
+    constructor( ){
+
     }
 }
