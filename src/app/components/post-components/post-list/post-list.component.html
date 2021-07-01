@@ -3,6 +3,11 @@
     <app-post-miniature *ngFor="let aventura of aventuras; index as i"
                         [aventura]="aventura">
     </app-post-miniature>
+    <div class="clean"
+        [ngClass]="{ 'clean-hidden' : numAventuras > 0 }">
+        <h4 class="clean-title">Lo sentimos, pero en estos momentos aun estamos creando nuevas aventuras</h4>
+        <img src="assets/media/gifs/camping.gif" alt="" class="camping-gif">
+    </div>
     <div    class="loading"
             [ngClass]="{ 'loading-hidden' : aventurasCargadas }">
         <img src="assets/media/gifs/loading.gif" alt="" class="loading-img">

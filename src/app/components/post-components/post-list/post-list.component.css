@@ -33,3 +33,16 @@
 .loading-img{
     width: 10%;
 }
+.clean{
+    position: relative;
+}
+.clean-hidden{
+    display: none;
+}
+.clean-title{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+.camping-gif{
+}

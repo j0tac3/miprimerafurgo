@@ -11,6 +11,7 @@ import { AventuraService } from 'src/app/Services/aventura.service';
 export class PostListComponent implements OnInit {
   public aventuras : AventuraModel[] = [];
   public aventurasCargadas = false;
+  public numAventuras : number = 1;
 
   constructor( private aventuraService : AventuraService) { }
 
@@ -24,6 +25,7 @@ export class PostListComponent implements OnInit {
      this.aventuras = resp['data'];
      console.log(this.aventuras);
      this.aventurasCargadas = true;
+     this.numAventuras = this.aventuras.length;
     })
   }
 
