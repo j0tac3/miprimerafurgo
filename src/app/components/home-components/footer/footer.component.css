@@ -40,6 +40,9 @@
     align-items: flex-start;
     justify-content: space-evenly;
     margin: .5rem 0;
+    border-top: 1px solid #aaaa;
+    border-bottom: 1px solid #aaaa;
+    padding: 1.5rem 0;
 }
 .category-list{
     list-style: none;

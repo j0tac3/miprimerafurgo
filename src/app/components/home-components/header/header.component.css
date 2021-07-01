@@ -11,7 +11,7 @@
     transition: height 1s;
 }
 .header-container-hidden{
-    height: 0;
+    height: 5rem;
 }
 /* .header-image{
     width: 100%;

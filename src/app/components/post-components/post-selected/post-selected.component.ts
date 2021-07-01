@@ -15,6 +15,7 @@ export class PostSelectedComponent implements OnInit {
   public user = new UserModel();
   public elements: ElementAventuraModel[] = [];
   public adventure_id? : number;
+  public aventurasCargadas = false;
 
   public showButtonToUp! : boolean;
 
@@ -45,7 +46,8 @@ export class PostSelectedComponent implements OnInit {
           if (element.value !== this.aventura.titulo && element.value !== this.aventura.headerImage)
             this.publicarElemento(element);
         }
-      });
+        this.aventurasCargadas = true;
+    });
   }
 
   publicarElemento( element : ElementAventuraModel ) {

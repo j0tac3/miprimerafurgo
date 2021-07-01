@@ -17,4 +17,9 @@
     <button class="toUpButton" (click)="toUp()">
            <!--  [hidden]="!showButtonToUp">-->
     </button>
+
+    <div    class="loading"
+            [ngClass]="{ 'loading-hidden' : aventurasCargadas }">
+        <img src="assets/media/gifs/loading.gif" alt="" class="loading-img">
+    </div>
 </div>

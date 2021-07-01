@@ -18,12 +18,14 @@
     border-bottom: 2px solid #aaa;
     margin-bottom: 1rem;
 }
-.info-post, .post-text{
+.post-text{
     width: 50%;
     max-width: 40rem;
 
 }
 .info-post{
+    width: 95%;
+    max-width: 40rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -70,7 +72,27 @@
 }
 
 @media screen and (max-width: 750px) {
-    .info-post, .post-text{
+    .post-text{
         width: 85%;
     }
+}
+
+
+.loading{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .5);
+}
+.loading-hidden{
+    display: none;
+}
+.loading-img{
+    width: 20%;
+    max-width: 5rem;
 }
