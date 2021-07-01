@@ -1,13 +1,13 @@
 <div    class="post-selected-container">
         <!-- (scroll)="onScroll($event)"> -->
-    <!-- <img [src]="aventura.headerImage" alt="" class="header-image"> -->
-    <!-- <h1 class="post-title"> {{ aventura.titulo }} </h1> -->
-    <div class="post-text" id="container-elements">
-       
-    </div>
+    <h1 class="post-title"> {{ aventura.titulo }} </h1>
+    <img [src]="aventura.headerImage" alt="" class="header-image">
     <div class="info-post">
         <app-user-miniature-info [user]="user"></app-user-miniature-info>
         <app-post-miniature-info></app-post-miniature-info>
+    </div>
+    <div class="post-text" id="container-elements">
+       
     </div>
     <button class="toUpButton" (click)="toUp()">
            <!--  [hidden]="!showButtonToUp">-->

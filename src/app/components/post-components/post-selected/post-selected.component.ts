@@ -30,7 +30,6 @@ export class PostSelectedComponent implements OnInit {
         this.getAventura();
       }
     });
-
     //window.addEventListener('scroll', this.onScroll, true);
   }
 
@@ -43,7 +42,8 @@ export class PostSelectedComponent implements OnInit {
         this.user = resp['data'].user;
         console.log(this.elements);
         for (let element of this.elements) {
-          this.publicarElemento(element);
+          if (element.value !== this.aventura.titulo && element.value !== this.aventura.headerImage)
+            this.publicarElemento(element);
         }
       });
   }

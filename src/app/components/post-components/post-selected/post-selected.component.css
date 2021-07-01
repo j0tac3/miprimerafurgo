@@ -23,9 +23,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding-bottom: 1rem;
     border-bottom: 1px solid;
-    border-top: 1px solid;
     margin-bottom: 1rem;
 }
 .post-title{

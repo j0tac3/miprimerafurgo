@@ -5,13 +5,13 @@
         <img [src]="aventura.headerImage" alt="" class="miniature-image">
     </a>
     <div class="info-container">            
-        <a  [routerLink]="'/createPost'"
+        <a  [routerLink]="'/aventura'"
             [queryParams]="{'id': aventura.id}"
             class="miniature-link">
             <span class="miniature-title">{{ aventura.titulo }}</span>
         </a>
         <div class="miniatures">
-            <app-user-miniature-info></app-user-miniature-info>
+            <app-user-miniature-info [user]="user"></app-user-miniature-info>
             <app-post-miniature-info></app-post-miniature-info>
         </div>
     </div>

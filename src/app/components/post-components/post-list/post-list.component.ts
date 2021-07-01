@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AventuraModel } from 'src/app/models/aventura.model';
+import { UserModel } from 'src/app/models/user.model';
 import { AventuraService } from 'src/app/Services/aventura.service';
 
 @Component({
