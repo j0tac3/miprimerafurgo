@@ -184,3 +184,26 @@
     overflow-wrap: break-word;
     overflow-y: auto;
 }
+
+/*********** Nuevo menu opciones **********/
+.menu-edition{
+    list-style: none;
+    display: grid;
+    justify-content: center;
+    margin: 0;
+    position: fixed;
+    left: 0;
+    top: 12rem;
+    background-color: #ffff;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    border-top: 1px solid #aaa;
+    padding: .5rem .5rem .5rem 0;
+}
+.btn-option{
+    background-color: transparent;
+    border: none;
+    width: 3rem;
+}
