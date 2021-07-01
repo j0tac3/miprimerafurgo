@@ -19,7 +19,7 @@ export class PostListComponent implements OnInit {
   }
 
   getAventuras() {
-    this.aventuraService.getAventura()
+    this.aventuraService.getAventurasPublicadas()
     .subscribe( resp => {
      this.aventuras = resp['data'];
      console.log(this.aventuras);

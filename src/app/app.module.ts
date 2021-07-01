@@ -29,6 +29,7 @@ import { CreteNewPostComponent } from './components/post-components/crete-new-po
 import { AdministrarComponent } from './pages/administrar/administrar.component';
 import { AdminarticulosComponent } from './components/admin-components/adminarticulos/adminarticulos.component';
 import { AdminaventurasComponent } from './components/admin-components/adminaventuras/adminaventuras.component';
+import { LoginComponent } from './components/user-components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { AdminaventurasComponent } from './components/admin-components/adminaven
     CreteNewPostComponent,
     AdministrarComponent,
     AdminarticulosComponent,
-    AdminaventurasComponent
+    AdminaventurasComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

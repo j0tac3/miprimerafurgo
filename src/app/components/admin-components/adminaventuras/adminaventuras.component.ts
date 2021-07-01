@@ -38,6 +38,18 @@ export class AdminaventurasComponent implements OnInit {
     })
   }
 
+  publicarAventura( event : any, aventura : AventuraModel){
+    console.log(event.target.checked);
+    let publicado = event.target.checked;
+    let newAventura = new AventuraModel();
+    newAventura.publicado = publicado;
+    newAventura.id = aventura.id;
+    this.aventuraService.publicarAventura(newAventura)
+    .subscribe( resp => {
+      console.log(resp);
+    })
+  }
+
   closeModel(){
     this.message = '';  
   }

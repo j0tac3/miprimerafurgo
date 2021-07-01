@@ -22,6 +22,14 @@ export class AventuraService {
     return this.http.put<AventuraModel>(`${this.url}/${aventura.id}`, aventura);
   }
 
+  publicarAventura( aventura : AventuraModel ): Observable<AventuraModel> {
+    return this.http.put<AventuraModel>(`https://mi-primera-furgo-api.herokuapp.com/api/publicarAventura/${aventura.id}`, aventura);
+  }
+
+  getAventurasPublicadas(): Observable<any> {
+    return this.http.get<any>(`https://mi-primera-furgo-api.herokuapp.com/api/aventurasPublicadas`);
+  }
+
   getAventura(): Observable<any> {
     return this.http.get<any>(`${this.url}`);
   }
