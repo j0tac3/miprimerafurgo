@@ -14,7 +14,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let aventura of aventuras">
-                    <td><input type="checkbox" name="" id="" [value]="aventura.publicado" (change)="publicarAventura($event, aventura)"></td>
+                    <td><input type="checkbox" name="" id="" [checked]="aventura.publicado" (change)="publicarAventura($event, aventura)"></td>
                     <td>
                         <button class="btn-action">
                             <img src="assets/media/icons/text.svg" alt="" class="img-btn" 
