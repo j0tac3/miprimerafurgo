@@ -16,8 +16,8 @@
     border: 1px dotted;
 }
 .options-container{
-    position: sticky;
-    top: 5rem;
+    position: fixed;
+    top: 11rem;
     z-index: 900;
     width: 100%;
     margin: 0 auto;
@@ -48,7 +48,6 @@
     box-shadow: 0px 0px 0px 0px;
 }
 .container-elements{
-    position: absolute;
 }
 
 .subOption{
