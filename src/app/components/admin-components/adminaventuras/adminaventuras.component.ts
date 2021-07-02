@@ -28,14 +28,18 @@ export class AdminaventurasComponent implements OnInit {
   }
 
   delAventura( aventuraToDel : AventuraModel ){
+    let aventurasBeforeDel = this.aventuras.filter(aventura => this.checkAventura(aventura, aventuraToDel));
+    this.aventuras = aventurasBeforeDel;
     this.aventuraService.deleteAventura(aventuraToDel)
     .subscribe( resp => {
-      console.log(resp);
-      this.aventuras = this.aventuras.filter(aventura => {
-        aventura.id !== aventuraToDel.id;
-        this.message = `La aventura "${aventuraToDel.titulo}" ha sido eliminada.`;
-      })
+      let aventurasBeforeDel = this.aventuras.filter(aventura => this.checkAventura(aventura, aventuraToDel));
+      this.aventuras = aventurasBeforeDel;
+      this.message = `La aventura "${aventuraToDel.titulo}" ha sido eliminada.`;
     })
+  }
+
+  checkAventura(aventura : AventuraModel, aventuraToDel : AventuraModel){
+    return aventura.id !== aventuraToDel.id;
   }
 
   publicarAventura( event : any, aventura : AventuraModel){

@@ -93,8 +93,8 @@
             </div>
         </form>
     </div>
-    <button (click)="addElements()" class="notVisible" [ngClass]="{'visible' : elementos}">
-        Publicar
+    <button (click)="addElements()" class="btn-publicar notVisible" [ngClass]="{'visible' : elementos}">
+        Guardar
     </button>
 
     <div class="modal_container"
@@ -103,6 +103,19 @@
             <p>{{ message }}</p>
             <button class="btn-action button_close-modal" (click)="closeModel()">
                 Aceptar
+            </button>
+        </div>
+    </div>
+
+    <div class="modal_container"
+        [ngClass]="{'modal_visible': messageconfirm}">
+        <div class="modal">
+            <p>{{ messageconfirm }}</p>
+            <button class="btn-action button_close-modal" (click)="publicarAventura()">
+                Publicar
+            </button>
+            <button class="btn-action button_close-modal" (click)="almacenarElementos()">
+                Solo Guardar
             </button>
         </div>
     </div>

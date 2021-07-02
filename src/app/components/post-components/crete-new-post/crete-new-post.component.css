@@ -201,7 +201,7 @@
 .btn-option{
     background-color: transparent;
     border: none;
-    width: 2rem;
+    width: 2.5rem;
     padding: .5rem;
 }
 .btn-option:hover{
@@ -219,4 +219,12 @@
     background-color: darkgrey;
     opacity: .5;
     cursor: default;
+}
+.btn-publicar{
+    background-color: dodgerblue;
+    color: #fff;
+    border: none;
+    padding: .5rem 1rem;
+    box-shadow: 3px 3px 5px 0px #aaaa;
+    border-radius: 3px;
 }

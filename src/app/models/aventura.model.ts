@@ -15,6 +15,6 @@ export class AventuraModel {
     user? : UserModel;
 
     constructor( ){
-
+        this.publicado = false;
     }
 }

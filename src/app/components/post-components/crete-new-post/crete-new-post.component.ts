@@ -12,8 +12,10 @@ import { AventuraModel } from 'src/app/models/aventura.model';
   styleUrls: ['./crete-new-post.component.css']
 })
 export class CreteNewPostComponent implements OnInit {
+  public aventura = new AventuraModel;
   public adventure_id? : number;
   public message! : string;
+  public messageconfirm! : string;
   public prevText! : string;
 
   public subOptionsTextVisible : boolean = false;
@@ -70,6 +72,18 @@ export class CreteNewPostComponent implements OnInit {
   }
 
   addElements() {
+    this.messageconfirm = "Quieres publicar la Aventura?"
+  }
+
+  publicarAventura(){
+    this.aventura.publicado = true;
+    this.almacenarElementos();
+    this.messageconfirm = "";
+  }
+
+  almacenarElementos(){
+    this.messageconfirm = "";
+    this.message = "";
     if (this.checkIfNewAdventure()){
       //LLamar al servicio para que cree una nueva aventura en la BDD
       console.log('Creando una nueva Aventura ...')
@@ -222,8 +236,7 @@ export class CreteNewPostComponent implements OnInit {
 
   createAventura() {
     if (this.elements.length > 0) {
-      let aventura = new AventuraModel();
-      aventura.publicado = false;
+      let aventura = this.aventura;
       aventura.user_id = 1;
       this.aventuraService.createAventura(aventura)
       .subscribe( resp => {
@@ -250,6 +263,7 @@ export class CreteNewPostComponent implements OnInit {
 
   closeModel(){
     this.message = '';
+    this.messageconfirm = '';
   }
 
   actualizarPreText( event : any) {
