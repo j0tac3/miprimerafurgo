@@ -24,10 +24,12 @@ export class CreteNewPostComponent implements OnInit {
   public formNewElement!: FormGroup;
   public elementName!: string;
   public elementTag!: string;
+  public activarBtnH1 = true;
 
   public imgFile! : string;
   public imageName! : string;
   public elements: ElementAventuraModel[] = [];
+  public elementos! : boolean;
 
   constructor(  private elementRef : ElementRef,
                 private fb: FormBuilder,
@@ -109,6 +111,7 @@ export class CreteNewPostComponent implements OnInit {
     let contenedor = this.elementRef.nativeElement.querySelector('.container-elements');
     if (element.element === 'h1') {
       contenedor.insertAdjacentHTML('beforeend', `<h1>${element.value}</h1>`);
+      this.activarBtnH1 = false;
     } else if (element.element === 'h2') {
       contenedor.insertAdjacentHTML('beforeend', `<h2 style="text-align: left;">${element.value}</h2>`);
     } else if (element.element === 'p') {
@@ -123,6 +126,18 @@ export class CreteNewPostComponent implements OnInit {
     this.elements.push(element);
     console.log(this.elements);
     this.publicarElemento(element);
+    this.comporbarSiPublicar();
+  }
+
+  comporbarSiPublicar(){
+    if (this.elements.length > 0){
+      let header = this.elements.filter(element => element.element === 'h1');
+      if (header.length > 0)
+        this.elementos = true;
+      else
+        this.elementos = false;
+    }
+    console.log(this.elementos);
   }
 
   showInputElemenToAdd( tag : string ) {
