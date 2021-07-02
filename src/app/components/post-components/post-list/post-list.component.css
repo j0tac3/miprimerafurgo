@@ -17,20 +17,21 @@
 }
 
 .loading{
-    position: fixed;
+    position: absolute;
     left: 0;
     top: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     background-color: rgba(0, 0, 0, .5);
 }
 .loading-hidden{
     display: none;
 }
 .loading-img{
+    margin-top: 10rem;
     width: 10%;
 }
 .clean{
