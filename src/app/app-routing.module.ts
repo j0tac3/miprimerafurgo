@@ -10,7 +10,8 @@ import { PostComponent } from './pages/post/post.component';
 import { AdministrarComponent } from './pages/administrar/administrar.component';
 import { AdminarticulosComponent } from './components/admin-components/adminarticulos/adminarticulos.component';
 import { AdminaventurasComponent } from './components/admin-components/adminaventuras/adminaventuras.component';
-
+import { ADMINAVENTURAS_ROUTERS } from './components/admin-components/adminaventuras/adminaventuras.routes';
+ 
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'camperizar', component: CamperizacionComponent },
@@ -24,7 +25,9 @@ const APP_ROUTES: Routes = [
   { path: 'createPost', component: CreteNewPostComponent },
   { path: 'administrar', component: AdministrarComponent },
   { path: 'adminArticulos', component: AdminarticulosComponent },
-  { path: 'adminAventuras', component: AdminaventurasComponent },
+  { path: 'adminAventuras', component: AdminaventurasComponent,
+    children: ADMINAVENTURAS_ROUTERS,
+  },
   { path: 'aventura/:id', component: PostSelectedComponent },
   { path: 'aventura', component: PostSelectedComponent },
   {path: '**', pathMatch: 'full', redirectTo: 'home'}
