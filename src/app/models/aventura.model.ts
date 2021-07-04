@@ -3,8 +3,8 @@ import { UserModel } from "./user.model";
 
 export class AventuraModel {
     id? : number;
-    titulo? : ElementAventuraModel;
-    headerImage? : ElementAventuraModel;
+    titulo? : string;
+    headerImage? : string;
     resumen? : ElementAventuraModel;
     publicado? : boolean;
     user_id? : number;

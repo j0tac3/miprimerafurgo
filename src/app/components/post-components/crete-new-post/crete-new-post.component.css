@@ -12,6 +12,9 @@
     animation: show-container 1s;
     background-color: darkgrey;
 }
+.hidden-post-container{
+    transform: translateY(100%);
+}
 @keyframes show-container {
     from{
         transform: translatey(100%);
@@ -30,16 +33,15 @@
     position: fixed;
     top: 11rem;
     z-index: 900;
-    width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: flex-start;
     left: 0;
-    animation: show-options 1.5s;
+    animation: show-options 1.8s;
 }
 @keyframes show-options {
     from{
-        transform: translatex(-100%);
+        transform: translatex(-30rem);
     }
     to{
         transform: translateX(0);
@@ -194,6 +196,14 @@
     border: none;
     margin: .5rem 0 .5rem 0;
     padding: .5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 10rem;
+    box-shadow: 3px 3px 15px -5px #ffff;
+}
+.img-btn{
+    width: 1.5rem;
 }
 .prevImage{
     max-width: 20rem;
@@ -247,7 +257,20 @@
     background-color: dodgerblue;
     color: #fff;
     border: none;
-    padding: .5rem 1rem;
+    padding: .5rem 2rem;
     box-shadow: 3px 3px 5px 0px #aaaa;
     border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttons{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.close-view{
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
 }

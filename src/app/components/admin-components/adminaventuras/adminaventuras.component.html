@@ -1,6 +1,11 @@
 <div style="position: relative;overflow: hidden;">
+    <!-- <router-outlet></router-outlet> -->
+    <app-crete-new-post *ngIf="showAddAventura" (addAvntura)="addAventura($event)" 
+                        [currentAventura]="currentAventura"
+                        (cerrarVista)="cerrarVista()">
+    </app-crete-new-post>
     <div class="adminaventura-container">
-        <a class="btn-new-aventura" [routerLink]="'createAventura'"> 
+        <a class="btn-new-aventura" (click)="showCreateAventura()"> 
             Añadir una nueva Aventura
         </a>
 
@@ -19,8 +24,7 @@
                         <td>
                             <button class="btn-action">
                                 <img src="assets/media/icons/text.svg" alt="" class="img-btn" 
-                                        [routerLink]="'/createPost'"
-                                        [queryParams]="{'id': aventura.id}">
+                                        (click)="editarAventura(aventura)">
                             </button>
                         </td>
                         <td>
@@ -50,5 +54,4 @@
             <img src="assets/media/gifs/loading.gif" alt="" class="loading-img">
         </div>
     </div>
-    <router-outlet></router-outlet>
 </div>

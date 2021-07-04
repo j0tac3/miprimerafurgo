@@ -9,8 +9,10 @@ import { AventuraService } from 'src/app/Services/aventura.service';
 })
 export class AdminaventurasComponent implements OnInit {
   public aventuras : AventuraModel[] = [];
+  public currentAventura! : AventuraModel;
   public message! : string;
   public aventurasCargadas = false;
+  public showAddAventura = false;
 
   constructor( private aventuraService : AventuraService ) { }
 
@@ -42,6 +44,11 @@ export class AdminaventurasComponent implements OnInit {
     return aventura.id !== aventuraToDel.id;
   }
 
+  editarAventura( aventura : AventuraModel){
+    this.currentAventura = aventura;
+    this.showAddAventura = true;
+  }
+
   publicarAventura( event : any, aventura : AventuraModel){
     console.log(event.target.checked);
     let publicado = event.target.checked;
@@ -52,6 +59,20 @@ export class AdminaventurasComponent implements OnInit {
     .subscribe( resp => {
       console.log(resp);
     })
+  }
+
+  addAventura( aventura : AventuraModel){
+    this.aventuras.push(aventura);
+    this.showAddAventura = false;
+  }
+
+  showCreateAventura(){
+    this.currentAventura = new AventuraModel();
+    this.showAddAventura = true;
+  }
+
+  cerrarVista(){
+    this.showAddAventura = false;
   }
 
   closeModel(){

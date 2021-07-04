@@ -1,122 +1,105 @@
-<div class="post-container">
-    <!-- <div class="header-image-container">
-    </div> -->
-    <aside class="options-container">
-        <ul class="menu-edition">
-            <li>
-                <button class="btn-option" (click)="showInputElemenToAdd('h1')" [disabled]="!activarBtnH1">
-                    <img src="assets/media/icons/menu_edition/title.svg" alt="Titulo">
-                </button>
-            </li>
-            <li>
-                <button class="btn-option" (click)="showInputElemenToAdd('h2')">
-                    <img src="assets/media/icons/menu_edition/subtitle.svg" alt="Subtitulo">
-                </button>
-            </li>
-            <li>
-                <button class="btn-option" (click)="showInputElemenToAdd('p')">
-                    <img src="assets/media/icons/menu_edition/text.svg" alt="Texto">
-                </button>
-            </li>
-            <li>
-                <button class="btn-option" (click)="showInputElemenToAdd('ul')">
-                    <img src="assets/media/icons/menu_edition/list.svg" alt="Lista">
-                </button>
-            </li>
-            <li>
-                <button class="btn-option" (click)="showInputElemenToAdd('img')">
-                    <img src="assets/media/icons/menu_edition/image.svg" alt="Imagen">
-                </button>
-            </li>
-        </ul>
-        <!-- <ul class="option-list">
-            <li class="option-item">
-                <button class="option"
-                        (click)="showSuboption('texto')">Texto
-                </button>
-                <div    class="subOption-container"
-                        [ngClass]="{ 'subOption-hidden' : subOptionsTextVisible === false }">
-                    <button class="option subOption" (click)="showInputElemenToAdd('h1')">Titulo</button>
-                    <button class="option subOption" (click)="showInputElemenToAdd('h2')">Subtitulo</button>
-                    <button class="option subOption" (click)="showInputElemenToAdd('ul')">Lista</button>
-                    <button class="option subOption" (click)="showInputElemenToAdd('p')">Parrafo</button>
-                </div>
-            </li>
-            <li class="option-item">
-                <button class="option"
-                        (click)="showSuboption('media')">Media
-                </button>
-                <div    class="subOption-container"
-                        [ngClass]="{ 'subOption-hidden' : subOptionsMediaVisible === false }">
-                    <button class="option subOption" (click)="showInputElemenToAdd('img')">Imagen</button>
-                    <button class="option subOption" (click)="showInputElemenToAdd('galery')">Galeria</button>
-                </div>
-            </li>
-            <li class="option-item">
-                <button class="option">Video</button>
-            </li>
-        </ul> -->
-    </aside>
-
-    <div class="container-elements" style="width: 90%;">
-
-    </div>
-
-    <div    class="element-to-add-container"
-            [ngClass]="{ 'subOption-hidden' : showInputElement === false && showInputElementImage === false}">
-        <form   action="" 
-                class="form-element"
-                [formGroup]="formNewElement">
-            <div class="form-control">
-                <label for="" class="label">{{ elementTag }}</label>
-                <div class="text-container">{{ prevText }}</div>
-                <img [src]="imgFile" class="prevImage">
-                <!-- <textarea   name="" id="" cols="25" rows="10"
+<div>
+    <div class="post-container">
+        <img class="img-thumbnail" src="assets/media/icons/close.svg" alt="" class="img-btn close-view" (click)="onCerrarVista()">
+        <!-- <div class="header-image-container">
+        </div> -->
+        <aside class="options-container">
+            <ul class="menu-edition">
+                <li>
+                    <button class="btn-option" (click)="showInputElemenToAdd('h1')" [disabled]="!activarBtnH1">
+                        <img src="assets/media/icons/menu_edition/title.svg" alt="Titulo">
+                    </button>
+                </li>
+                <li>
+                    <button class="btn-option" (click)="showInputElemenToAdd('h2')">
+                        <img src="assets/media/icons/menu_edition/subtitle.svg" alt="Subtitulo">
+                    </button>
+                </li>
+                <li>
+                    <button class="btn-option" (click)="showInputElemenToAdd('p')">
+                        <img src="assets/media/icons/menu_edition/text.svg" alt="Texto">
+                    </button>
+                </li>
+                <li>
+                    <button class="btn-option" (click)="showInputElemenToAdd('ul')">
+                        <img src="assets/media/icons/menu_edition/list.svg" alt="Lista">
+                    </button>
+                </li>
+                <li>
+                    <button class="btn-option" (click)="showInputElemenToAdd('img')">
+                        <img src="assets/media/icons/menu_edition/image.svg" alt="Imagen">
+                    </button>
+                </li>
+            </ul>
+        </aside>
+    
+        <div class="container-elements" style="width: 90%;">
+    
+        </div>
+    
+        <div    class="element-to-add-container"
+                [ngClass]="{ 'subOption-hidden' : showInputElement === false && showInputElementImage === false}">
+            <form   action="" 
+                    class="form-element"
+                    [formGroup]="formNewElement">
+                <div class="form-control">
+                    <label for="" class="label">{{ elementTag }}</label>
+                    <div class="text-container">{{ prevText }}</div>
+                    <img [src]="imgFile" class="prevImage">
+                    <!-- <textarea   name="" id="" cols="25" rows="10"
+                                formControlName="element"
+                                class="text-area"
+                                [ngClass]="{ 'subOption-hidden' : showInputElement === false }">
+                    </textarea> -->
+                    <input  type="text" 
+                            class="input-to-add" 
                             formControlName="element"
-                            class="text-area"
-                            [ngClass]="{ 'subOption-hidden' : showInputElement === false }">
-                </textarea> -->
-                <input  type="text" 
+                            [ngClass]="{ 'subOption-hidden' : showInputElement === false }"
+                            (keyup)="actualizarPreText($event)">
+                    <input  type="file" 
                         class="input-to-add" 
-                        formControlName="element"
-                        [ngClass]="{ 'subOption-hidden' : showInputElement === false }"
-                        (keyup)="actualizarPreText($event)">
-                <input  type="file" 
-                    class="input-to-add" 
-                    formControlName="elementImage"
-                    [ngClass]="{ 'subOption-hidden' : showInputElementImage === false }"
-                    (change)="onImageChange($event)">
-            </div>
-            <div class="buttons-container">
-                <button class="btn-element btn-add" (click)="guardarElemento()">Guardar</button>
-                <button class="btn-element btn-cancel" (click)="closeInputElement()">Cancelar</button>
-            </div>
-        </form>
-    </div>
-    <button (click)="addElements()" class="btn-publicar notVisible" [ngClass]="{'visible' : elementos}">
-        Guardar
-    </button>
-
-    <div class="modal_container"
-        [ngClass]="{'modal_visible': message}">
-        <div class="modal">
-            <p>{{ message }}</p>
-            <button class="btn-action button_close-modal" (click)="closeModel()">
-                Aceptar
+                        formControlName="elementImage"
+                        [ngClass]="{ 'subOption-hidden' : showInputElementImage === false }"
+                        (change)="onImageChange($event)">
+                </div>
+                <div class="buttons-container">
+                    <button class="btn-element btn-add" (click)="guardarElemento()">Guardar</button>
+                    <button class="btn-element btn-cancel" (click)="closeInputElement()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+        <div class="buttons" *ngIf="checkIfElements()" >
+            <button (click)="almacenarElementos()" class="btn-action button_close-modal">
+                <span>Guardar</span>
+                <img class="img-thumbnail" src="assets/media/icons/save.svg" alt="" class="img-btn">
+            </button>
+            <button class="btn-action button_close-modal" (click)="onCerrarVista()">
+                <span>Cancelar</span>
+                <img class="img-thumbnail" src="assets/media/icons/close.svg" alt="" class="img-btn">
             </button>
         </div>
-    </div>
-
-    <div class="modal_container"
-        [ngClass]="{'modal_visible': messageconfirm}">
-        <div class="modal">
-            <p>{{ messageconfirm }}</p>
-            <button class="btn-action button_close-modal" (click)="publicarAventura()">
-                Publicar
-            </button>
-            <button class="btn-action button_close-modal" (click)="almacenarElementos()">
-                Solo Guardar
-            </button>
+    
+        <div class="modal_container"
+            [ngClass]="{'modal_visible': message}">
+            <div class="modal">
+                <p>{{ message }}</p>
+                <button class="btn-action button_close-modal" (click)="closeModel()">
+                    Aceptar
+                </button>
+            </div>
+        </div>
+    
+        <div class="modal_container"
+            [ngClass]="{'modal_visible': messageconfirm}">
+            <div class="modal">
+                <p>{{ messageconfirm }}</p>
+                <button class="btn-action button_close-modal" (click)="publicarAventura()">
+                    Publicar
+                </button>
+                <button class="btn-action button_close-modal" (click)="almacenarElementos()">
+                    Solo Guardar
+                </button>
+            </div>
         </div>
     </div>
 </div>

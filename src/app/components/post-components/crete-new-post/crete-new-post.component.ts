@@ -1,10 +1,12 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ElementAventuraModel } from 'src/app/models/elementAventura.model';
 import { AventuraService } from './../../../Services/aventura.service'
 import { ElementsaventuraService } from './../../../Services/elementsaventura.service'
 import { AventuraModel } from 'src/app/models/aventura.model';
+import { Location } from '@angular/common'
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-crete-new-post',
@@ -12,11 +14,16 @@ import { AventuraModel } from 'src/app/models/aventura.model';
   styleUrls: ['./crete-new-post.component.css']
 })
 export class CreteNewPostComponent implements OnInit {
+  @Output() addAvntura = new EventEmitter<AventuraModel>();
+  @Output() cerrarVista = new EventEmitter();
+  @Input() currentAventura! : AventuraModel;
+
   public aventura = new AventuraModel;
   public adventure_id? : number;
   public message! : string;
   public messageconfirm! : string;
   public prevText! : string;
+  public showContainer : boolean = true;
 
   public subOptionsTextVisible : boolean = false;
   public subOptionsMediaVisible : boolean = false;
@@ -37,16 +44,17 @@ export class CreteNewPostComponent implements OnInit {
                 private fb: FormBuilder,
                 private route : ActivatedRoute,
                 private aventuraService : AventuraService,
-                private elementaventuraService : ElementsaventuraService ) { }
+                private elementaventuraService : ElementsaventuraService,
+                private location: Location ) { }
 
   ngOnInit(): void {
-     this.route.queryParams
+  /*    this.route.queryParams
     .subscribe( params => {
       console.log(params);
       if (params.id){
         this.adventure_id = params.id;
       }
-    });
+    }); */
 
     this.createOrEditAdventura();
     this.formInit();
@@ -56,10 +64,11 @@ export class CreteNewPostComponent implements OnInit {
     if (this.checkIfNewAdventure()){
       //Crear un nuevo array para guardar los elementos de la nueva aventura
       console.log('Se va a crear una nueva aventura.');
+      this.currentAventura = new AventuraModel();
     } else {
       //Usar el servicio para recoger los elementos de la aventura desde la BDD
-      console.log(`Leyendo los datos de la aventura ${this.adventure_id} desde el servicio ....`);
-      this.aventuraService.getAventuraSelected(this.adventure_id)
+      console.log(`Leyendo los datos de la aventura ${this.currentAventura.id} desde el servicio ....`);
+      this.aventuraService.getAventuraSelected(this.currentAventura.id)
       .subscribe( resp => {
         console.log(resp);
         this.elements = resp['data'].elementos;
@@ -92,13 +101,11 @@ export class CreteNewPostComponent implements OnInit {
       //LLamar al servicio para que edite la aventura en la BDD
       console.log(`Editando la aventura ${this.adventure_id} ...`)
     }
-    /* for (const element of this.elements) {
-      this.publicarElemento(element);
-    } */
   }
 
   checkIfNewAdventure(){
-    return (this.adventure_id === undefined || this.adventure_id === null);
+    //return (this.adventure_id === undefined || this.adventure_id === null);
+    return (this.currentAventura.id === undefined || this.currentAventura.id === null);
   }
 
   formInit(){
@@ -240,10 +247,11 @@ export class CreteNewPostComponent implements OnInit {
       aventura.user_id = 1;
       this.aventuraService.createAventura(aventura)
       .subscribe( resp => {
-        console.log(resp['data']);
+        this.aventura = resp['data'];
+        this.aventura.titulo = this.elements[0].value;
         aventura = resp['data'];
         console.log(aventura);
-        this.createElements(aventura);
+        this.createElements(this.aventura);
       });
     }
   }
@@ -258,6 +266,8 @@ export class CreteNewPostComponent implements OnInit {
     .subscribe( resp => {
       console.log(resp);
       this.message = 'La aventura se ha creado correctamente.';
+      this.aventura.elementos = this.elements;
+      this.onAddAventura();
     }); 
   }
 
@@ -268,5 +278,21 @@ export class CreteNewPostComponent implements OnInit {
 
   actualizarPreText( event : any) {
     this.prevText = event.target.value;
+  }
+
+  checkIfElements(){
+    return this.elements.length > 0;
+  }
+
+  cerrarVentana(){
+    this.location.back();
+  }
+
+  onAddAventura() {
+    this.addAvntura.emit(this.aventura);
+  }
+
+  onCerrarVista(){
+    this.cerrarVista.emit();
   }
 }
