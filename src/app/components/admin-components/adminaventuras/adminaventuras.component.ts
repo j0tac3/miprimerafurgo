@@ -13,6 +13,7 @@ export class AdminaventurasComponent implements OnInit {
   public message! : string;
   public aventurasCargadas = false;
   public showAddAventura = false;
+  public ocultarVentanaTabla = false;
 
   constructor( private aventuraService : AventuraService ) { }
 
@@ -77,5 +78,14 @@ export class AdminaventurasComponent implements OnInit {
 
   closeModel(){
     this.message = '';  
+  }
+
+  ocultarVentana(){
+    console.log('ocultando ventana');
+    this.ocultarVentanaTabla = true;
+  }
+
+  ocultarVentanaActivo(){
+    return this.ocultarVentanaTabla;
   }
 }

@@ -14,6 +14,7 @@ import { EventEmitter } from '@angular/core';
   styleUrls: ['./crete-new-post.component.css']
 })
 export class CreteNewPostComponent implements OnInit {
+  @Output() componentCargado = new EventEmitter();
   @Output() addAvntura = new EventEmitter<AventuraModel>();
   @Output() cerrarVista = new EventEmitter();
   @Input() currentAventura! : AventuraModel;
@@ -58,6 +59,16 @@ export class CreteNewPostComponent implements OnInit {
 
     this.createOrEditAdventura();
     this.formInit();
+  }
+
+  ngAfterViewInit(): void {
+    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+    //Add 'implements AfterViewInit' to the class.
+    this.onComponenteCargado();
+  }
+
+  onComponenteCargado(){
+    this.componentCargado.emit();
   }
 
   createOrEditAdventura(){

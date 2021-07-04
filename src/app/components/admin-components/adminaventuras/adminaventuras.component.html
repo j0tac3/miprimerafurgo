@@ -1,10 +1,12 @@
-<div style="position: relative;overflow: hidden;">
+<div style="position: relative; overflow: scroll;">
     <!-- <router-outlet></router-outlet> -->
-    <app-crete-new-post *ngIf="showAddAventura" (addAvntura)="addAventura($event)" 
+    <app-crete-new-post *ngIf="showAddAventura" 
+                        (addAvntura)="addAventura($event)" 
                         [currentAventura]="currentAventura"
-                        (cerrarVista)="cerrarVista()">
+                        (cerrarVista)="cerrarVista()"
+                        (componentCargado)="ocultarVentana()">
     </app-crete-new-post>
-    <div class="adminaventura-container">
+    <div    class="adminaventura-container">
         <a class="btn-new-aventura" (click)="showCreateAventura()"> 
             Añadir una nueva Aventura
         </a>
