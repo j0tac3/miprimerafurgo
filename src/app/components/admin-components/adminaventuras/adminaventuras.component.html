@@ -19,13 +19,13 @@
                     <div class="aventura__actions">
                         <input type="checkbox" [checked]="aventura.publicado" class="publicado" (change)="publicarAventura($event, aventura)">
                         <img src="assets/media/icons/edit.svg" alt="" class="icon" (click)="editarAventura(aventura)">
-                        <img src="assets/media/icons/trash.svg" alt="" class="icon" (click)="delAventura(aventura)">
+                        <img src="assets/media/icons/trash-delete-bin.svg" alt="" class="icon" (click)="delAventura(aventura)">
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="table-container">
+        <!-- <div class="table-container">
             <table class="aventuras">
                 <thead class="aventuras__cabecera">
                     <th>Publicar</th>
@@ -53,7 +53,7 @@
                     </tr>
                 </tbody>
             </table> 
-        </div>
+        </div> -->
 
         <div    class="modal_container"
                 [ngClass]="{'modal_visible': message}">
