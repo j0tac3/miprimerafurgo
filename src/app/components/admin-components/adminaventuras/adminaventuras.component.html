@@ -11,6 +11,20 @@
             Añadir una nueva Aventura
         </a>
 
+        <div class="aventuras-container">
+            <div class="aventura" *ngFor="let aventura of aventuras" [ngClass]="{'publicado_checked': aventura.publicado}">
+                <h4 class="aventura__title">{{ aventura.titulo }}</h4>
+                <div class="aventura__cuerpo">
+                    <span class="aventura__date">{{ aventura.fecha_creacion | date:'dd-MM-yyyy' }}</span>
+                    <div class="aventura__actions">
+                        <input type="checkbox" [checked]="aventura.publicado" class="publicado" (change)="publicarAventura($event, aventura)">
+                        <img src="assets/media/icons/edit.svg" alt="" class="icon" (click)="editarAventura(aventura)">
+                        <img src="assets/media/icons/trash.svg" alt="" class="icon" (click)="delAventura(aventura)">
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="table-container">
             <table class="aventuras">
                 <thead class="aventuras__cabecera">

@@ -116,3 +116,47 @@
 .loading-img{
     width: 20%;
 }
+.icon{
+    width: 2rem;
+}
+
+
+/******************************/
+.aventuras-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.aventura{
+    width: 20rem;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #aaaa;
+    margin: .5rem;
+    background-color: darkgrey;
+}
+.aventura__title{
+    width: 50%;
+}
+.aventura__cuerpo{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+.aventura__date{
+
+}
+.aventura__actions{
+    display: flex;
+    align-items: center;
+}
+.publicado{
+    width: 1.2rem;
+    height: 1.2rem;
+}
+.publicado_checked{
+    background-color: lightseagreen;
+    color: #ffff;
+}

@@ -59,11 +59,12 @@ export class AdminaventurasComponent implements OnInit {
     this.aventuraService.publicarAventura(newAventura)
     .subscribe( resp => {
       console.log(resp);
+      aventura.publicado = publicado;
     })
   }
 
   addAventura( aventura : AventuraModel){
-    this.aventuras.push(aventura);
+    this.aventuras.unshift(aventura);
     this.showAddAventura = false;
   }
 

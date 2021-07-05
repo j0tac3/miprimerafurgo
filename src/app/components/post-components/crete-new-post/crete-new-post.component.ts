@@ -26,6 +26,8 @@ export class CreteNewPostComponent implements OnInit {
   public prevText! : string;
   public showContainer : boolean = true;
 
+  public newElement! : any;
+
   public subOptionsTextVisible : boolean = false;
   public subOptionsMediaVisible : boolean = false;
   public showInputElement : boolean = false;
@@ -79,7 +81,11 @@ export class CreteNewPostComponent implements OnInit {
     } else {
       //Usar el servicio para recoger los elementos de la aventura desde la BDD
       console.log(`Leyendo los datos de la aventura ${this.currentAventura.id} desde el servicio ....`);
-      this.aventuraService.getAventuraSelected(this.currentAventura.id)
+      this.elements = this.currentAventura.elementos!;
+      for (let element of this.elements) {
+        this.publicarElemento(element);
+      }
+      /* this.aventuraService.getAventuraSelected(this.currentAventura.id)
       .subscribe( resp => {
         console.log(resp);
         this.elements = resp['data'].elementos;
@@ -87,7 +93,7 @@ export class CreteNewPostComponent implements OnInit {
         for (let element of this.elements) {
           this.publicarElemento(element);
         }
-      });
+      }); */
     }
   }
 
@@ -142,7 +148,9 @@ export class CreteNewPostComponent implements OnInit {
     this.prevText = '';
     let contenedor = this.elementRef.nativeElement.querySelector('.container-elements');
     if (element.element === 'h1') {
+      //this.newElement = `<h1>${element.value}</h1>`;
       contenedor.insertAdjacentHTML('beforeend', `<h1>${element.value}</h1>`);
+      console.log(this.newElement);
       this.activarBtnH1 = false;
     } else if (element.element === 'h2') {
       contenedor.insertAdjacentHTML('beforeend', `<h2 style="text-align: left;">${element.value}</h2>`);
@@ -155,9 +163,10 @@ export class CreteNewPostComponent implements OnInit {
   }
 
   addElement( element : ElementAventuraModel) {
-    this.elements.push(element);
     console.log(this.elements);
     this.publicarElemento(element);
+    //element.value = this.newElement;
+    this.elements.push(element);
     this.comporbarSiPublicar();
   }
 
@@ -305,5 +314,23 @@ export class CreteNewPostComponent implements OnInit {
 
   onCerrarVista(){
     this.cerrarVista.emit();
+  }
+
+  elementoSeleccionado(e : ElementAventuraModel){
+    console.log(e);
+    if (e.element !== 'img'){
+      let value = e.value; 
+      console.log(this.elements.filter( elemento => elemento.value === value )[0]);
+      this.elementName = this.elements.filter( elemento => elemento.value === value )[0].element!;
+      this.formNewElement.get('element')?.setValue(value);
+      this.prevText = value!;
+      this.showInputElement = true;
+    } else if ( e.element === 'img' ){
+      let value = e.value; 
+      console.log(this.elements.filter( elemento => elemento.value === value )[0]);
+      console.log(this.elements[0].value);
+      this.showInputElementImage = true;
+      this.formNewElement.get('elementImage')?.setValue(value);
+    }
   }
 }
