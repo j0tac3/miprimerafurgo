@@ -10,10 +10,12 @@
     border-radius: 50px;
     padding: .5rem;
     background-color: dodgerblue;
-    /* text-align: center; */
-    margin-right: .5rem;
-    left: .5rem;
-    position: fixed;
+    /* margin-right: .5rem; */
+    /* right: .5rem; */
+    position: sticky;
+    top: 1rem;
+    right: 0;
+    left: 90%;
     z-index: 888;
 }
 .btn-action{
