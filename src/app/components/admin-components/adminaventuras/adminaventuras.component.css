@@ -127,8 +127,8 @@
 .admin-header{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    width: 22rem;
+    justify-content: space-between;
+    width: 20rem;
     margin: 0 auto;
     position: sticky;
     top: 3.5rem;

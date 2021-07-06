@@ -5,7 +5,7 @@ export class AventuraModel {
     id? : number;
     titulo? : string;
     headerImage? : string;
-    resumen? : ElementAventuraModel;
+    resumen? : string;
     publicado? : boolean;
     user_id? : number;
     fecha_creacion? : Date;

@@ -14,8 +14,13 @@ export class PostMiniatureComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    if (this.aventura.user)
-      this.user = this.aventura.user;
+      if (this.aventura.user)
+        this.user = this.aventura.user;
+
+      if (this.aventura.resumen){
+        let resumen = this.aventura.resumen;
+        this.aventura.resumen = `${resumen.substring(0, 200)} ...`;
+      } 
   }
 
 }

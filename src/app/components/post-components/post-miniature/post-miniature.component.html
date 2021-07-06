@@ -20,5 +20,11 @@
             </app-post-miniature-info>
         </div>
     </div>
-    <p class="texto-resumen">{{ aventura.resumen }}</p>
+    <p class="texto-resumen">{{ aventura.resumen }} 
+        <a  [routerLink]="'/aventura'"
+            [queryParams]="{'id': aventura.id}"
+            class="miniature__link">
+            Leer
+        </a>
+    </p>
 </div>

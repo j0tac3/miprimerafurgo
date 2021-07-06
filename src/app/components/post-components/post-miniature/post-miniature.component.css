@@ -27,6 +27,10 @@
 .texto-resumen{
     width: 100%;
 }
+.miniature__link{
+    color: dodgerblue;
+    font-style: italic;
+}
 
 @media screen and (max-width: 750px) {
     .info-container{
