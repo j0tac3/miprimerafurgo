@@ -7,11 +7,11 @@
     </app-crete-new-post>
     <div    class="adminaventura-container" [hidden]="ocultarAdmin()">
         <div class="admin-header"  [hidden]="!aventurasCargadas">
-            <app-post-search (textChange)="changeSearchingText($event)"></app-post-search>
             <button (click)="showCreateAventura()"
                     class="btn-new-aventura">
                 <img    src="assets/media/icons/add.svg" alt="">
             </button>
+            <app-post-search (textChange)="changeSearchingText($event)"></app-post-search>
         </div>
 
         <div class="aventuras-container">
