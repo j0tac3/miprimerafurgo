@@ -30,6 +30,7 @@ import { AdministrarComponent } from './pages/administrar/administrar.component'
 import { AdminarticulosComponent } from './components/admin-components/adminarticulos/adminarticulos.component';
 import { AdminaventurasComponent } from './components/admin-components/adminaventuras/adminaventuras.component';
 import { LoginComponent } from './components/user-components/login/login.component';
+import { AventuraTarjetComponent } from './components/admin-components/adminaventuras/aventura-tarjet/aventura-tarjet.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { LoginComponent } from './components/user-components/login/login.compone
     AdminarticulosComponent,
     AdminaventurasComponent,
     LoginComponent,
+    AventuraTarjetComponent,
   ],
   imports: [
     BrowserModule,

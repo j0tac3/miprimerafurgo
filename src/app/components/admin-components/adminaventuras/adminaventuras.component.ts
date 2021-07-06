@@ -33,12 +33,12 @@ export class AdminaventurasComponent implements OnInit {
   delAventura( aventuraToDel : AventuraModel ){
     let aventurasBeforeDel = this.aventuras.filter(aventura => this.checkAventura(aventura, aventuraToDel));
     this.aventuras = aventurasBeforeDel;
-    this.aventuraService.deleteAventura(aventuraToDel)
+    /* this.aventuraService.deleteAventura(aventuraToDel)
     .subscribe( resp => {
       let aventurasBeforeDel = this.aventuras.filter(aventura => this.checkAventura(aventura, aventuraToDel));
       this.aventuras = aventurasBeforeDel;
       this.message = `La aventura "${aventuraToDel.titulo}" ha sido eliminada.`;
-    })
+    }) */
   }
 
   checkAventura(aventura : AventuraModel, aventuraToDel : AventuraModel){
@@ -46,11 +46,12 @@ export class AdminaventurasComponent implements OnInit {
   }
 
   editarAventura( aventura : AventuraModel){
+    console.log("Editando");
     this.currentAventura = aventura;
     this.showAddAventura = true;
   }
 
-  publicarAventura( event : any, aventura : AventuraModel){
+/*   publicarAventura( event : any, aventura : AventuraModel){
     console.log(event.target.checked);
     let publicado = event.target.checked;
     let newAventura = new AventuraModel();
@@ -62,7 +63,7 @@ export class AdminaventurasComponent implements OnInit {
       aventura.publicado = publicado;
     })
   }
-
+ */
   addAventura( aventura : AventuraModel){
     this.aventuras.unshift(aventura);
     this.showAddAventura = false;

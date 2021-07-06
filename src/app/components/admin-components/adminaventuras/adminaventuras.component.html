@@ -12,7 +12,12 @@
         </a>
 
         <div class="aventuras-container">
-            <div class="aventura" *ngFor="let aventura of aventuras" [ngClass]="{'publicado_checked': aventura.publicado}">
+            <app-aventura-tarjet    *ngFor="let aventura of aventuras"
+                                    [aventura]="aventura"
+                                    (editAventura)="editarAventura(aventura)"
+                                    (delAventura)="delAventura(aventura)">
+            </app-aventura-tarjet>
+            <!-- <div class="aventura" *ngFor="let aventura of aventuras" [ngClass]="{'publicado_checked': aventura.publicado}">
                 <h4 class="aventura__title">{{ aventura.titulo }}</h4>
                 <div class="aventura__cuerpo">
                     <span class="aventura__date">{{ aventura.fecha_creacion | date:'dd-MM-yyyy' }}</span>
@@ -22,7 +27,7 @@
                         <img src="assets/media/icons/trash-delete-bin.svg" alt="" class="icon" (click)="delAventura(aventura)">
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <!-- <div class="table-container">
