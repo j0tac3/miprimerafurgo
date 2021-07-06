@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { AventuraModel } from 'src/app/models/aventura.model';
 import { AventuraService } from 'src/app/Services/aventura.service';
 
@@ -14,12 +14,16 @@ export class AdminaventurasComponent implements OnInit {
   public aventurasCargadas = false;
   public showAddAventura = false;
   public ocultarVentanaTabla = false;
+  public editing : boolean = false;
 
-  constructor( private aventuraService : AventuraService ) { }
+  constructor( private aventuraService : AventuraService,
+    private changeDetector : ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.getAventuras();
   }
+
+  ngAfterViewChecked(){ this.changeDetector.detectChanges(); }
 
   getAventuras() {
     this.aventuraService.getAventura()
@@ -47,6 +51,7 @@ export class AdminaventurasComponent implements OnInit {
 
   editarAventura( aventura : AventuraModel){
     console.log("Editando");
+    this.editing = true;
     this.currentAventura = aventura;
     this.showAddAventura = true;
   }
@@ -75,6 +80,7 @@ export class AdminaventurasComponent implements OnInit {
   }
 
   cerrarVista(){
+    this.editing = false;
     this.showAddAventura = false;
   }
 
@@ -83,11 +89,16 @@ export class AdminaventurasComponent implements OnInit {
   }
 
   ocultarVentana(){
+    this.editing = true;
     console.log('ocultando ventana');
     this.ocultarVentanaTabla = true;
   }
 
   ocultarVentanaActivo(){
     return this.ocultarVentanaTabla;
+  }
+
+  ocultarAdmin(){
+    return this.editing;
   }
 }

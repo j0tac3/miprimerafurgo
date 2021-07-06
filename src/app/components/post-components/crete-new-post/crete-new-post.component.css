@@ -1,16 +1,18 @@
 .post-container{
-    position: absolute;
+    /*position: absolute;*/
     top: 0;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    width: 100vw;
-    min-height: calc(100vh - 16vh);
+    width: 100%;
+    height: 100%;
+    /*min-height: calc(100vh - 16vh);*/
     background-color: #ffff;
-    animation: show-container 1s;
-    background-color: darkgrey;
+    /* animation: show-container 1s; */
+    background-color: rgba(0, 0, 0, .96);
+    color: #ffff;
     z-index: 999;
 }
 .hidden-post-container{
@@ -38,7 +40,7 @@
     display: flex;
     justify-content: flex-start;
     left: 0;
-    animation: show-options 1.8s;
+    animation: show-options .8s;
 }
 @keyframes show-options {
     from{

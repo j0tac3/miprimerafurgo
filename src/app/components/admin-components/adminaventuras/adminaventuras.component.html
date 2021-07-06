@@ -1,17 +1,14 @@
-<div style="position: relative; overflow: scroll;">
-    <!-- <router-outlet></router-outlet> -->
+<div>
     <app-crete-new-post *ngIf="showAddAventura" 
                         (addAvntura)="addAventura($event)" 
                         [currentAventura]="currentAventura"
                         (cerrarVista)="cerrarVista()"
                         (componentCargado)="ocultarVentana()">
     </app-crete-new-post>
-    <div    class="adminaventura-container">
-        <!-- <a class="btn-new-aventura" (click)="showCreateAventura()"> 
-            Añadir una nueva Aventura
-        </a> -->
+    <div    class="adminaventura-container" [hidden]="ocultarAdmin()">
         <button (click)="showCreateAventura()"
-                class="btn-new-aventura">
+                class="btn-new-aventura"
+                [hidden]="!aventurasCargadas">
             <img    src="assets/media/icons/add.svg" alt="">
         </button>
 
@@ -21,49 +18,7 @@
                                     (editAventura)="editarAventura(aventura)"
                                     (delAventura)="delAventura(aventura)">
             </app-aventura-tarjet>
-            <!-- <div class="aventura" *ngFor="let aventura of aventuras" [ngClass]="{'publicado_checked': aventura.publicado}">
-                <h4 class="aventura__title">{{ aventura.titulo }}</h4>
-                <div class="aventura__cuerpo">
-                    <span class="aventura__date">{{ aventura.fecha_creacion | date:'dd-MM-yyyy' }}</span>
-                    <div class="aventura__actions">
-                        <input type="checkbox" [checked]="aventura.publicado" class="publicado" (change)="publicarAventura($event, aventura)">
-                        <img src="assets/media/icons/edit.svg" alt="" class="icon" (click)="editarAventura(aventura)">
-                        <img src="assets/media/icons/trash-delete-bin.svg" alt="" class="icon" (click)="delAventura(aventura)">
-                    </div>
-                </div>
-            </div> -->
         </div>
-
-        <!-- <div class="table-container">
-            <table class="aventuras">
-                <thead class="aventuras__cabecera">
-                    <th>Publicar</th>
-                    <th>Editar</th>
-                    <th>Eliminar</th>
-                    <th>Fecha Creacion</th>
-                    <th>Titulo</th>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let aventura of aventuras">
-                        <td><input type="checkbox" name="" id="" [checked]="aventura.publicado" (change)="publicarAventura($event, aventura)"></td>
-                        <td>
-                            <button class="btn-action">
-                                <img src="assets/media/icons/text.svg" alt="" class="img-btn" 
-                                        (click)="editarAventura(aventura)">
-                            </button>
-                        </td>
-                        <td>
-                            <button class="btn-action" (click)="delAventura(aventura)">
-                                <img src="assets/media/icons/close-circle.svg" alt="">
-                            </button>
-                        </td>
-                        <td>{{ aventura.fecha_creacion | date : 'shortDate' }}</td>
-                        <td class="titulo"><div class="titulo-container">{{ aventura.titulo }}</div></td>
-                    </tr>
-                </tbody>
-            </table> 
-        </div> -->
-
         <div    class="modal_container"
                 [ngClass]="{'modal_visible': message}">
             <div class="modal">
@@ -75,7 +30,7 @@
         </div>
 
         <div    class="loading"
-                [ngClass]="{ 'loading-hidden' : aventurasCargadas }">
+                *ngIf="!aventurasCargadas">
             <img src="assets/media/gifs/loading.gif" alt="" class="loading-img">
         </div>
     </div>
