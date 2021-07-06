@@ -33,8 +33,9 @@
     border: 1px dotted;
 }
 .options-container{
-    position: fixed;
-    top: 11rem;
+    position: absolute;
+    height: 100%;
+    top: 0;
     z-index: 900;
     margin: 0 auto;
     display: flex;
@@ -230,6 +231,8 @@
     border-bottom-right-radius: 5px;
     border: 1px solid #aaa;
     padding: 0;
+    position: sticky;
+    top: 5rem;
 }
 .menu-edition li{
     overflow: hidden;
