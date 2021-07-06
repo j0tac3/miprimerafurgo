@@ -42,6 +42,7 @@ export class CreteNewPostComponent implements OnInit {
   public imageName! : string;
   public elements: ElementAventuraModel[] = [];
   public elementos! : boolean;
+  public loading : boolean = false;
 
   constructor(  private elementRef : ElementRef,
                 private fb: FormBuilder,
@@ -108,6 +109,7 @@ export class CreteNewPostComponent implements OnInit {
   }
 
   almacenarElementos(){
+    this.loading = true
     this.messageconfirm = "";
     this.message = "";
     if (this.checkIfNewAdventure()){
@@ -272,6 +274,7 @@ export class CreteNewPostComponent implements OnInit {
         aventura = resp['data'];
         console.log(aventura);
         this.createElements(this.aventura);
+        this.loading = false
       });
     }
   }

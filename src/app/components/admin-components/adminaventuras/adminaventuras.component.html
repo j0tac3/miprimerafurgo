@@ -7,9 +7,13 @@
                         (componentCargado)="ocultarVentana()">
     </app-crete-new-post>
     <div    class="adminaventura-container">
-        <a class="btn-new-aventura" (click)="showCreateAventura()"> 
+        <!-- <a class="btn-new-aventura" (click)="showCreateAventura()"> 
             Añadir una nueva Aventura
-        </a>
+        </a> -->
+        <button (click)="showCreateAventura()"
+                class="btn-new-aventura">
+            <img    src="assets/media/icons/add.svg" alt="">
+        </button>
 
         <div class="aventuras-container">
             <app-aventura-tarjet    *ngFor="let aventura of aventuras"

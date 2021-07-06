@@ -1,5 +1,8 @@
 <div>
     <div class="post-container">
+        <div class="loading" *ngIf="loading">
+            <img src="assets/media/gifs/loading.gif" alt="" class="loading_gid">
+        </div>
         <img class="img-thumbnail" src="assets/media/icons/close.svg" alt="" class="img-btn close-view" (click)="onCerrarVista()">
         <!-- <div class="header-image-container">
         </div> -->

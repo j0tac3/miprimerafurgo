@@ -23,9 +23,6 @@
     align-items: flex-end;
     padding: .5rem;
 }
-.aventura__date{
-
-}
 .aventura__actions{
     display: flex;
     align-items: center;
