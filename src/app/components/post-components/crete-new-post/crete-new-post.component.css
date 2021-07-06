@@ -11,6 +11,7 @@
     background-color: #ffff;
     animation: show-container 1s;
     background-color: darkgrey;
+    z-index: 999;
 }
 .hidden-post-container{
     transform: translateY(100%);

@@ -12,12 +12,15 @@ export class AventuraTarjetComponent implements OnInit {
   @Output() editAventura = new EventEmitter();
   @Output() delAventura = new EventEmitter();
 
+  public loading : boolean = false;;
+
   constructor( private aventuraService : AventuraService ) { }
 
   ngOnInit(): void {
   }
 
   publicarAventura( event : any, aventura : AventuraModel){
+    this.loading = true;
     console.log(event.target.checked);
     let publicado = event.target.checked;
     let newAventura = new AventuraModel();
@@ -27,11 +30,8 @@ export class AventuraTarjetComponent implements OnInit {
     .subscribe( resp => {
       console.log(resp);
       aventura.publicado = publicado;
-    })
-  }
-
-  editarAventura(){
-    console.log('EDITANDO');
+      this.loading = false;
+  })
   }
 
   onEditAventura(){
@@ -43,9 +43,11 @@ export class AventuraTarjetComponent implements OnInit {
   }
 
   deleteAventura( aventura : AventuraModel ){
+    this.loading = true;
     this.aventuraService.deleteAventura(aventura)
     .subscribe( resp => {
       this.onDeleteAventura();
+      this.loading = false;
     });
   }
 

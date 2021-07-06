@@ -1,5 +1,8 @@
 <div    class="aventura" 
         [ngClass]="{'publicado_checked': aventura.publicado}">
+    <div class="modal" *ngIf="loading">
+        <img src="assets/media/gifs/loading.gif" alt="" class="loading">
+    </div>
     <h4 class="aventura__title">{{ aventura.titulo }}</h4>
     <div class="aventura__cuerpo">
         <span class="aventura__date">{{ aventura.fecha_creacion | date:'dd-MM-yyyy' }}</span>
