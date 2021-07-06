@@ -9,6 +9,8 @@ import { AventuraService } from 'src/app/Services/aventura.service';
 })
 export class AdminaventurasComponent implements OnInit {
   public aventuras : AventuraModel[] = [];
+  public aventurasSeleccionadas : AventuraModel[] = [];
+
   public currentAventura! : AventuraModel;
   public message! : string;
   public aventurasCargadas = false;
@@ -29,6 +31,7 @@ export class AdminaventurasComponent implements OnInit {
     this.aventuraService.getAventura()
     .subscribe( resp => {
       this.aventuras = resp['data'];
+      this.aventurasSeleccionadas = resp['data'];
       console.log(this.aventuras);
       this.aventurasCargadas = true;
     })
@@ -100,5 +103,13 @@ export class AdminaventurasComponent implements OnInit {
 
   ocultarAdmin(){
     return this.editing;
+  }
+
+  changeSearchingText( text : string){
+    if (text.length > 0) {
+      this.aventurasSeleccionadas = this.aventuras.filter( aventura => aventura.titulo?.toLocaleLowerCase().includes(text.toLocaleLowerCase()));
+    } else {
+      this.aventurasSeleccionadas = this.aventuras;
+    }
   }
 }

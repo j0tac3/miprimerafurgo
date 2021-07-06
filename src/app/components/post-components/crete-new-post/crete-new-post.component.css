@@ -13,7 +13,7 @@
     /* animation: show-container 1s; */
     background-color: rgba(0, 0, 0, .96);
     color: #ffff;
-    z-index: 999;
+    z-index: 911;
 }
 .hidden-post-container{
     transform: translateY(100%);

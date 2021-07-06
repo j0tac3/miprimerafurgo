@@ -1,6 +1,7 @@
 .post-list-container{
     display: grid;
     justify-content: center;
+    padding-top: 1rem;
     /* animation: show-posts-list 1.5s ease-in-out; */
 }
 .title{

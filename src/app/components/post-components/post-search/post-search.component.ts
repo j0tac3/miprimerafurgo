@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-post-search',
@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post-search.component.css']
 })
 export class PostSearchComponent implements OnInit {
+  @Output() textChange = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onTextChange(event : any){
+    let text = event.target.value;
+    this.textChange.emit(text);
   }
 
 }

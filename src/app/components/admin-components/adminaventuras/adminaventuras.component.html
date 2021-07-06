@@ -6,14 +6,16 @@
                         (componentCargado)="ocultarVentana()">
     </app-crete-new-post>
     <div    class="adminaventura-container" [hidden]="ocultarAdmin()">
-        <button (click)="showCreateAventura()"
-                class="btn-new-aventura"
-                [hidden]="!aventurasCargadas">
-            <img    src="assets/media/icons/add.svg" alt="">
-        </button>
+        <div class="admin-header"  [hidden]="!aventurasCargadas">
+            <app-post-search (textChange)="changeSearchingText($event)"></app-post-search>
+            <button (click)="showCreateAventura()"
+                    class="btn-new-aventura">
+                <img    src="assets/media/icons/add.svg" alt="">
+            </button>
+        </div>
 
         <div class="aventuras-container">
-            <app-aventura-tarjet    *ngFor="let aventura of aventuras"
+            <app-aventura-tarjet    *ngFor="let aventura of aventurasSeleccionadas"
                                     [aventura]="aventura"
                                     (editAventura)="editarAventura(aventura)"
                                     (delAventura)="delAventura(aventura)">

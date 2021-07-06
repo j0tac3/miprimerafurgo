@@ -10,6 +10,7 @@ import { AventuraService } from 'src/app/Services/aventura.service';
 })
 export class PostListComponent implements OnInit {
   public aventuras : AventuraModel[] = [];
+  public aventurasSeleccionadas : AventuraModel[] = [];
   public aventurasCargadas = false;
   public numAventuras : number = 1;
 
@@ -23,10 +24,19 @@ export class PostListComponent implements OnInit {
     this.aventuraService.getAventurasPublicadas()
     .subscribe( resp => {
      this.aventuras = resp['data'];
+     this.aventurasSeleccionadas = resp['data'];
      console.log(this.aventuras);
      this.aventurasCargadas = true;
      this.numAventuras = this.aventuras.length;
     })
+  }
+
+  changeSearchingText( text : string){
+    if (text.length > 0) {
+      this.aventurasSeleccionadas = this.aventuras.filter( aventura => aventura.titulo?.toLocaleLowerCase().includes(text.toLocaleLowerCase()));
+    } else {
+      this.aventurasSeleccionadas = this.aventuras;
+    }
   }
 
 }
