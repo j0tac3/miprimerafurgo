@@ -19,6 +19,11 @@ export class CreteNewPostComponent implements OnInit {
   @Output() cerrarVista = new EventEmitter();
   @Input() currentAventura! : AventuraModel;
 
+  public currentElement! : ElementAventuraModel;
+  public elementsToUpdate : ElementAventuraModel[] = [];
+  public elementsToDel : ElementAventuraModel[] = [];
+  public editingelement : boolean = false;
+
   public aventura = new AventuraModel;
   public adventure_id? : number;
   public message! : string;
@@ -59,8 +64,8 @@ export class CreteNewPostComponent implements OnInit {
         this.adventure_id = params.id;
       }
     }); */
-
     this.createOrEditAdventura();
+    this.ordenarElementos();
     this.formInit();
   }
 
@@ -70,31 +75,30 @@ export class CreteNewPostComponent implements OnInit {
     this.onComponenteCargado();
   }
 
+  ordenarElementos(): any {
+    this.elements.sort( function(a, b) {
+      if (a.id! > b.id!) {
+        return 1;
+      }
+      if (a.id! < b.id!){
+        return -1;
+      }
+      return 0;
+    })
+  }
+
   onComponenteCargado(){
     this.componentCargado.emit();
   }
 
   createOrEditAdventura(){
     if (this.checkIfNewAdventure()){
-      //Crear un nuevo array para guardar los elementos de la nueva aventura
       console.log('Se va a crear una nueva aventura.');
       this.currentAventura = new AventuraModel();
     } else {
-      //Usar el servicio para recoger los elementos de la aventura desde la BDD
       console.log(`Leyendo los datos de la aventura ${this.currentAventura.id} desde el servicio ....`);
       this.elements = this.currentAventura.elementos!;
-      for (let element of this.elements) {
-        this.publicarElemento(element);
-      }
-      /* this.aventuraService.getAventuraSelected(this.currentAventura.id)
-      .subscribe( resp => {
-        console.log(resp);
-        this.elements = resp['data'].elementos;
-        console.log(this.elements);
-        for (let element of this.elements) {
-          this.publicarElemento(element);
-        }
-      }); */
+      console.log(this.elements);
     }
   }
 
@@ -116,9 +120,28 @@ export class CreteNewPostComponent implements OnInit {
       //LLamar al servicio para que cree una nueva aventura en la BDD
       console.log('Creando una nueva Aventura ...')
       this.createAventura();
-    } else {
+    }
+    if ( this.elementsToUpdate.length > 0){
       //LLamar al servicio para que edite la aventura en la BDD
-      console.log(`Editando la aventura ${this.adventure_id} ...`)
+      console.log(`Editando la aventura ${this.elementsToUpdate} ...`);
+      this.loading = true
+      this.elementaventuraService.updateAventura(this.elementsToUpdate)
+      .subscribe( resp => {
+        console.log(resp);
+        this.loading = false
+      });
+    }
+    if ( this.elementsToDel.length > 0){
+      //LLamar al servicio para que edite la aventura en la BDD
+      console.log(`Editando la aventura ${this.elementsToUpdate} ...`);
+      this.loading = true
+      for (let element of this.elementsToDel){
+        this.elementaventuraService.deleteAventura(element)
+        .subscribe( resp => {
+          console.log(resp);
+          this.loading = false
+        });
+      }
     }
   }
 
@@ -165,8 +188,8 @@ export class CreteNewPostComponent implements OnInit {
   }
 
   addElement( element : ElementAventuraModel) {
-    console.log(this.elements);
-    this.publicarElemento(element);
+    //console.log(this.elements);
+    //this.publicarElemento(element);
     //element.value = this.newElement;
     this.elements.push(element);
     this.comporbarSiPublicar();
@@ -219,13 +242,21 @@ export class CreteNewPostComponent implements OnInit {
     
   guardarElemento(){
     let element = this.showInputElement ? this.formNewElement.get('element')?.value : this.getImageValue();
-    const elementToAdd = new ElementAventuraModel();
-    elementToAdd.element = this.elementName;
-    elementToAdd.value = element;
-    this.addElement(elementToAdd);
-    
+      if (!this.editingelement){
+      let currentElement = new ElementAventuraModel();
+      currentElement.element = this.elementName;
+      currentElement.value = element;
+      this.addElement(currentElement);   
+    } else {
+      this.currentElement.value = element;
+      console.log(this.elements.filter( element => element.id === this.currentElement.id)[0]);
+      console.log(this.currentElement.value);
+      this.elements.filter( element => element.id === this.currentElement.id)[0].value = this.currentElement.value;
+      this.elementsToUpdate.push(this.currentElement);
+    }
+    this.editingelement = false
     this.closeInputElement();
-  }
+}
 
   getImageValue(){
     return this.imgFile;
@@ -307,10 +338,6 @@ export class CreteNewPostComponent implements OnInit {
     return this.elements.length > 0;
   }
 
-  cerrarVentana(){
-    this.location.back();
-  }
-
   onAddAventura() {
     this.addAvntura.emit(this.aventura);
   }
@@ -319,21 +346,35 @@ export class CreteNewPostComponent implements OnInit {
     this.cerrarVista.emit();
   }
 
-  elementoSeleccionado(e : ElementAventuraModel){
-    console.log(e);
-    if (e.element !== 'img'){
-      let value = e.value; 
+  editElement( elemento : ElementAventuraModel){
+    console.log(`Editando el elemento ${elemento.element}`);
+    this.currentElement = elemento;
+    this.elementoSeleccionado(elemento);
+  }
+
+  elementoSeleccionado(elemento : ElementAventuraModel){
+    console.log(elemento);
+    if (elemento.element !== 'img'){
+      let value = elemento.value; 
       console.log(this.elements.filter( elemento => elemento.value === value )[0]);
       this.elementName = this.elements.filter( elemento => elemento.value === value )[0].element!;
       this.formNewElement.get('element')?.setValue(value);
       this.prevText = value!;
       this.showInputElement = true;
-    } else if ( e.element === 'img' ){
-      let value = e.value; 
+    } else if ( elemento.element === 'img' ){
+      let value = elemento.value; 
       console.log(this.elements.filter( elemento => elemento.value === value )[0]);
       console.log(this.elements[0].value);
       this.showInputElementImage = true;
       this.formNewElement.get('elementImage')?.setValue(value);
     }
+    this.editingelement = true;
+  }
+
+  deleteElement( elemento : ElementAventuraModel ){
+    console.log(`Eliminando el elemento ${elemento.element}`);
+    let elementosActualizados = this.elements.filter( element => element.id !== elemento.id );
+    this.elementsToDel.push(elemento);
+    this.elements = elementosActualizados;
   }
 }

@@ -96,6 +96,7 @@
     border: none;
     box-shadow: 5px 5px 20px -5px #aaa;
     background-color: #fff;
+    color: black;
 }
 .form-control{
     width: 100%;
@@ -156,9 +157,9 @@
     }
 }
 @media screen and (max-width: 1024px) and (min-width: 751px){
-    .post-container{
-        /* width: 70%; */
-    }
+    /* .post-container{
+        width: 70%;
+    } */
     .form-element{
         width: 70%;
     }
@@ -295,4 +296,20 @@
 }
 .loading_gid{
     width: 5rem;
+}
+
+/************* Elemento Tarjet *******/
+.elemento_tarjet{
+    position: relative;
+}
+.options__element{
+    position: absolute;
+    right: 0;
+}
+.icon{
+    width: 1.5rem;
+    margin: .3rem;
+    background-color: rgba(255, 255, 255, .5);
+    padding: .2rem;
+    border-radius: 50px;
 }

@@ -38,13 +38,23 @@
             </div>
         </aside>
     
-        <div class="container-elements" style="width: 90%;">
-           <!--  <div *ngFor="let element of elements"(click)="elementoSeleccionado(element)">
-                <div class="buttons">
-                    <img src="assets/media/icons/close.svg" alt="">
+        <!-- <div class="container-elements" style="width: 90%;">
+
+        </div> -->
+
+        <div    *ngFor="let elemento of elements" [ngSwitch]="elemento.element"
+                class="container-elements" style="width: 90%;">
+            <div class="elemento_tarjet">
+                <div class="options__element">
+                    <img src="assets/media/icons/edit.svg" alt="" class="icon" (click)="editElement(elemento)">
+                    <img src="assets/media/icons/trash-delete-bin.svg" alt="" class="icon" (click)="deleteElement(elemento)">
                 </div>
-                <div [innerHTML]="element.value"></div>
-            </div> -->
+                <h1 *ngSwitchCase="'h1'">{{ elemento.value }}</h1>
+                <h2 *ngSwitchCase="'h2'">{{ elemento.value }}</h2>
+                <p *ngSwitchCase="'p'">{{ elemento.value }}</p>
+                <img    *ngSwitchCase="'img'"
+                        [src]="elemento.value" alt="Imagen">
+            </div>
         </div>
     
         <div    class="element-to-add-container"

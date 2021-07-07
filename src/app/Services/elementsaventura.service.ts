@@ -19,8 +19,11 @@ export class ElementsaventuraService {
     return this.http.post<ElementAventuraModel[]>(this.url, body, {'headers': headers});
   }
 
-  updateAventura( elements: ElementAventuraModel): Observable<ElementAventuraModel> {
-    return this.http.put<ElementAventuraModel>(`${this.url}/${elements.id}`, elements);
+  updateAventura( elements: ElementAventuraModel[]): Observable<any> {
+    const headers = { 'content-type' : 'application/json' };
+    const body = JSON.stringify(elements);
+    console.log(body);
+    return this.http.put<ElementAventuraModel[]>(`${this.url}/${elements[0].id}`, body, {'headers': headers});
   }
 
   getAventura(): Observable<ElementAventuraModel[]> {
