@@ -3,7 +3,9 @@
         <div class="loading" *ngIf="loading">
             <img src="assets/media/gifs/loading.gif" alt="" class="loading_gid">
         </div>
-        <img class="img-thumbnail" src="assets/media/icons/close.svg" alt="" class="img-btn close-view" (click)="onCerrarVista()">
+        <div class="close__icon-container" style="position: absolute; height: 100%;">
+            <img class="img-thumbnail" src="assets/media/icons/close.svg" alt="" class="img-btn close-view" (click)="onCerrarVista()">
+        </div>
         <!-- <div class="header-image-container">
         </div> -->
         <aside class="options-container">
@@ -37,17 +39,13 @@
                 </ul>
             </div>
         </aside>
-    
-        <!-- <div class="container-elements" style="width: 90%;">
-
-        </div> -->
 
         <div    *ngFor="let elemento of elements" [ngSwitch]="elemento.element"
                 class="container-elements" style="width: 90%;">
             <div class="elemento_tarjet">
                 <div class="options__element">
                     <img    src="assets/media/icons/edit_white.svg" alt="" 
-                            class="icon" style="background-color: orange;"
+                            class="icon" style="background-color: rgba(255, 165, 0, .7);;"
                             (click)="editElement(elemento)">
                     <img    src="assets/media/icons/trash_white.svg" alt="" 
                             class="icon" style="background-color: rgba(255, 0, 0, .6);"
@@ -97,7 +95,7 @@
                 <span>Guardar</span>
                 <img class="img-thumbnail" src="assets/media/icons/save.svg" alt="" class="img-btn">
             </button>
-            <button class="btn-action button_close-modal" (click)="onCerrarVista()">
+            <button class="btn-action button_close-modal" (click)="onCerrarVista()" style="background-color: rgba(255, 0, 0, .7);">
                 <span>Cancelar</span>
                 <img class="img-thumbnail" src="assets/media/icons/close.svg" alt="" class="img-btn">
             </button>
