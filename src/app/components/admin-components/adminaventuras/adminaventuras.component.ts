@@ -41,12 +41,6 @@ export class AdminaventurasComponent implements OnInit {
     let aventurasBeforeDel = this.aventuras.filter(aventura => this.checkAventura(aventura, aventuraToDel));
     this.aventuras = aventurasBeforeDel;
     this.aventurasSeleccionadas = aventurasBeforeDel;
-    /* this.aventuraService.deleteAventura(aventuraToDel)
-    .subscribe( resp => {
-      let aventurasBeforeDel = this.aventuras.filter(aventura => this.checkAventura(aventura, aventuraToDel));
-      this.aventuras = aventurasBeforeDel;
-      this.message = `La aventura "${aventuraToDel.titulo}" ha sido eliminada.`;
-    }) */
   }
 
   checkAventura(aventura : AventuraModel, aventuraToDel : AventuraModel){

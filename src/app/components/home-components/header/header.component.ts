@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs';
 export class HeaderComponent implements OnInit {
   public currentRoute : string = 'home';
   public subscription: Subscription;
+  public isHome : boolean = true;
 
   constructor( private route : Router ) { 
     this.subscription = this.route.events.subscribe((newUrl : any) => {
@@ -17,11 +18,12 @@ export class HeaderComponent implements OnInit {
         if (newUrl instanceof NavigationEnd) {
         console.log(newUrl.url);
         //if (newUrl.url.includes('home') || newUrl.url === '/') {
-        if (newUrl.url.includes('/aventura?')){
-          this.currentRoute = 'postSelected';
+        this.isHome = (newUrl.url.includes('home'));
+        /* if (!newUrl.url.includes('home')){
+          this.currentRoute = 'notHome';
           } else {
             this.currentRoute = 'notPost';
-          }
+          }*/
         }
       } catch (e) {
         console.log(e);

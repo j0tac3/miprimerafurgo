@@ -362,11 +362,11 @@ export class CreteNewPostComponent implements OnInit {
       this.prevText = value!;
       this.showInputElement = true;
     } else if ( elemento.element === 'img' ){
-      let value = elemento.value; 
+      /* let value = elemento.value; 
       console.log(this.elements.filter( elemento => elemento.value === value )[0]);
       console.log(this.elements[0].value);
       this.showInputElementImage = true;
-      this.formNewElement.get('elementImage')?.setValue(value);
+      this.formNewElement.get('elementImage')?.setValue(value); */
     }
     this.editingelement = true;
   }

@@ -46,8 +46,12 @@
                 class="container-elements" style="width: 90%;">
             <div class="elemento_tarjet">
                 <div class="options__element">
-                    <img src="assets/media/icons/edit.svg" alt="" class="icon" (click)="editElement(elemento)">
-                    <img src="assets/media/icons/trash-delete-bin.svg" alt="" class="icon" (click)="deleteElement(elemento)">
+                    <img    src="assets/media/icons/edit_white.svg" alt="" 
+                            class="icon" style="background-color: orange;"
+                            (click)="editElement(elemento)">
+                    <img    src="assets/media/icons/trash_white.svg" alt="" 
+                            class="icon" style="background-color: rgba(255, 0, 0, .6);"
+                            (click)="deleteElement(elemento)">
                 </div>
                 <h1 *ngSwitchCase="'h1'">{{ elemento.value }}</h1>
                 <h2 *ngSwitchCase="'h2'">{{ elemento.value }}</h2>

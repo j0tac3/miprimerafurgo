@@ -1,5 +1,5 @@
 <div    class="header-container header-container-compact"
-        [ngClass]="{ 'header-container-hidden' : currentRoute === 'postSelected' }">
+        [ngClass]="{ 'header-container-hidden' : !isHome }">
     <!-- <img    src="assets/media/icons/menu_open.svg" alt="Mi primera Furgo" class="menu-icon"
             [ngClass]="{ 'menu-icon-notvisible' : currentRoute === 'inicio' }"> -->
         <app-lateral-menu></app-lateral-menu>
