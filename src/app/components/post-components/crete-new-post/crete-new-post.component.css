@@ -33,7 +33,7 @@
     border: 1px dotted;
 }
 .options-container{
-    position: relative;
+    position: absolute;
     height: 100%;
     top: 0;
     z-index: 900;
@@ -316,7 +316,6 @@
     position: sticky;
     display: flex;
     justify-content: flex-end;
-    /* left: 100%; */
     top: 0;
     padding-right: 1rem;
 }
