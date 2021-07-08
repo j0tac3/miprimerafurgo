@@ -263,8 +263,8 @@ export class CreteNewPostComponent implements OnInit {
       this.currentElement.value = element;
       console.log(this.elements.filter( element => element.id === this.currentElement.id)[0]);
       console.log(this.currentElement.value);
-      this.elements.filter( element => element.id === this.currentElement.id)[0].value = this.currentElement.value;
-      this.elementsToUpdate.push(this.currentElement);
+      this.elements.filter( element => element.value === this.currentElement.value)[0].value = this.currentElement.value;
+      this.currentElement.id ? this.elementsToUpdate.push(this.currentElement) : this.elementsToAdd.push(this.currentElement);
     }
     this.editingelement = false
     this.closeInputElement();
