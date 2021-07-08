@@ -2,6 +2,8 @@
     min-height: calc(100vh - 25vh);
     padding-top: 1rem;
     position: relative;
+    background-color: #1f1f1f;
+    color: #f1eded;
 }
 .btn-new-aventura{
     width: 2.5rem;

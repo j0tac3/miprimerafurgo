@@ -69,7 +69,7 @@ export class AdminaventurasComponent implements OnInit {
  */
   addAventura( aventura : AventuraModel){
     this.aventuras.unshift(aventura);
-    this.showAddAventura = false;
+    this.showAddAventura = true;
   }
 
   showCreateAventura(){

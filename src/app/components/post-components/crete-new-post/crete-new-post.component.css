@@ -9,10 +9,10 @@
     margin: 0 auto;
     width: 100%;
     height: 100%;
-    background-color: #ffff;
+    /* background-color: #ffff; */
     /* animation: show-container 1s; */
-    background-color: rgba(0, 0, 0, .96);
-    color: #ffff;
+    background-color: #1f1f1f;
+    color: #f1eded;
     z-index: 911;
 }
 .hidden-post-container{
@@ -33,7 +33,7 @@
     border: 1px dotted;
 }
 .options-container{
-    position: absolute;
+    position: relative;
     height: 100%;
     top: 0;
     z-index: 900;
@@ -76,6 +76,7 @@
 }
 .container-elements{
     width: 70%;
+    max-width: 40rem;
 }
 
 .subOption{

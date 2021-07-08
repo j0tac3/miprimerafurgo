@@ -22,6 +22,8 @@ export class CreteNewPostComponent implements OnInit {
   public currentElement! : ElementAventuraModel;
   public elementsToUpdate : ElementAventuraModel[] = [];
   public elementsToDel : ElementAventuraModel[] = [];
+  public elementsToAdd : ElementAventuraModel[] = [];
+
   public editingelement : boolean = false;
 
   public aventura = new AventuraModel;
@@ -142,6 +144,16 @@ export class CreteNewPostComponent implements OnInit {
           this.loading = false
         });
       }
+    }
+    if ( this.elementsToAdd.length > 0){
+      //LLamar al servicio para que edite la aventura en la BDD
+      console.log(`Editando la aventura ${this.elementsToUpdate} ...`);
+      this.loading = true;
+      this.elementaventuraService.createAventura(this.elementsToAdd)
+      .subscribe( resp => {
+        console.log(resp);
+        this.loading = false
+      });
     }
   }
 
@@ -373,8 +385,17 @@ export class CreteNewPostComponent implements OnInit {
 
   deleteElement( elemento : ElementAventuraModel ){
     console.log(`Eliminando el elemento ${elemento.element}`);
-    let elementosActualizados = this.elements.filter( element => element.id !== elemento.id );
-    this.elementsToDel.push(elemento);
-    this.elements = elementosActualizados;
+    if (elemento.id){
+      if ( this.elements.filter( element => element.id !== elemento.id ).length > 0){
+        this.elementsToDel.push(elemento);
+        this.elementsToUpdate = this.elementsToUpdate.filter( element => element.id !== elemento.id );
+        this.elements = this.elements.filter( element => element.id !== elemento.id );
+      }
+    } else {
+      if ( this.elementsToAdd.filter( element => element.value !== elemento.value ).length > 0){
+        this.elementsToAdd = this.elementsToAdd.filter( element => element.value !== elemento.value );
+        this.elementsToUpdate = this.elementsToUpdate.filter( element => element.value !== elemento.value );
+      }
+    }
   }
 }
