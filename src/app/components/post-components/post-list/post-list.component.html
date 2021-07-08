@@ -2,7 +2,7 @@
     <app-post-search (textChange)="changeSearchingText($event)" class="buscador">
     </app-post-search>
 
-    <h2 class="title">Aventuras</h2>
+    <!-- <h2 class="title">Aventuras</h2> -->
     <app-post-miniature *ngFor="let aventura of aventurasSeleccionadas; index as i"
                         [aventura]="aventura">
     </app-post-miniature>

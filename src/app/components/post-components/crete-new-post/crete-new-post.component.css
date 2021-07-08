@@ -279,7 +279,7 @@
 }
 .close-view{
     position: sticky;
-    top: 0;
+    top: 3.5rem;
     z-index: 900;
     background-color: rgba(255, 0, 0, .8);
     padding: .2rem;
@@ -316,7 +316,7 @@
     position: sticky;
     display: flex;
     justify-content: flex-end;
-    top: 0;
+    top: 3.5rem;
     padding-right: 1rem;
 }
 .icon{

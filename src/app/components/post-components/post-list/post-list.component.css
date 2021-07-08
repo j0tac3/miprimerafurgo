@@ -1,7 +1,6 @@
 .post-list-container{
     display: grid;
     justify-content: center;
-    padding-top: 1rem;
     /* animation: show-posts-list 1.5s ease-in-out; */
 }
 .title{
@@ -26,7 +25,8 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, .8);
+    z-index: 999;
 }
 .loading-hidden{
     display: none;
@@ -50,6 +50,7 @@
 }
 .buscador{
     position: sticky;
-    top: 1.5rem;
+    top: 3.9rem;
     z-index: 900;
+    margin: 1rem 0;
 }
