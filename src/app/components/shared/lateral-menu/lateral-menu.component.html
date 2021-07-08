@@ -1,53 +1,34 @@
 <div class="lateral-menu-container">
-    <div class="layout" [ngClass]="{ 'menu-list_show' : showMenu }" (click)="openCloseMenu()"></div>
-    <img    src="assets/media/icons/menu_open.svg" alt="Mi primera Furgo" class="menu-icon"
+    <!-- <div class="layout" [ngClass]="{ 'menu-list_show' : showMenu }" (click)="openCloseMenu()"></div> -->
+    <!-- <img    src="assets/media/icons/menu_open.svg" alt="Mi primera Furgo" class="menu-icon"
             [ngClass]="{ 'menu-icon-notvisible' : currentRoute === 'inicio' }"
-            (click)="openCloseMenu()">
+            (click)="openCloseMenu()"> -->
     <ul class="menu-list"
         [ngClass]="{ 'menu-list_show' : showMenu }"
         (click)="openCloseMenu()">
-        <li class="list-item-header">
-            <a [routerLink]="'home'" class="" routerLinkActive="">
-                <img src="assets/media/icons/mpf_logo_2.png" alt="Cerrar menu" class="logo">
-                <span>Mi Primera Furgo</span>
-                <!-- <img src="assets/media/icons/close.svg" alt="Cerrar menu" class="close-icon"> -->
-            </a>
-        </li>
-        <li class="list-item">
-            <a [routerLink]="'home'" class="item-link" routerLinkActive="active">
-                <img src="assets/media/icons/home.svg" alt="Inicio" class="link-image">
-                <span class="link-tag">Home</span>
-            </a>
-        </li>
-        <li class="list-item">
-            <a [routerLink]="'camperizar'" class="item-link" routerLinkActive="active">
-                <img src="assets/media/icons/camperizar.svg" alt="Camperizar" class="link-image">
-                <span class="link-tag">Camperizar</span>
-            </a>
-        </li>
-        <li class="list-item">
-            <a [routerLink]="'aventuras'" class="item-link" routerLinkActive="active">
-                <img src="assets/media/icons/blog.svg" alt="Aventuras" class="link-image">
-                <span class="link-tag">Aventuras</span>
-            </a>
-        </li>
-        <li class="list-item">
-            <a [routerLink]="'articulos'" class="item-link" routerLinkActive="active">
-                <img src="assets/media/icons/articulos.svg" alt="Articulos" class="link-image">
-                <span class="link-tag">Articulos</span>
-            </a>
-        </li>
-        <li class="list-item">
-            <a [routerLink]="'administrar'" class="item-link" routerLinkActive="active">
-                <img src="assets/media/icons/administrar.svg" alt="Administrar" class="link-image">
-                <span class="link-tag">Administrar</span>
-            </a>
-        </li>
-        <li class="list-item">
-            <a [routerLink]="'contacto'" class="item-link" routerLinkActive="active">
-                <img src="assets/media/icons/contact.svg" alt="Contacto" class="link-image">
-                <span class="link-tag">Contacto</span>
-            </a>
-        </li>
+        <app-menu-item  [itemLabel]="'Home'"
+                        [itemRoute]="'home'"
+                        [iconRoute]="'home'">
+        </app-menu-item>
+        <app-menu-item  [itemLabel]="'Camperizar'"
+                        [itemRoute]="'camperizar'"
+                        [iconRoute]="'camperizar'">
+        </app-menu-item>
+        <app-menu-item  [itemLabel]="'Aventuras'"
+                        [itemRoute]="'aventuras'"
+                        [iconRoute]="'blog'">
+        </app-menu-item>
+        <app-menu-item  [itemLabel]="'Articulos'"
+                        [itemRoute]="'articulos'"
+                        [iconRoute]="'articulos'">
+        </app-menu-item>
+        <app-menu-item  [itemLabel]="'Configuracion'"
+                        [itemRoute]="'administrar'"
+                        [iconRoute]="'administrar'">
+        </app-menu-item>
+        <app-menu-item  [itemLabel]="'Contacto'"
+                        [itemRoute]="'contacto'"
+                    [iconRoute]="'contact'">
+        </app-menu-item>
     </ul>
 </div>

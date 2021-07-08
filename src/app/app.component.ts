@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -6,17 +8,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'mi-primera-furgo-angular';
+  public title : string = 'mi-primera-furgo-angular';
+  public isHome? : boolean;
+  public subscription! : Subscription;
+
+  constructor( private route : Router ){}
+
+  ngOnInit(): void {
+    this.checkIsHome();
+  }
 
   onActivate(event : Event){
-    /* const scrollOptionsCustoms = {
-      left: 0,
-      top: 0,
-      behavior: "smooth"
-    }
-    window.scrollTo(scrollOptionsCustoms); */
     window.scroll(0,0);
-    //or document.body.scrollTop = 0;
-    //or document.querySelector('body').scrollTo(0,0)
+  }
+
+  checkIsHome(){
+    this.subscription = this.route.events.subscribe((newUrl : any) => {
+      try {
+        if (newUrl instanceof NavigationEnd) {
+        console.log(newUrl.url);
+        this.isHome = (newUrl.url.includes('home'));
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    });
   }
 }

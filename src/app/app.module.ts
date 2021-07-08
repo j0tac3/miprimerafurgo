@@ -31,6 +31,7 @@ import { AdminarticulosComponent } from './components/admin-components/adminarti
 import { AdminaventurasComponent } from './components/admin-components/adminaventuras/adminaventuras.component';
 import { LoginComponent } from './components/user-components/login/login.component';
 import { AventuraTarjetComponent } from './components/admin-components/adminaventuras/aventura-tarjet/aventura-tarjet.component';
+import { MenuItemComponent } from './components/shared/lateral-menu/menu-item/menu-item.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { AventuraTarjetComponent } from './components/admin-components/adminaven
     AdminaventurasComponent,
     LoginComponent,
     AventuraTarjetComponent,
+    MenuItemComponent,
   ],
   imports: [
     BrowserModule,
