@@ -27,6 +27,7 @@ export class AppComponent {
       try {
         if (newUrl instanceof NavigationEnd) {
         console.log(newUrl.url);
+        console.log(this.isHome);
         this.isHome = (newUrl.url.includes('home'));
         }
       } catch (e) {

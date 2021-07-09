@@ -1,4 +1,4 @@
 <app-header></app-header>
-<app-lateral-menu class="menu" [ngClass]="{'show_menu' : isHome }"></app-lateral-menu>
+<app-lateral-menu class="menu" [ngClass]="{'show_menu' : checkIsHome() }"></app-lateral-menu>
 <router-outlet (activate)="onActivate($event)"></router-outlet>
 <app-footer></app-footer>
