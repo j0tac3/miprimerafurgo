@@ -25,7 +25,9 @@
                 marginwidth="0" marginheight="0" 
                 scrolling="no" frameborder="0" 
                 [src]="cargarArticulo(articulo)"
-                class="articulo">
+                class="articulo"
+                #iframe
+                (load)="onLoadIframe(iframe)">
         </iframe>
     </div>
 </div>

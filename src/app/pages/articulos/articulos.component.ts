@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ComponentFactoryResolver, ElementRef, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -16,8 +16,14 @@ export class ArticulosComponent implements OnInit {
   public themes = [{'desc':'Viajes'}, {'desc':'Playa'}, {'desc':'Montaña'}, {'desc':'Verano'}, {'desc':'Escapada'}];
   public themesSelected : any;
 
+  private textSearching! : string;
+  @ViewChild('iframe', { static: false })
+  iframe!: ElementRef;  
+
   constructor(  private fb : FormBuilder,
-                private sanitizer: DomSanitizer ) { }
+                private sanitizer: DomSanitizer,
+                private vcRef: ViewContainerRef,
+                private resolver: ComponentFactoryResolver ) { }
 
   ngOnInit(): void {
     this.formInit();
@@ -78,9 +84,14 @@ export class ArticulosComponent implements OnInit {
   }
 
   textChange( text : any){
-    let element1 = document.querySelectorAll('div.amzn-ad-prod-detail');
-    let element = document.querySelectorAll(`a[title="${text}"`);
-    console.log(`a[title="${text}"`);
+    this.textSearching = text;
+  }
+
+  onLoadIframe( iframe : any){
+    let doc = iframe.contentDocument || iframe.contentWindow;
+    console.log(doc);
+    let element1 = doc.querySelectorAll('div.amzn-ad-prod-detail');
+    let element = doc.querySelectorAll(`a[title="${this.textSearching}"`);
     console.log(element1);
     console.log(element);
   }
