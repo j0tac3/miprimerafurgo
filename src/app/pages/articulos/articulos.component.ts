@@ -16,14 +16,8 @@ export class ArticulosComponent implements OnInit {
   public themes = [{'desc':'Viajes'}, {'desc':'Playa'}, {'desc':'Montaña'}, {'desc':'Verano'}, {'desc':'Escapada'}];
   public themesSelected : any;
 
-  private textSearching! : string;
-  @ViewChild('iframe', { static: false })
-  iframe!: ElementRef;  
-
   constructor(  private fb : FormBuilder,
-                private sanitizer: DomSanitizer,
-                private vcRef: ViewContainerRef,
-                private resolver: ComponentFactoryResolver ) { }
+                private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.formInit();
@@ -84,16 +78,8 @@ export class ArticulosComponent implements OnInit {
   }
 
   textChange( text : any){
-    this.textSearching = text;
+    console.log('Buscando : ' + text);
+    let iframes = document.querySelectorAll('iframe');
+    console.log(iframes);
   }
-
-  onLoadIframe( iframe : any){
-    let doc = iframe.contentDocument || iframe.contentWindow;
-    console.log(doc);
-    let element1 = doc.querySelectorAll('div.amzn-ad-prod-detail');
-    let element = doc.querySelectorAll(`a[title="${this.textSearching}"`);
-    console.log(element1);
-    console.log(element);
-  }
-
 }
