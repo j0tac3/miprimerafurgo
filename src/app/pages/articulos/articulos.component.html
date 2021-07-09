@@ -26,7 +26,7 @@
                 scrolling="no" frameborder="0" 
                 [src]="cargarArticulo(articulo)"
                 class="articulo"
-                #iframe>
+                (onLoad)="onLoadIframe($event)">
         </iframe>
     </div>
 </div>

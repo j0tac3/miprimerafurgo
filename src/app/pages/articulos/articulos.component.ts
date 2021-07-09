@@ -16,6 +16,8 @@ export class ArticulosComponent implements OnInit {
   public themes = [{'desc':'Viajes'}, {'desc':'Playa'}, {'desc':'Montaña'}, {'desc':'Verano'}, {'desc':'Escapada'}];
   public themesSelected : any;
 
+  public iframes : any = [];
+
   constructor(  private fb : FormBuilder,
                 private sanitizer: DomSanitizer) { }
 
@@ -81,5 +83,12 @@ export class ArticulosComponent implements OnInit {
     console.log('Buscando : ' + text);
     let iframes = document.querySelectorAll('iframe');
     console.log(iframes);
+  }
+
+  onLoadIframe( iframe : any){
+    let value = iframe.contentWindow.document.querySelectorAll('div.title');
+    console.log(value);
+    this.iframes.push(iframe);
+    console.log(this.iframes);
   }
 }
