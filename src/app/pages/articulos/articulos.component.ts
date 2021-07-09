@@ -81,16 +81,6 @@ export class ArticulosComponent implements OnInit {
 
   textChange( text : any){
     console.log('Buscando : ' + text);
-    let iframes = document.getElementsByClassName('iframe');
-    console.log(iframes);
   }
-
-  onLoadIframe( iframe : any){
-    console.log('Buscando');
-    console.log(iframe);
-    let value = iframe.contentWindow.document.querySelectorAll('div.title');
-    console.log(value);
-    this.iframes.push(iframe);
-    console.log(this.iframes);
-  }
+  
 }
