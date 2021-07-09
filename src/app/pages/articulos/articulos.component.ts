@@ -78,7 +78,10 @@ export class ArticulosComponent implements OnInit {
   }
 
   textChange( text : any){
+    let element1 = document.querySelectorAll('div.amzn-ad-prod-detail');
     let element = document.querySelectorAll(`a[title="${text}"`);
+    console.log(`a[title="${text}"`);
+    console.log(element1);
     console.log(element);
   }
 
