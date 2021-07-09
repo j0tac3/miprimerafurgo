@@ -1,0 +1,7 @@
+.show_menu{
+    transform: translateY(-100%);
+    z-index: -1;
+}
+.menu{
+    transition: transform.5s;
+}
