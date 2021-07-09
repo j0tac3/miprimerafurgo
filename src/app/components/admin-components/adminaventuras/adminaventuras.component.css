@@ -55,18 +55,6 @@
     padding: .5rem;
 }
 
-@media screen and (max-width: 750px) {
-    .aventuras{
-        width: 100%;
-    }
-    .table-container{
-        justify-content: flex-start;
-    }
-    .admin-header{
-        top: 4rem;
-    }
-}
-
 .modal_container{
     display: flex;
     justify-content: center;
@@ -139,4 +127,16 @@
     position: sticky;
     top: 5rem;
     z-index: 888;
+}
+
+@media screen and (max-width: 750px) {
+    .aventuras{
+        width: 100%;
+    }
+    .table-container{
+        justify-content: flex-start;
+    }
+    .admin-header{
+        top: 4rem;
+    }
 }
