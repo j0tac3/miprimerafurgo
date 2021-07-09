@@ -28,3 +28,16 @@ a{
         min-height: calc(100vh - 20rem);
     }
 }
+
+@font-face {
+    font-family: "Borg";
+    src: url('assets/media/fonts/borg/Borg.ttf');
+}
+@font-face {
+    font-family: "Anurati";
+    src: url('assets/media/fonts/anurati_font/anurati_font/Anurati-Regular.otf');
+}
+@font-face {
+    font-family: "Elianto";
+    src: url('assets/media/fonts/Elianto/Elianto/Elianto-Regular.ttf');
+}

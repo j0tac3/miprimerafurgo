@@ -28,10 +28,14 @@
     object-position: center;
 }
 .header-title{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-size: 2rem;
+    color: #ffff;
+    font-family: "Borg";
+    font-family: "Anurati";
+    font-family: "Elianto";
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    bottom: 0;
 }
 .text-hidden{
     color: transparent;
