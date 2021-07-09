@@ -86,6 +86,8 @@ export class ArticulosComponent implements OnInit {
   }
 
   onLoadIframe( iframe : any){
+    console.log('Buscando');
+    console.log(iframe);
     let value = iframe.contentWindow.document.querySelectorAll('div.title');
     console.log(value);
     this.iframes.push(iframe);
