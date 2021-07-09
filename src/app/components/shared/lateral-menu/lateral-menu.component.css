@@ -4,6 +4,11 @@
     width: 100%;
     position: sticky;
     top: 0;
+    transition: transform .5s;
+}
+.lateral-menu-container__notVisible{
+    z-index: -111;
+    transform: translateY(-100%);
 }
 .menu-icon{
     width: 2rem;
