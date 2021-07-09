@@ -62,6 +62,9 @@
     .table-container{
         justify-content: flex-start;
     }
+    .admin-header{
+        top: 4rem;
+    }
 }
 
 .modal_container{
@@ -134,6 +137,6 @@
     width: 20rem;
     margin: 0 auto;
     position: sticky;
-    top: 4rem;
+    top: 5rem;
     z-index: 888;
 }

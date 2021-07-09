@@ -77,4 +77,9 @@ export class ArticulosComponent implements OnInit {
     this.themesSelected = [];
   }
 
+  textChange( text : any){
+    let element = document.querySelectorAll(`a[title="${text}"`);
+    console.log(element);
+  }
+
 }

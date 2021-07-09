@@ -1,14 +1,13 @@
 <div class="articulos-container">
-    <app-post-search></app-post-search>
+    <app-post-search (textChange)="textChange($event)"></app-post-search>
     <!-- <img src="assets/media/icons/under-constructions.svg" alt="">
     <span>Los sentimos, pero esta sección se encuentra en construcción &#x263A;</span> -->
-    <div class="new-articulo-container">
+    <!-- <div class="new-articulo-container">
         <button (click)="insertarArticulo()" class="button-articulo">+</button>
         <div style="position: relative;">
             <form action="" [formGroup]="formArticulos">
                 <input name="" id="" formControlName='articulo'
                         (keyup)="displayMaches($event)">
-                <!-- <textarea name="" id="" cols="30" rows="5" formControlName='articulo'></textarea> -->
             </form>
             <ul class="suggest">
                 <li *ngFor="let theme of themesSelected"
@@ -20,7 +19,7 @@
             <img src="assets/media/icons/info.svg" alt="" class="icon-info">
             <div class="info-text">Añada aqui el articulo que hayas seleccionado de Amazon Afiliados</div>
         </div>
-    </div>
+    </div> -->
     <div class="iframes-container">
         <iframe *ngFor="let articulo of articulos"
                 marginwidth="0" marginheight="0" 

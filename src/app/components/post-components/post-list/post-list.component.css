@@ -46,11 +46,14 @@
     width: 100%;
     text-align: center;
 }
-.camping-gif{
-}
 .buscador{
     position: sticky;
-    top: 3.9rem;
+    top: 5rem;
     z-index: 900;
     margin: 1rem 0;
+}
+@media screen and (max-width: 750px) {
+    .buscador{
+        top: 4rem;
+    }
 }
