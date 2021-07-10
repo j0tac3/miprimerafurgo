@@ -1,4 +1,4 @@
 <app-header></app-header>
-<app-lateral-menu></app-lateral-menu>
+<app-lateral-menu class="show_menu" [hidden]="isHome"></app-lateral-menu>
 <router-outlet (activate)="onActivate($event)"></router-outlet>
 <app-footer></app-footer>

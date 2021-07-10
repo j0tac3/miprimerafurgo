@@ -1,0 +1,12 @@
+.show_menu{
+    transform: translateY(-100%);
+    animation: show-menu 1s;
+}
+@keyframes show-menu {
+    from{
+        transform: translatey(-100%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}

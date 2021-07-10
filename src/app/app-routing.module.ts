@@ -11,6 +11,8 @@ import { AdministrarComponent } from './pages/administrar/administrar.component'
 import { AdminarticulosComponent } from './components/admin-components/adminarticulos/adminarticulos.component';
 import { AdminaventurasComponent } from './components/admin-components/adminaventuras/adminaventuras.component';
 import { ADMINAVENTURAS_ROUTERS } from './components/admin-components/adminaventuras/adminaventuras.routes';
+import { LoginComponent } from './components/user-components/login/login.component';
+import { RegisterComponent } from './components/user-components/register/register.component';
  
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
@@ -30,6 +32,8 @@ const APP_ROUTES: Routes = [
   },
   { path: 'aventura/:id', component: PostSelectedComponent },
   { path: 'aventura', component: PostSelectedComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 

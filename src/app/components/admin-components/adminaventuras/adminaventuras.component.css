@@ -1,6 +1,6 @@
 .adminaventura-container{
     min-height: calc(100vh - 25vh);
-    padding-top: 1rem;
+    /* padding-top: 1rem; */
     position: relative;
     background-color: #ffff;
     color: #1f1f1f;
@@ -124,8 +124,10 @@
     justify-content: space-between;
     width: 20rem;
     margin: 0 auto;
+    margin-bottom: .5rem;
+    padding-top: .5rem;
     position: sticky;
-    top: 5rem;
+    top: 4.5rem;
     z-index: 888;
 }
 

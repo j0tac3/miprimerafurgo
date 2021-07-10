@@ -1,0 +1,55 @@
+.login-container{
+    min-height: calc(100vh - 30rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #aaa;
+}
+.login{
+    padding: 2rem;
+    /* border: 1px solid #aaa; */
+    color: #aaa;
+    box-shadow: 10px 10px 15px -5px #aaa;
+    width: 20rem;
+    /* height: 9rem; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.title{
+    text-align: center;
+    padding-top: 0;
+    margin: 0;
+    width: 20rem;
+    border: none;
+    padding: 2rem;
+    background-color: dodgerblue;
+    color: #ffff;
+}
+.input-container{
+    display: grid;
+    margin-bottom: 1rem;
+}
+.input{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ffff;
+    background-color: transparent;
+}
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+}
+.button{
+    border: none;
+    background-color: transparent;
+    padding: .5rem 1rem;
+    color: #ffff;
+}
+.aceptar{
+    background-color: dodgerblue;
+}
+.cancelar{
+    background-color: red;
+}
