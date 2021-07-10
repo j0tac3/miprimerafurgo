@@ -4,17 +4,35 @@
         <div class="field">
             <div class="input-container">
                 <label for="" class="label">Email</label>
-                <input type="email" class="input">
+                <input  type="email" 
+                        class="input"
+                        name="email"
+                        placeholder="Email">
             </div>
             <div class="input-container">
                 <label for="" class="label">Contraseña</label>
-                <input type="password" class="input">
+                <input  type="password" 
+                        class="input"
+                        name="password">
+            </div>
+            <div class="footer">
+                <div class="input-container check_container">
+                    <input  type="checkbox" 
+                            class="input"
+                            name="recordar">
+                    <label for="" class="label">Recordar mi usuario</label>
+                </div>
+                <a [href]="'register'" class="link_register">¿No tienes cuenta?</a>
             </div>
         </div>
 
         <div class="buttons">
-            <button class="button aceptar">Aceptar</button>
-            <button class="button cancelar">Cancelar</button>
+            <button class="button aceptar">INICIAR SESION</button>
+            <button class="button cancelar">
+                <a [href]="'home'">
+                    CANCELAR
+                </a>
+            </button>
         </div>
     </form>
 </div>

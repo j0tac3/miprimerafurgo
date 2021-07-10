@@ -1,1 +1,33 @@
-<p>register works!</p>
+<div class="login-container">
+    <h2 class="title">CREAR NUEVA CUENTA</h2>
+    <form action="" class="login">
+        <div class="field">
+            <div class="input-container">
+                <label for="" class="label">Nombre</label>
+                <input  type="text" 
+                        class="input"
+                        name="nombre"
+                        placeholder="Nombre">
+            </div>
+            <div class="input-container">
+                <label for="" class="label">Email</label>
+                <input  type="email" 
+                        class="input"
+                        name="email"
+                        placeholder="Email">
+            </div>
+            <div class="input-container">
+                <label for="" class="label">Contraseña</label>
+                <input  type="password" 
+                        class="input"
+                        name="password">
+            </div>
+            <a [href]="'login'" class="link_register">¿Ya tienes cuenta?</a>
+        </div>
+
+        <div class="buttons">
+            <button class="button aceptar">CREAR CUENTA</button>
+            <!-- <button class="button cancelar">Cancelar</button> -->
+        </div>
+    </form>
+</div>
