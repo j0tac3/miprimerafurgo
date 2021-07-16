@@ -20,7 +20,7 @@ export class AuthenticationService {
     console.log('Iniciando sesion');
     let result = this.http.post( this.basePath + 'login' , body, {'headers': headers})
     .pipe(map((response: any) => this.extractData(response)));
-    console.log(this.extractData);
+    console.log(result);
     return (result);
   }
 
