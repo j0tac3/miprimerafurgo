@@ -38,7 +38,8 @@ export class LoginComponent implements OnInit {
     console.log(newLogin);
     this.authenticationService.login( newLogin )
       .subscribe(
-        data => this.correctLogin(data),
+        //data => this.correctLogin(data),
+        data => console.log(data),
         error => this.error = JSON.parse(error._body)
       )
     }
