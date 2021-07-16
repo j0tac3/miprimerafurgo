@@ -40,8 +40,9 @@ export class LoginComponent implements OnInit {
       .subscribe(
         //data => this.correctLogin(data),
         data => {
-          console.log(data);
-          this.correctLogin(data);
+          let currentSession : Session = data;
+          console.log(currentSession);
+          this.correctLogin(currentSession);
         },
         error => this.error = JSON.parse(error._body)
       )
