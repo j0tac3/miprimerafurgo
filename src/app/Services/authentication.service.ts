@@ -18,8 +18,10 @@ export class AuthenticationService {
     const headers = { 'content-type' : 'application/json' };
     const body = JSON.stringify(loginObj);
     console.log('Iniciando sesion');
-    return this.http.post( this.basePath + 'login' , body, {'headers': headers})
+    let result = this.http.post( this.basePath + 'login' , body, {'headers': headers})
     .pipe(map((response: any) => response.json()));
+    console.log(result);
+    return (result);
   }
 
   logout() : Observable<Session> {
