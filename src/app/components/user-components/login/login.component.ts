@@ -39,7 +39,9 @@ export class LoginComponent implements OnInit {
     this.authenticationService.login( newLogin )
       .subscribe(
         //data => this.correctLogin(data),
-        data => console.log(data),
+        data => {
+          console.log(data)
+        },
         error => this.error = JSON.parse(error._body)
       )
     }
