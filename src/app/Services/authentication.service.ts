@@ -14,13 +14,13 @@ export class AuthenticationService {
 
   private basePath = 'https://mi-primera-furgo-api.herokuapp.com/api/';
 
-  login( loginObj : Login) : Observable<Session> {
+  login( loginObj : Login) : Observable<any> {
     const headers = { 'content-type' : 'application/json' };
     const body = JSON.stringify(loginObj);
     console.log('Iniciando sesion');
     let result = this.http.post( this.basePath + 'login' , body, {'headers': headers})
-    .pipe(map((response: any) => response.json()));
-    console.log(result);
+    .pipe(map((response: any) => this.extractData(response)));
+    console.log(this.extractData);
     return (result);
   }
 
