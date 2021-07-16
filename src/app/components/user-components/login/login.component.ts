@@ -40,7 +40,8 @@ export class LoginComponent implements OnInit {
       .subscribe(
         //data => this.correctLogin(data),
         data => {
-          console.log(data)
+          console.log(data);
+          this.correctLogin(data);
         },
         error => this.error = JSON.parse(error._body)
       )
